@@ -24,32 +24,13 @@ table {
     padding: 10px;
     text-align: center;
   }
+
+  .cor1 { background-color: #66ccff; }
+    .cor2 { background-color: #7ae2b2; }
+    .cor3 { background-color: #ffd966; }
+    .cor4 { background-color: #ff7c80; }
+    .cor5 { background-color: #d9d9d9; }
+    .cor6 { background-color: #33cc33; }
+    .cor7 { background-color: #ffeeb9; }
   
  
-  tr:nth-child(2) {
-    background-color: #66ccff; /* segunda */
-  }
-  
-  tr:nth-child(3) {
-    background-color: #c9c9c9; /* terça */
-  }
-  
-  tr:nth-child(4) {
-    background-color: #ffd966; /* quarta */
-  }
-  
-  tr:nth-child(5) {
-    background-color: #ff7c80; /* quinta */
-  }
-  
-  tr:nth-child(6) {
-    background-color: #d9d9d9; /* sexta */
-  }
-  
-  tr:nth-child(7) {
-    background-color: #33cc33; /* sabado */
-  }
-
-  tr:nth-child(8) {
-    background-color: #ffeeb9; /* domingo */
-  }

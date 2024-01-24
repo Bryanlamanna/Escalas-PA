@@ -2,11 +2,31 @@
 const weekdays = document.querySelectorAll('.weekday');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const daynums = document.querySelectorAll('.daynum');
+const weeknums = document.querySelectorAll('.weeknum');
+const scales = document.querySelectorAll('.day');
 
 function setDayNum () {
   for (let i = 0; i < daynums.length; i++) {
     daynums[i].innerHTML = i+1;
   }  
+}
+
+function setWeekNum () {
+  for (let i = 0; i < 7; i++) {
+    weeknums[i].innerHTML = '1';
+  }
+  for (let i = 7; i < 14; i++) {
+    weeknums[i].innerHTML = '2';
+  }
+  for (let i = 14; i < 21; i++) {
+    weeknums[i].innerHTML = '3';
+  }
+  for (let i = 21; i < 28; i++) {
+    weeknums[i].innerHTML = '4';
+  }
+  for (let i = 28; i < weeknums.length; i++) {
+    weeknums[i].innerHTML = '5';
+  }
 }
 
 function definirCoresNaTabela() {
@@ -31,7 +51,7 @@ function diaDaSemanaNoProximoMes() {
     const mesAtual = dataAtual.getMonth();
   
     // Configurar a data para o primeiro dia do próximo mês
-    dataAtual.setMonth(mesAtual + 1, 1);
+    dataAtual.setMonth(mesAtual + 2, 1);
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
     const diaDaSemanaProximoMes = dataAtual.getDay();
@@ -41,7 +61,7 @@ function diaDaSemanaNoProximoMes() {
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
 
-    setDayNum ()
+    
 
     for (let i = 1; i < 31; i++) {
       const diaDaSemanaAtual = (diaDaSemanaProximoMes + i) % 7; // Lidando com os dias além do índice 6
@@ -57,6 +77,8 @@ weekdays[0].innerHTML = diaDaSemanaNoProximoMes();
 
 
 definirCoresNaTabela()
+setDayNum();
+setWeekNum();
 
 // Chamando a função e exibindo o resultado
 const diaDaSemanaProximoMes = diaDaSemanaNoProximoMes();
