@@ -1,0 +1,55 @@
+
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+  width: 95%;
+  margin: 0 auto;
+}
+
+table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    align-items: start;
+  }
+  
+  th {
+    background-color: lightgray;
+  }
+  th, td {
+    max-width: 2em;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+ 
+  tr:nth-child(2) {
+    background-color: #66ccff; /* segunda */
+  }
+  
+  tr:nth-child(3) {
+    background-color: #c9c9c9; /* terça */
+  }
+  
+  tr:nth-child(4) {
+    background-color: #ffd966; /* quarta */
+  }
+  
+  tr:nth-child(5) {
+    background-color: #ff7c80; /* quinta */
+  }
+  
+  tr:nth-child(6) {
+    background-color: #d9d9d9; /* sexta */
+  }
+  
+  tr:nth-child(7) {
+    background-color: #33cc33; /* sabado */
+  }
+
+  tr:nth-child(8) {
+    background-color: #ffeeb9; /* domingo */
+  }
