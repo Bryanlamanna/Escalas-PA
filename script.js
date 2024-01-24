@@ -51,7 +51,7 @@ function diaDaSemanaNoProximoMes() {
     const mesAtual = dataAtual.getMonth();
   
     // Configurar a data para o primeiro dia do próximo mês
-    dataAtual.setMonth(mesAtual + 2, 1);
+    dataAtual.setMonth(mesAtual + 1, 1);
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
     const diaDaSemanaProximoMes = dataAtual.getDay();
