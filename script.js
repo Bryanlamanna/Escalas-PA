@@ -3,7 +3,214 @@ const weekdays = document.querySelectorAll('.weekday');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const daynums = document.querySelectorAll('.daynum');
 const weeknums = document.querySelectorAll('.weeknum');
-const scales = document.querySelectorAll('.day');
+const plantoes = document.querySelectorAll('.day');
+const scale = [
+  /*1 segunda*/
+
+  'ROSA',
+  'LILIAN',
+  'TELMO',
+  'LUCIANE',
+
+  'KARINA',
+  'ANA LUISA',
+  'ADRIANO',
+  'ADRIANO',
+
+  'MARLENE',
+  'JEAN',
+  'MARIANA',
+  'STAVROS',
+
+  'ANA LUISA',
+  'TELMO',
+  'ANA PETRY',
+  'LUCIANE',
+
+  'ROSA',
+  'LILIAN',
+  'TELMO',
+  'GILBERTO',
+
+  'ANA LUISA',
+  'JEAN',
+  'CRISTIANE',
+  'LUZZI',
+
+  'LUCIANE',
+  '',
+  'CRISTIANE',
+  'LUZZI',
+
+  /* 2 segunda*/
+
+  "MARLENE",
+  "MARIANA",
+  "LILIAN",
+  "ESTEVÃO",
+
+  "LILIAN",
+  "TELMO",
+  "ANA LUISA",
+  "ADRIANO",
+
+  "MARLENE",
+  "TELMO",
+  "JEAN",
+  "STAVROS",
+
+  "MARCIA",
+  "LEILA",
+  "ANA PETRY",
+  "GILBERTO",
+
+  "ROSA",
+  "MARIANA",
+  "LILIAN",
+  "COUTINHO",
+
+  "RAQUEL",
+  "JEAN",
+  "TELMO",
+  "ESTEVÃO",
+
+  "GILBERTO",
+  '',
+  "GILBERTO",
+  "ESTEVÃO",
+
+  /* 3 segunda*/
+
+  "LILIAN",
+  "TELMO",
+  "JEAN",
+  "LUCIANE",
+
+  "KARINA",
+  "ANA LUISA",
+  "ADRIANO",
+  "ADRIANO",
+
+  "MARLENE",
+  "LEILA",
+  "MARIANA",
+  "STAVROS",
+
+  "MARLENE",
+  "ANA PETRY",
+  "ADRIANO",
+  "LUCIANE",
+
+  "LILIAN",
+  "TELMO",
+  "ANA PETRY",
+  "LUZZI",
+
+  "GILBERTO",
+  "JEAN",
+  "GILBERTO",
+  "LUCIANE",
+
+  "GILBERTO",
+  '',
+  "LILIAN",
+  "LUZZI",
+
+  /* 4 segunda */
+
+  "MARCIA",
+  "ADRIANO",
+  "LILIAN",
+  "GREICE",
+
+  "ANA PETRY",
+  "LILIAN",
+  "ANA LUISA",
+  "ADRIANO",
+
+  "MARLENE",
+  "JEAN",
+  "MARIANA",
+  "STAVROS",
+
+  "ANA LUISA",
+  "ROSA",
+  "ANA PETRY",
+  "GILBERTO",
+
+  "MARCIA",
+  "GUSTAVO",
+  "ROSA",
+  "JESSICA",
+
+  "JEAN",
+  "MARIANA",
+  "ADRIANO",
+  "ESTEVÃO",
+
+  "ESTEVÃO",
+  '',
+  "GILBERTO",
+  "GILBERTO",
+
+  /* 5 segunda */ 
+
+  "LUCIANE",
+  "TELMO",
+  "GUSTAVO",
+  "CRISTIANE",
+
+  "KARINA",
+  "ANA LUISA",
+  "ADRIANO",
+  "GREICE",
+
+  "MARLENE",
+  "JEAN",
+  "TELMO",
+  "COUTINHO",
+  
+  "ANA LUISA",
+  "ANA PETRY",
+  "CRISTIANE",
+  "COUTINHO",
+
+  "ROSA",
+  "MARIANA",
+  "JEAN",
+  "GREICE",
+
+  "GILBERTO",
+  "GUSTAVO",
+  "JEAN",
+  "CRISTIANE",
+
+  "GUSTAVO",
+  '',
+  "GUSTAVO",
+  "JESSICA",
+
+];
+let indice = 0;
+let index = 1;
+const btn = document.querySelector('.nextBtn');
+
+btn.addEventListener('click', () => {
+  index = index + 1;
+  fillScale();
+  diaDaSemanaNoProximoMes()
+  definirCoresNaTabela()
+  setDayNum();
+  setWeekNum();
+
+})
+
+function fillScale () {
+  for (let i = 0; i < plantoes.length; i++) {
+    plantoes[i].innerHTML = scale[indice];
+    indice++;
+  }
+}
 
 function setDayNum () {
   for (let i = 0; i < daynums.length; i++) {
@@ -51,10 +258,26 @@ function diaDaSemanaNoProximoMes() {
     const mesAtual = dataAtual.getMonth();
   
     // Configurar a data para o primeiro dia do próximo mês
-    dataAtual.setMonth(mesAtual + 1, 1);
+    dataAtual.setMonth(mesAtual + index, 1);
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
     const diaDaSemanaProximoMes = dataAtual.getDay();
+
+    if (diaDaSemanaProximoMes === 0) {
+      indice = 24;
+    } if (diaDaSemanaProximoMes === 1) {
+      indice = 0;
+    } if (diaDaSemanaProximoMes === 2) {
+      indice = 4;
+    } if (diaDaSemanaProximoMes === 3) {
+      indice = 8;
+    } if (diaDaSemanaProximoMes === 4) {
+      indice = 12;
+    } if (diaDaSemanaProximoMes === 5) {
+      indice = 16;
+    } if (diaDaSemanaProximoMes === 6) {
+      indice = 20;
+    }
   
     // Array com os nomes dos dias da semana
      
@@ -63,12 +286,14 @@ function diaDaSemanaNoProximoMes() {
 
     
 
-    for (let i = 1; i < 31; i++) {
+    for (let i = 0; i < 31; i++) {
       const diaDaSemanaAtual = (diaDaSemanaProximoMes + i) % 7; // Lidando com os dias além do índice 6
       weekdays[i].textContent = diasDaSemana[diaDaSemanaAtual];
     }
     
-    
+    fillScale();
+
+    document.querySelector('.title').innerHTML =("O primeiro dia do próximo mês será um(a) " + nomeDoDiaDaSemana + ".");
 
     return nomeDoDiaDaSemana;
   }
@@ -81,5 +306,4 @@ setDayNum();
 setWeekNum();
 
 // Chamando a função e exibindo o resultado
-const diaDaSemanaProximoMes = diaDaSemanaNoProximoMes();
-document.querySelector('.title').innerHTML =("O primeiro dia do próximo mês será um(a) " + diaDaSemanaProximoMes + ".");
+let diaDaSemanaProximoMes = diaDaSemanaNoProximoMes();
