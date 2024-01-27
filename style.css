@@ -7,12 +7,22 @@ body {
   background-color: #9e234a;
 }
 
-h1 {
-  font-size: larger;
-  color: white;
+button:active {
+  transform: scale(0.95);
+}
+
+button:hover {
+  transform: translate(-.2em,-.2em);
+  background-color: #b5b5b5;
+}
+
+button i {
+  font-size: medium;
 }
 
 button {
+  transition: .3s;
+  cursor: pointer;
   font-size: small;
   border-radius: 4px;
   border: none;
@@ -24,10 +34,14 @@ button {
 
 h1 {
   width: 95%;
-  margin: 0 auto;
+  margin-bottom: 1em;
+  font-size: larger;
+  color: white;
 }
 
 table {
+    
+    transition: .5s;
     width: 95%;
     margin: 0 auto;
     border-collapse: collapse;

@@ -8,6 +8,9 @@ const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
+const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
 
 previousBtn.addEventListener('click', () => {
   index = index - 1;
@@ -141,6 +144,10 @@ function setWeekNum () {
   for (let i = 28; i < weeknums.length; i++) {
     weeknums[i].innerHTML = '5';
   }
+}
+
+window.onload = () => {
+  currentMonth()
 }
 
 definirCoresNaTabela();

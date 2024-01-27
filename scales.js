@@ -1528,6 +1528,4 @@ const scaleDom = [
 
 const scales = [scaleDom, scaleSeg, scaleTer, scaleQua, scaleQui, scaleSex, scaleSab];
 
-const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
