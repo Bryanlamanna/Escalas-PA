@@ -4,6 +4,9 @@ const weeknums = document.querySelectorAll('.weeknum');
 const plantoes = document.querySelectorAll('.day');
 let index = 0;
 let indice = 0;
+const shortMonth = document.querySelector('.shortday');
+const normalMonth = document.querySelector('.normalday');
+const longMonth = document.querySelector('.longday');
 const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
@@ -51,6 +54,26 @@ function fillScale(dia) {
     }
 }
 
+function hideDays(dia) {
+    if (dia == 28) {
+        shortMonth.style.opacity = '0';
+        normalMonth.style.opacity = '0';
+        longMonth.style.opacity = '0';
+    } if (dia == 29) {
+        shortMonth.style.opacity = '1';
+        normalMonth.style.opacity = '0';
+        longMonth.style.opacity = '0';
+    } if (dia == 30) {
+        shortMonth.style.opacity = '1';
+        normalMonth.style.opacity = '1';
+        longMonth.style.opacity = '0';
+    } else if (dia == 31) {
+        shortMonth.style.opacity = '1';
+        normalMonth.style.opacity = '1';
+        longMonth.style.opacity = '1';
+    }
+
+}
 function nextMonth() {
     // Criar um objeto Date para a data atual
     const dataAtual = new Date();
@@ -68,6 +91,12 @@ function nextMonth() {
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
     const diaDaSemanaProximoMes = dataAtual.getDay();
+
+    //obter o ultimo dia do mes
+    const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
+    console.log(ultimoDiaDoMes)
+    //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
+    hideDays(ultimoDiaDoMes)
   
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -103,6 +132,12 @@ function currentMonth() {
   // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
   const diaDaSemanaProximoMes = dataAtual.getDay();
   let anoAtual = dataAtual.getFullYear();
+
+  //obter o ultimo dia do mes
+  const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
+  console.log(ultimoDiaDoMes)
+  //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
+  hideDays(ultimoDiaDoMes)
 
   // Obter o nome do dia da semana
   const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
