@@ -4,6 +4,7 @@ const weeknums = document.querySelectorAll('.weeknum');
 const plantoes = document.querySelectorAll('.day');
 let index = 0;
 let indice = 0;
+const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
@@ -11,16 +12,21 @@ const previousBtn = document.querySelector('.previousBtn');
 previousBtn.addEventListener('click', () => {
   index = index - 1;
   nextMonth();
+  tabela.style.visibility = 'visible';
 })
 
 currentBtn.addEventListener('click', () => {
   index = 0;
   currentMonth()
+  tabela.style.visibility = 'visible';
+
 })
 
 nextBtn.addEventListener('click', () => {
   index = index + 1;
   nextMonth()
+  tabela.style.visibility = 'visible';
+
 })
 
 function fillScale(dia) {
@@ -60,7 +66,7 @@ function nextMonth() {
     fillScale(diaDaSemanaProximoMes);
 
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/'+ anoAtual + ', começando em um(a) ' + nomeDoDiaDaSemana);
+    document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
 
     
 }
@@ -81,6 +87,7 @@ function currentMonth() {
 
   // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
   const diaDaSemanaProximoMes = dataAtual.getDay();
+  let anoAtual = dataAtual.getFullYear();
 
   // Obter o nome do dia da semana
   const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -94,7 +101,7 @@ function currentMonth() {
   fillScale(diaDaSemanaProximoMes);
 
   // Atualizar o titulo da pagina com o primeiro dia do mes
-  document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/2024, começando em um(a) ' + nomeDoDiaDaSemana);
+  document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
 
 }
 

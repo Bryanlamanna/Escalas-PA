@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png ">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <title>Escala PA</title>
 </head>
 <body>
   <main style="text-align: center;">
-    <h1 class="title"></h1>
+   
     <button class="previousBtn">mes anterior</button>
     <button class="currentBtn">Escala mês atual</button>
     <button class="nextBtn">proximo mês</button>
+    <h1 class="title"></h1>
   </main>
-    <table id="tabela">
+    <table id="tabela" style="visibility: hidden; border-radius: 4px;">
         <tr>
           <th style="width: 1em;">Num</th>
           <th>Dia</th>
@@ -21,7 +25,7 @@
           <th>Intermed.</th>
           <th>Tarde</th>
           <th>Noturno</th>
-          <th style="width: 1em;" class="weeknum">S</th>
+          <th style="width: 1em; border-top-right-radius: 4px;" class="weekhd">S</th>
         </tr>
         
         <tr>
