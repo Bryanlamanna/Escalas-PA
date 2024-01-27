@@ -7,9 +7,7 @@ body {
   background-color: #9e234a;
 }
 
-button:active {
-  transform: scale(0.95);
-}
+
 
 button:hover {
   transform: translate(-.2em,-.2em);
@@ -33,17 +31,18 @@ button {
 }
 
 h1 {
-  width: 95%;
   margin-bottom: 1em;
+  width: 95%;
   font-size: larger;
   color: white;
+  margin: 0 auto;
 }
 
 table {
     
-    transition: .5s;
+    transition: .1s;
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto ;
     border-collapse: collapse;
     align-items: start;
   }

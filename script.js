@@ -13,22 +13,34 @@ const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
 
 
 previousBtn.addEventListener('click', () => {
-  index = index - 1;
-  nextMonth();
-  tabela.style.visibility = 'visible';
+  tabela.style.opacity = .5;
+  
+  setTimeout(() => {
+    index = index - 1;
+    nextMonth()
+    tabela.style.opacity = 1;
+  }, 100)
 })
 
 currentBtn.addEventListener('click', () => {
-  index = 0;
-  currentMonth()
-  tabela.style.visibility = 'visible';
+  tabela.style.opacity = .5;
+  
+  setTimeout(() => {
+    index = 0;
+    currentMonth()
+    tabela.style.opacity = 1;
+  }, 100)
 
 })
 
 nextBtn.addEventListener('click', () => {
-  index = index + 1;
-  nextMonth()
-  tabela.style.visibility = 'visible';
+  tabela.style.opacity = .5;
+  
+  setTimeout(() => {
+    index = index + 1;
+    nextMonth()
+    tabela.style.opacity = 1;
+  }, 100)
 
 })
 
