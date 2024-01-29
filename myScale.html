@@ -14,29 +14,28 @@
 </head>
 <body>
   <main style="text-align: center;">
-    <a href="myScale.html" target="_self">
-    <button disabled class="myScale">
+    
+    <button class="myScale">
       <i class="fa-solid fa-user-pen"></i>
       Minha Escala  
     </button>
-    </a>
-    <button class="previousBtn">
-      <i class="fa-regular fa-hand-point-left"></i>
-      mes anterior
-    </button>
+
+    <button class="previousBtn" style="display: none;">
+        <i class="fa-regular fa-hand-point-left"></i>
+        mes anterior
+      </button>
+    
+    <a href="index.html" target="_self">
     <button class="currentBtn">
       Escala mês atual
       <i class="fa-regular fa-calendar-check"></i>
     </button>
-    <button class="nextBtn">
-      proximo mês
-      <i class="fa-regular fa-hand-point-right"></i>
-    </button>
-    <button disabled class="particular">
-      <i class="fa-solid fa-circle-dollar-to-slot"></i>
-      Anotar particular
-
-    </button>
+    </a>
+    <button class="nextBtn" style="display: none;">
+        proximo mês
+        <i class="fa-regular fa-hand-point-right"></i>
+      </button>
+   
     <h1 class="title"></h1>
   </main>
   <table id="tabela" style="border-radius: 4px;">
@@ -334,5 +333,6 @@
   </table>
   <script src="script.js"></script>
   <script src="scales.js"></script>
+  <script src="myScale.js"></script>
 </body>
 </html>

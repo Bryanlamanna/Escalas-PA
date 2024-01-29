@@ -11,8 +11,10 @@ const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
+const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+var scriptElement;
 
 
 previousBtn.addEventListener('click', () => {
@@ -46,6 +48,10 @@ nextBtn.addEventListener('click', () => {
   }, 100)
 
 })
+
+
+
+
 
 function fillScale(dia) {
     
