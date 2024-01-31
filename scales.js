@@ -49,9 +49,9 @@ const scaleSeg = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -85,7 +85,7 @@ const scaleSeg = [
   "ESTEVÃO",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -256,9 +256,9 @@ const scaleTer = [
 
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -337,7 +337,7 @@ const scaleTer = [
 
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -510,9 +510,9 @@ const scaleQua = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
 
@@ -548,7 +548,7 @@ const scaleQua = [
   "LUZZI",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -723,9 +723,9 @@ const scaleQui = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -759,7 +759,7 @@ const scaleQui = [
   "LUZZI",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -938,9 +938,9 @@ const scaleSex = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -975,7 +975,7 @@ const scaleSex = [
   "LUZZI",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -1152,9 +1152,9 @@ const scaleSab = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -1189,7 +1189,7 @@ const scaleSab = [
   "LUZZI",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
@@ -1365,9 +1365,9 @@ const scaleDom = [
   "ESTEVÃO",
 
   /*2º terça*/
-  "LILIAN",
-  "TELMO",
   "ANA LUISA",
+  "TELMO",
+  "ADRIANO",
   "ADRIANO",
 
   /* 2º quarta*/
@@ -1402,7 +1402,7 @@ const scaleDom = [
   "LUZZI",
 
   /* 3º segunda*/
-  "LILIAN",
+  "MARIANA",
   "TELMO",
   "JEAN",
   "LUCIANE",
