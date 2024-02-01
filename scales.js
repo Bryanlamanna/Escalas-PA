@@ -130,7 +130,7 @@ const scaleSeg = [
   "MARCIA",
   "ADRIANO",
   "LILIAN",
-  "GREICE",
+  "CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
@@ -384,8 +384,7 @@ const scaleTer = [
   "MARCIA",
   "ADRIANO",
   "LILIAN",
-  "GREICE",
-
+  "CRISTIANE",
 
   /* 5º terça */
   "KARINA",
@@ -590,11 +589,11 @@ const scaleQua = [
   "GILBERTO",
   "GILBERTO",
 
-  /* 4º segunda */
-  "MARCIA",
-  "ADRIANO",
-  "LILIAN",
-  "GREICE",
+ /* 4º segunda */
+ "MARCIA",
+ "ADRIANO",
+ "LILIAN",
+ "CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
@@ -808,7 +807,7 @@ const scaleQui = [
   "MARCIA",
   "ADRIANO",
   "LILIAN",
-  "GREICE",
+  "CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
@@ -1019,11 +1018,11 @@ const scaleSex = [
   "GILBERTO",
   "GILBERTO",
 
-  /* 4º segunda */
-  "MARCIA",
-  "ADRIANO",
-  "LILIAN",
-  "GREICE",
+/* 4º segunda */
+"MARCIA",
+"ADRIANO",
+"LILIAN",
+"CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
@@ -1236,7 +1235,7 @@ const scaleSab = [
   "MARCIA",
   "ADRIANO",
   "LILIAN",
-  "GREICE",
+  "CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
@@ -1449,7 +1448,7 @@ const scaleDom = [
   "MARCIA",
   "ADRIANO",
   "LILIAN",
-  "GREICE",
+  "CRISTIANE",
 
   /* 4º terça */
   "ANA PETRY",
