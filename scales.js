@@ -2,7 +2,7 @@
 const scaleSeg = [
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -26,7 +26,7 @@ const scaleSeg = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -232,7 +232,7 @@ const scaleTer = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -250,7 +250,7 @@ const scaleTer = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -444,7 +444,7 @@ const scaleQua = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -462,7 +462,7 @@ const scaleQua = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -655,7 +655,7 @@ const scaleQui = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -673,7 +673,7 @@ const scaleQui = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -870,7 +870,7 @@ const scaleQui = [
 const scaleSex = [
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -888,7 +888,7 @@ const scaleSex = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -1102,7 +1102,7 @@ const scaleSab = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -1126,7 +1126,7 @@ const scaleSab = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
@@ -1316,7 +1316,7 @@ const scaleDom = [
 
   /*1º segunda*/
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'LUCIANE',
 
@@ -1340,7 +1340,7 @@ const scaleDom = [
 
   /* 1º sexta */
   'ROSA',
-  'LILIAN',
+  '',
   'TELMO',
   'GILBERTO',
 
