@@ -45,7 +45,7 @@ const scaleSeg = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -69,7 +69,7 @@ const scaleSeg = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -109,7 +109,7 @@ const scaleSeg = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -123,13 +123,13 @@ const scaleSeg = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 4º segunda */
   "MARCIA",
   "ADRIANO",
-  "LILIAN",
+  "",
   "CRISTIANE",
 
   /* 4º terça */
@@ -276,7 +276,7 @@ const scaleTer = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -294,7 +294,7 @@ const scaleTer = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
 
@@ -318,7 +318,7 @@ const scaleTer = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -332,7 +332,7 @@ const scaleTer = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
 
@@ -383,7 +383,7 @@ const scaleTer = [
   /* 4º segunda */
   "MARCIA",
   "ADRIANO",
-  "LILIAN",
+  "",
   "CRISTIANE",
 
   /* 5º terça */
@@ -487,7 +487,7 @@ const scaleQua = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -505,7 +505,7 @@ const scaleQua = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -529,7 +529,7 @@ const scaleQua = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -543,7 +543,7 @@ const scaleQua = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 3º segunda*/
@@ -592,7 +592,7 @@ const scaleQua = [
  /* 4º segunda */
  "MARCIA",
  "ADRIANO",
- "LILIAN",
+ "",
  "CRISTIANE",
 
   /* 4º terça */
@@ -700,7 +700,7 @@ const scaleQui = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -718,7 +718,7 @@ const scaleQui = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -740,7 +740,7 @@ const scaleQui = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -754,7 +754,7 @@ const scaleQui = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 3º segunda*/
@@ -806,7 +806,7 @@ const scaleQui = [
   /* 4º segunda */
   "MARCIA",
   "ADRIANO",
-  "LILIAN",
+  "",
   "CRISTIANE",
 
   /* 4º terça */
@@ -915,7 +915,7 @@ const scaleSex = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -933,7 +933,7 @@ const scaleSex = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -956,7 +956,7 @@ const scaleSex = [
 
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -970,7 +970,7 @@ const scaleSex = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1021,7 +1021,7 @@ const scaleSex = [
 /* 4º segunda */
 "MARCIA",
 "ADRIANO",
-"LILIAN",
+"",
 "CRISTIANE",
 
   /* 4º terça */
@@ -1147,7 +1147,7 @@ const scaleSab = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -1171,7 +1171,7 @@ const scaleSab = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
 
@@ -1184,7 +1184,7 @@ const scaleSab = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1214,7 +1214,7 @@ const scaleSab = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -1234,7 +1234,7 @@ const scaleSab = [
   /* 4º segunda */
   "MARCIA",
   "ADRIANO",
-  "LILIAN",
+  "",
   "CRISTIANE",
 
   /* 4º terça */
@@ -1360,7 +1360,7 @@ const scaleDom = [
   /* 2º segunda*/
   "MARLENE",
   "MARIANA",
-  "LILIAN",
+  "",
   "ESTEVÃO",
 
   /*2º terça*/
@@ -1384,7 +1384,7 @@ const scaleDom = [
   /* 2º sexta*/
   "ROSA",
   "MARIANA",
-  "LILIAN",
+  "",
   "COUTINHO",
 
   /* 2º sabado*/
@@ -1397,7 +1397,7 @@ const scaleDom = [
   /* 3º domingo */
   "GILBERTO",
   '',
-  "LILIAN",
+  "",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1427,7 +1427,7 @@ const scaleDom = [
   "LUCIANE",
 
   /* 3º sexta */
-  "LILIAN",
+  "",
   "TELMO",
   "ANA PETRY",
   "LUZZI",
@@ -1447,7 +1447,7 @@ const scaleDom = [
   /* 4º segunda */
   "MARCIA",
   "ADRIANO",
-  "LILIAN",
+  "",
   "CRISTIANE",
 
   /* 4º terça */
@@ -1523,6 +1523,227 @@ const scaleDom = [
   "GUSTAVO",
   "JEAN",
   "CRISTIANE",
+];
+
+const scaleUpdated = [
+  /* 1º quinta */
+  'JEAN',
+  'TELMO',
+  'ROSA',
+  'GILBERTO',
+
+  /* 1º sexta */
+  'ROSA',
+  'ANA LUISA',
+  'TELMO',
+  'LUCIANE',
+
+  /* 1º sabado */
+  'ANA LUISA',
+  'JEAN',
+  'CRISTIANE',
+  'LUZZI',
+
+  /* 1º domingo */
+  'JUVENAL',
+  '------',
+  'CRISTIANE',
+  'LUZZI',
+
+  /*1º segunda*/
+  'ROSA',
+  'ADRIANO',
+  'MARIANA',
+  'LUCIANE',
+
+  /* 1º terça */
+  'TELMO',
+  'ANA LUISA',
+  'ADRIANO',
+  'ADRIANO',
+
+  /* 1º quarta */
+  'MARLENE',
+  'JEAN',
+  'MARIANA',
+  'JESSICA',
+
+
+
+  /* 2º quinta*/
+  "JUVENAL",
+  "LEILA",
+  "ANA PETRY",
+  "GILBERTO",
+
+  /* 2º sexta*/
+  "ROSA",
+  "MARIANA",
+  "ADRIANO",
+  "CRISTIANE",
+
+  /* 2º sabado*/
+  "RAQUEL",
+  "ANA LUISA",
+  "TELMO",
+  "ESTEVÃO",
+
+  /* 2º domingo */
+  "GILBERTO",
+  '------',
+  "GILBERTO",
+  "ESTEVÃO",
+
+  /* 2º segunda*/
+  "ANA LUISA",
+  "TELMO",
+  "ESTEVAO",
+  "ESTEVÃO",
+
+  /*2º terça*/
+  "KARINA",
+  "ROSA",
+  "ADRIANO",
+  "ADRIANO",
+
+  /* 2º quarta*/
+  "MARLENE",
+  "TELMO",
+  "JEAN",
+  "STAVROS",
+
+  /* 3º quinta */
+  "MARLENE",
+  "ANA PETRY",
+  "ADRIANO",
+  "LUCIANE",
+
+  /* 3º sexta */
+  "JUVENAL",
+  "TELMO",
+  "ANA PETRY",
+  "LUZZI",
+
+  /* 3º sabado */
+  "GILBERTO",
+  "JEAN",
+  "GILBERTO",
+  "LUCIANE",
+
+  /* 3º domingo */
+  "GILBERTO",
+  '------',
+  "GREICE",
+  "LUZZI",
+
+  /* 3º segunda*/
+  "JUVENAL",
+  "TELMO",
+  "JEAN",
+  "LUCIANE",
+
+  /* 3º terça */
+  "KARINA",
+  "JEAN",
+  "ADRIANO",
+  "ADRIANO",
+
+
+  /* 3º quarta */
+  "MARLENE",
+  "LEILA",
+  "MARIANA",
+  "STAVROS",
+
+
+
+
+  /* 4º quinta */
+  "MARLENE",
+  "TELMO",
+  "ANA PETRY",
+  "GILBERTO",
+
+  /* 4º sexta */
+  "MARCIA",
+  "GUSTAVO",
+  "ANA PETRY",
+  "JESSICA",
+
+  /* 4º sabado */
+  "JEAN",
+  "MARIANA",
+  "ADRIANO",
+  "ESTEVÃO",
+
+  /* 4º domingo */
+  "ESTEVÃO",
+  '------',
+  "GILBERTO",
+  "GILBERTO",
+
+  /* 4º segunda */
+  "MARCIA",
+  "ADRIANO",
+  "JEAN",
+  "CRISTIANE",
+
+  /* 4º terça */
+  "ANA PETRY",
+  "ANA LUISA",
+  "ADRIANO",
+  "ADRIANO",
+
+  /* 4º quarta */
+  "MARLENE",
+  "JEAN",
+  "MARIANA",
+  "STAVROS",
+
+
+
+  /* 5º quinta */
+  "ANA LUISA",
+  "ANA PETRY",
+  "CRISTIANE",
+  "COUTINHO",
+
+  /* 5º sexta */
+  "ROSA",
+  "MARIANA",
+  "JEAN",
+  "GREICE",
+
+  /* 5º sabado */
+  "GILBERTO",
+  "GUSTAVO",
+  "JEAN",
+  "CRISTIANE",
+
+  /* 5º domingo */
+  "GUSTAVO",
+  '------',
+  "GUSTAVO",
+  "JESSICA",
+
+
+  /* 5º segunda */
+  "LUCIANE",
+  "TELMO",
+  "GUSTAVO",
+  "CRISTIANE",
+
+  /* 5º terça */
+  "KARINA",
+  "ANA LUISA",
+  "ADRIANO",
+  "GREICE",
+
+  /* 5º quarta */
+  "MARLENE",
+  "JEAN",
+  "TELMO",
+  "COUTINHO"
 ];
 
 const scales = [scaleDom, scaleSeg, scaleTer, scaleQua, scaleQui, scaleSex, scaleSab];

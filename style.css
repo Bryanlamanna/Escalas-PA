@@ -7,7 +7,9 @@ body {
   background-color: #9e234a;
 }
 
-
+.switch {
+  color: red;
+}
 
 button:hover {
   transform: translate(-.2em,-.2em);

@@ -1,19 +1,81 @@
-plantoes.forEach(cell => {
-    cell.addEventListener("click", function() {
-        const currentValue = this.textContent;
-        this.innerHTML = `<input type="text" value="${currentValue}" onblur="updateCellValue(this)">`;
-        const input = this.querySelector("input");
-        input.focus();
-    });
-  });       
-  
-  function updateCellValue(input) {
-    const newValue = input.value;
-    input.parentElement.innerHTML = newValue;
-    updateMyScale();
+const weekdays = document.querySelectorAll('.weekday');
+const daynums = document.querySelectorAll('.daynum');
+const weeknums = document.querySelectorAll('.weeknum');
+const plantoes = document.querySelectorAll('.day');
+let index = 0;
+let indice = 0;
+const shortMonth = document.querySelector('.shortday');
+const normalMonth = document.querySelector('.normalday');
+const longMonth = document.querySelector('.longday');
+const tabela = document.querySelector('#tabela');
+const nextBtn = document.querySelector('.nextBtn');
+const currentBtn = document.querySelector('.currentBtn');
+const previousBtn = document.querySelector('.previousBtn');
+const myScale = document.querySelector('.myScale');
+const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+var scriptElement;
+
+function definirCoresNaTabela() {
+  const tabela = document.querySelector('.tabela');
+  const linhas = document.querySelectorAll('tr');
+
+  // Array com as classes de cor
+  const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
+
+  // Loop para atribuir classes de cor às linhas
+  linhas.forEach((linha, indice) => {
+    const classeDeCor = classesDeCor[indice % classesDeCor.length];
+    linha.classList.add(classeDeCor);
+  });
+}
+
+function setDayNum () {
+for (let i = 0; i < daynums.length; i++) {
+  daynums[i].innerHTML = i+1;
+}  
+}
+
+function setWeekNum () {
+for (let i = 0; i < 7; i++) {
+  weeknums[i].innerHTML = '1';
+}
+for (let i = 7; i < 14; i++) {
+  weeknums[i].innerHTML = '2';
+}
+for (let i = 14; i < 21; i++) {
+  weeknums[i].innerHTML = '3';
+}
+for (let i = 21; i < 28; i++) {
+  weeknums[i].innerHTML = '4';
+}
+for (let i = 28; i < weeknums.length; i++) {
+  weeknums[i].innerHTML = '5';
+}
+}
+
+function hideDays(dia) {
+  if (dia == 28) {
+      shortMonth.style.opacity = '0';
+      normalMonth.style.opacity = '0';
+      longMonth.style.opacity = '0';
+  } if (dia == 29) {
+      shortMonth.style.opacity = '1';
+      normalMonth.style.opacity = '0';
+      longMonth.style.opacity = '0';
+  } if (dia == 30) {
+      shortMonth.style.opacity = '1';
+      normalMonth.style.opacity = '1';
+      longMonth.style.opacity = '0';
+  } else if (dia == 31) {
+      shortMonth.style.opacity = '1';
+      normalMonth.style.opacity = '1';
+      longMonth.style.opacity = '1';
   }
-  
-  function createMyScale() {  
+
+}
+
+function createMyScale() {  
     // Criar um objeto Date para a data atual
     const dataAtual = new Date();
    
@@ -46,51 +108,25 @@ plantoes.forEach(cell => {
       weekdays[i].textContent = diasDaSemana[diaDaSemanaAtual];
     }
   
-    saveScale(diaDaSemanaProximoMes);
+    saveScale();
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala editável para o mês de ' + mesSeguinte +'/'+ anoAtual + '.');
+    document.querySelector('.title').innerHTML =('Escala atualizada para o mês de ' + mesSeguinte +'/'+ anoAtual + '.');
   
  }
  
- function saveScale(dia) {
+ function saveScale() {
  
-   var escalaExistente = localStorage.getItem('scales');
-   var minhaEscala = [];
-   if (escalaExistente) {
-      minhaEscala = JSON.parse(escalaExistente);
-   } else {
-     var escalaString = JSON.stringify(scales[dia]);
-     localStorage.setItem('scales', escalaString);
-     minhaEscala = scales[dia];
-   }
+   
  
    for (let i = 0; i < plantoes.length; i++) {
-     plantoes[i].innerHTML = minhaEscala[i];
+     plantoes[i].innerHTML = scaleUpdated[i];
    }
    
  }
-
-function updateMyScale() {
-  var myCurrentScale = [];
-  for (let i = 0; i < plantoes.length; i++) {
-    myCurrentScale[i] = plantoes[i].textContent;
-  }
-  localStorage.setItem('scales', JSON.stringify(myCurrentScale));
-
-  var escalaExistente = localStorage.getItem('scales');
-  var minhaEscala = [];
-   
-   minhaEscala = JSON.parse(escalaExistente);
-
-   for (let i = 0; i < plantoes.length; i++) {
-    plantoes[i].innerHTML = minhaEscala[i];
-  }
-}
 
 
 createMyScale();
 definirCoresNaTabela();
 setDayNum();
 setWeekNum();
-updateMyScale();
