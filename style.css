@@ -68,6 +68,11 @@ table {
     .cor7 { background-color: #ffeeb9; }
 
     @media screen and (max-width: 600px) {
+
+      button {
+        font-size: .9em;
+        min-height: 3em;
+      }
       table {
         width: 100%;
       }
