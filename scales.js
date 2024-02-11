@@ -38,7 +38,7 @@ const scaleSeg = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -80,7 +80,7 @@ const scaleSeg = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -122,7 +122,7 @@ const scaleSeg = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -164,7 +164,7 @@ const scaleSeg = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -206,7 +206,7 @@ const scaleSeg = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA"
 ];
@@ -244,7 +244,7 @@ const scaleTer = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -287,7 +287,7 @@ const scaleTer = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -331,7 +331,7 @@ const scaleTer = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -376,7 +376,7 @@ const scaleTer = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -418,7 +418,7 @@ const scaleTer = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
@@ -456,7 +456,7 @@ const scaleQua = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -498,7 +498,7 @@ const scaleQua = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -542,7 +542,7 @@ const scaleQua = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -585,7 +585,7 @@ const scaleQua = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -628,7 +628,7 @@ const scaleQua = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
@@ -667,7 +667,7 @@ const scaleQui = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -711,7 +711,7 @@ const scaleQui = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -753,7 +753,7 @@ const scaleQui = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -799,7 +799,7 @@ const scaleQui = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -843,7 +843,7 @@ const scaleQui = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
@@ -882,7 +882,7 @@ const scaleSex = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -926,7 +926,7 @@ const scaleSex = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -969,7 +969,7 @@ const scaleSex = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -1014,7 +1014,7 @@ const scaleSex = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -1057,7 +1057,7 @@ const scaleSex = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
@@ -1096,7 +1096,7 @@ const scaleSab = [
 
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -1140,7 +1140,7 @@ const scaleSab = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -1183,7 +1183,7 @@ const scaleSab = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -1227,7 +1227,7 @@ const scaleSab = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -1271,7 +1271,7 @@ const scaleSab = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
@@ -1310,7 +1310,7 @@ const scaleSab = [
 const scaleDom = [
   /* 1º domingo */
   'LUCIANE',
-  '',
+  '------',
   'CRISTIANE',
   'LUZZI',
 
@@ -1353,7 +1353,7 @@ const scaleDom = [
 
   /* 2º domingo */
   "GILBERTO",
-  '',
+  '------',
   "GILBERTO",
   "ESTEVÃO",
 
@@ -1396,7 +1396,7 @@ const scaleDom = [
 
   /* 3º domingo */
   "GILBERTO",
-  '',
+  '------',
   "",
   "LUZZI",
 
@@ -1440,7 +1440,7 @@ const scaleDom = [
 
   /* 4º domingo */
   "ESTEVÃO",
-  '',
+  '------',
   "GILBERTO",
   "GILBERTO",
 
@@ -1483,7 +1483,7 @@ const scaleDom = [
 
   /* 5º domingo */
   "GUSTAVO",
-  '',
+  '------',
   "GUSTAVO",
   "JESSICA",
 
