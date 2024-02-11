@@ -135,7 +135,7 @@ const scaleSeg = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
@@ -347,7 +347,7 @@ const scaleTer = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
@@ -598,7 +598,7 @@ const scaleQua = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
 
@@ -812,7 +812,7 @@ const scaleQui = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
@@ -1027,7 +1027,7 @@ const scaleSex = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
@@ -1240,7 +1240,7 @@ const scaleSab = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
@@ -1453,7 +1453,7 @@ const scaleDom = [
   /* 4º terça */
   "ANA PETRY",
   "ANA LUISA",
-  "VAGO***",
+  "",
   "ADRIANO",
 
   /* 4º quarta */
