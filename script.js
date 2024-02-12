@@ -116,7 +116,7 @@ function nextMonth() {
     fillScale(diaDaSemanaProximoMes);
 
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
+    document.querySelector('.title').innerHTML =('Escala de plantões FIXOS para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
 
     
 }
@@ -157,7 +157,7 @@ function currentMonth() {
   fillScale(diaDaSemanaProximoMes);
 
   // Atualizar o titulo da pagina com o primeiro dia do mes
-  document.querySelector('.title').innerHTML =('Escala para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
+  document.querySelector('.title').innerHTML =('Escala de plantões FIXOS para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
 
 }
 
