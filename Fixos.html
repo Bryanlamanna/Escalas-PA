@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/png ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Escala PA</title>
+</head>
+<body>
+  <main style="text-align: center;">
+    
+    <button class="previousBtn">
+      <i class="fa-regular fa-hand-point-left"></i>
+      MES ANTERIOR
+    </button>
+    <button class="currentBtn">
+      ESCALA FIXA ATUAL
+      <i class="fa-regular fa-calendar-check"></i>
+    </button>
+    <button class="nextBtn">
+      PROXIMO MES
+      <i class="fa-regular fa-hand-point-right"></i>
+    </button> 
+    <a href="myScale.html" target="_self">
+      <button  class="myScale" style="background-color: rgb(161, 223, 96);">
+        <i class="fa-solid fa-user-pen"></i>
+        VER ESCALA ATUALIZADA
+      </button>
+      </a>
+    <h1 class="title"></h1>
+  </main>
+  <table id="tabela" style="border-radius: 4px;">
+      <tr>
+        <th style="width: 1em;">Num</th>
+        <th>Dia</th>
+        <th>Manhã</th>
+        <th>Intermed.</th>
+        <th>Tarde</th>
+        <th>Noturno</th>
+        <th style="width: 1em; border-top-right-radius: 4px;" class="weekhd">S</th>
+      </tr>
+      
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr>
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr class="shortday">
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr class="normalday">
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      <tr class="longday">
+        <td class="daynum"></td>
+        <td class="weekday"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="day"></td>
+        <td class="weeknum"></td>
+      </tr>
+      
+      
+  </table>
+  <script src="script.js"></script>
+  <script src="scales.js"></script>
+</body>
+</html>
