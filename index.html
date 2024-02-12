@@ -13,6 +13,12 @@
     <title>Escala PA</title>
 </head>
 <body>
+
+  <div class="modalChave">
+    <input type="text" id="inputValor" placeholder="Insira a chave">
+    <button>Confirmar</button>
+  </div>
+
   <main style="text-align: center;">
   
     <a href="fixos.html" target="_self">
@@ -28,7 +34,12 @@
   <table id="tabela" style="border-radius: 4px;">
     <tr  class="cabec">
       <th style="visibility: hidden; border: none;"></th>
-      <th style="visibility: hidden;  border: none;"></th>
+      <th style="border: none;">
+        <button style="margin: 0 0 0 0;" class="editBtn">
+          EDITAR ESCALA
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </th>
       <th>8h - 14h</th>
       <th>12h - 18h</th>
       <th>14h - 20h</th>
@@ -360,6 +371,6 @@
   </table>
   <script src="scales.js"></script>
   <script src="myScale.js"></script>
-  <script src="changes.js"></script>
+  
 </body>
 </html>

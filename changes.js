@@ -1,4 +1,4 @@
-   // Função para adicionar comportamento de edição às células da tabela
+ // Função para adicionar comportamento de edição às células da tabela
  
  plantoes.forEach(cell => {
     cell.addEventListener('click', function() {
@@ -15,13 +15,16 @@
 
         // Adiciona um ouvinte de evento para detectar a tecla 'Enter'
         input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter')  {
                 // Quando 'Enter' é pressionado, atualiza o conteúdo da célula
                 const newValue = input.value;
                 cell.textContent = newValue;
                 cell.classList.add('switch');
                 updateScale();
-            }
+            } else if (e.key === 'Escape') {
+              // Quando 'Esc' é pressionado, volta ao estado anterior
+              cell.textContent = currentValue;
+          }
         });
 
         // Define o foco no input

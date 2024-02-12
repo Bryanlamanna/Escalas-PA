@@ -14,7 +14,19 @@ const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
-var scriptElement;
+const modalChave = document.querySelector('.modalChave');
+const modalBtn = document.querySelector('.editBtn');
+let modalOn = false;
+
+modalBtn.addEventListener('click', () => {
+  if (modalOn) {
+    modalChave.style.display = 'none'; 
+    modalOn = false;
+  } else {
+    modalChave.style.display = 'block';
+    modalOn = true;
+  }
+})
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');
