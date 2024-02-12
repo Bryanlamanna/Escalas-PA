@@ -117,14 +117,25 @@ function createMyScale() {
  
  function saveScale() {
  
-   
- 
-   for (let i = 0; i < plantoes.length; i++) {
-     plantoes[i].innerHTML = scaleUpdated[i];
-   }
-   
- }
+  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json";
 
+  fetch(databaseURL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao recuperar os dados.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      for (let i = 0; i < plantoes.length; i++) {
+        plantoes[i].innerHTML = data[i];
+      }
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+    });
+  
+ }
 
 createMyScale();
 definirCoresNaTabela();
