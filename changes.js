@@ -31,6 +31,7 @@
                 location.reload();
                 alert('Alteração salva com sucesso!');
             }   if (e.key === 'Escape') {
+                alert('Nenhuma alteração foi realizada!');
                 location.reload(); 
             }
         });
@@ -38,6 +39,7 @@
         input.addEventListener('blur', function() {
           // Quando o input perde o foco, recarrega a página
           location.reload();
+          alert('Nenhuma alteração foi realizada!');
       });
 
         // Define o foco no input

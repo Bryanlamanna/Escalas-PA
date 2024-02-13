@@ -36,6 +36,12 @@ modalBtn.addEventListener('click', () => {
   }
 })
 
+document.querySelector('.chave').addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    confirmBtn.click();
+  }
+})
+
 confirmBtn.addEventListener('click', () => {
   let chave = document.querySelector('.chave').value;
 
@@ -43,6 +49,9 @@ confirmBtn.addEventListener('click', () => {
     includeScript();
     modalChave.style.display = 'none'; 
     modalOn = false;
+    plantoes.forEach(cell => {
+      cell.style.backgroundColor = 'white';
+    })
   } else {
     alert('Chave Incorreta!');
     document.querySelector('.chave').value = '';
