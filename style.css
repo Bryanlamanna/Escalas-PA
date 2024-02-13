@@ -111,6 +111,14 @@ table {
 
     @media screen and (max-width: 600px) {
 
+      
+
+      .closeBtn {
+        transform: scale(1.5);
+        top: 1em;
+        right: 1em;
+      }
+
       .modalChave {
         width: 70%;
       }

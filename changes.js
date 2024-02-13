@@ -21,20 +21,24 @@
         this.appendChild(input);
 
         // Adiciona um ouvinte de evento para detectar a tecla 'Enter'
-        input.addEventListener('keypress', function(e) {
+        input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter')  {
                 // Quando 'Enter' é pressionado, atualiza o conteúdo da célula
                 const newValue = input.value;
                 cell.textContent = newValue;
-                cell.classList.add('switch');
                 updateScale();
 
-                location.reload()
+                location.reload();
                 alert('Alteração salva com sucesso!');
-            } else if (e.key === 'Esc') {
-              // Quando 'Esc' é pressionado, volta ao estado anterior
-              cell.textContent = cell.getAttribute('data-original-value');          }
+            }   if (e.key === 'Escape') {
+                location.reload(); 
+            }
         });
+
+        input.addEventListener('blur', function() {
+          // Quando o input perde o foco, recarrega a página
+          location.reload();
+      });
 
         // Define o foco no input
         input.focus();
