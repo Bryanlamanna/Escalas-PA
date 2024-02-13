@@ -7,6 +7,10 @@
     cell.addEventListener('click', function() {
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
+
+        // Armazena o conteúdo atual como um atributo da célula
+        this.setAttribute('data-original-value', currentValue);
+
         // Cria um input e define seu valor como o conteúdo atual
         const input = document.createElement('input');
         input.value = currentValue;
@@ -27,10 +31,9 @@
 
                 location.reload()
                 alert('Alteração salva com sucesso!');
-            } else if (e.key === 'Escape') {
+            } else if (e.key === 'Esc') {
               // Quando 'Esc' é pressionado, volta ao estado anterior
-              cell.textContent = currentValue;
-          }
+              cell.textContent = cell.getAttribute('data-original-value');          }
         });
 
         // Define o foco no input
