@@ -1,12 +1,15 @@
 
 
-
+const indices = [];
 // Função para adicionar comportamento de edição às células da tabela
  
  plantoes.forEach(cell => {
     cell.addEventListener('click', function() {
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
+        
+        const posicao = Array.from(plantoes).indexOf(cell);
+        
 
         // Armazena o conteúdo atual como um atributo da célula
         this.setAttribute('data-original-value', currentValue);
@@ -27,7 +30,7 @@
                 const newValue = input.value;
                 cell.textContent = newValue;
                 updateScale();
-
+                updateColors(posicao);
                 location.reload();
                 alert('Alteração salva com sucesso!');
             }   if (e.key === 'Escape') {
@@ -57,6 +60,16 @@ function updateScale() {
     updateDatabase(newScale) 
     
 }
+
+function updateColors(position) {
+    
+  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/positions.json";
+
+  
+}
+ 
+
+
 
 
 function updateDatabase(newScale) {
