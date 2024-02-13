@@ -12,6 +12,13 @@ body {
   
 }
 
+#inputValor {
+  border: none;
+  outline: none;
+  padding: 6px;
+  border-radius: 2px;
+}
+
 .cabec {
   margin-top: 10em;
 }
@@ -26,7 +33,7 @@ body {
   color: red;
 }
 
-button:hover {
+button:hover  {
   transform: translate(-.2em,-.2em);
   background-color: #b5b5b5;
 }
@@ -53,6 +60,16 @@ h1 {
   font-size: x-large;
   color: white;
   margin: 0 auto;
+}
+
+.closeBtn {
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  color: white;
 }
 
 table {

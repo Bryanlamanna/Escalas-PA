@@ -1,4 +1,7 @@
- // Função para adicionar comportamento de edição às células da tabela
+
+
+
+// Função para adicionar comportamento de edição às células da tabela
  
  plantoes.forEach(cell => {
     cell.addEventListener('click', function() {
@@ -21,6 +24,9 @@
                 cell.textContent = newValue;
                 cell.classList.add('switch');
                 updateScale();
+
+                location.reload()
+                alert('Alteração salva com sucesso!');
             } else if (e.key === 'Escape') {
               // Quando 'Esc' é pressionado, volta ao estado anterior
               cell.textContent = currentValue;
@@ -30,6 +36,7 @@
         // Define o foco no input
         input.focus();
     });
+   
 });
 
 function updateScale() {
@@ -37,8 +44,9 @@ function updateScale() {
     plantoes.forEach(cell => {
         newScale.push(cell.innerHTML);
     })
-    console.log(newScale);   
+      
     updateDatabase(newScale) 
+    
 }
 
 

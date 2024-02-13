@@ -17,6 +17,14 @@ const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
 const modalChave = document.querySelector('.modalChave');
 const modalBtn = document.querySelector('.editBtn');
 let modalOn = false;
+const confirmBtn  = document.querySelector('.confirmBtn');
+
+const closeBtn = document.querySelector('.closeBtn');
+
+closeBtn.addEventListener('click', () => {
+  modalChave.style.display = 'none'; 
+    modalOn = false;
+})
 
 modalBtn.addEventListener('click', () => {
   if (modalOn) {
@@ -27,6 +35,29 @@ modalBtn.addEventListener('click', () => {
     modalOn = true;
   }
 })
+
+confirmBtn.addEventListener('click', () => {
+  let chave = document.querySelector('.chave').value;
+
+  if (chave === '4024') {
+    includeScript();
+    modalChave.style.display = 'none'; 
+    modalOn = false;
+  } else {
+    alert('Chave Incorreta!');
+    document.querySelector('.chave').value = '';
+  }
+  
+})
+
+function includeScript() {
+  var script = document.createElement('script');
+  script.src = 'changes.js'; // Substitua pelo caminho do seu script
+  script.type = 'text/javascript';
+  script.id = 'changes'; // Atribui um ID ao script
+  document.head.appendChild(script);
+}
+
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');

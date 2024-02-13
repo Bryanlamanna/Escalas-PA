@@ -15,8 +15,9 @@
 <body>
 
   <div class="modalChave">
-    <input type="text" id="inputValor" placeholder="Insira a chave">
-    <button>Confirmar</button>
+    <i class="closeBtn fa-solid fa-square-xmark"></i>
+    <input type="text" id="inputValor" class="chave" placeholder="Insira a chave">
+    <button class="confirmBtn">Confirmar</button>
   </div>
 
   <main style="text-align: center;">
@@ -35,7 +36,7 @@
     <tr  class="cabec">
       <th style="visibility: hidden; border: none;"></th>
       <th style="border: none;">
-        <button disabled style="margin: 0 0 0 0;" class="editBtn">
+        <button style="margin: 0 0 0 0;" class="editBtn">
           EDITAR
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
@@ -370,7 +371,8 @@
       
   </table>
   <script src="scales.js"></script>
-  <script src="myScale.js"></script>
+  <script src="myScale.js"></script>
+
   
 </body>
 </html>
