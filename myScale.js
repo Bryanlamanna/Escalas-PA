@@ -237,7 +237,7 @@ options.forEach(option => {
     buscarCelulas(selectedOption);
 
     document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;
+    optionsOn = false;n  
 
   })
 })

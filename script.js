@@ -14,6 +14,52 @@ const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+const options = document.querySelectorAll('.dropdown-content a');
+const closeBtn = document.querySelector('.closeBtn');
+const nameBtn = document.querySelector('.dropBtn');
+let optionsOn = false;
+
+nameBtn.addEventListener('click', () => {
+  if (optionsOn) {
+    document.querySelector('.dropdown-content').style.visibility = 'hidden';
+    optionsOn = false;
+  } else {
+    document.querySelector('.dropdown-content').style.visibility = 'visible';
+    optionsOn = true;
+  }
+ 
+})
+
+
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    const selectedOption = option.textContent;
+    
+    buscarCelulas(selectedOption);
+
+    document.querySelector('.dropdown-content').style.visibility = 'hidden';
+    optionsOn = false;n  
+
+  })
+})
+
+function buscarCelulas(option) {
+  
+  plantoes.forEach(function(celula) {
+    if (celula.textContent.trim() === option) {
+      // Realiza a ação desejada para as células com o nome selecionado
+       
+      celula.style.backgroundColor = "black";
+      celula.style.color = "white";  
+      // Exemplo: Altera a cor de fundo
+    } else {
+      // Reverte as alterações em células que não contêm o nome selecionado
+      celula.style.backgroundColor = ""; // Exemplo: Remove a cor de fundo
+      celula.style.color = "black";
+    }
+  });
+}
+
 
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
