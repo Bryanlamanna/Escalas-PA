@@ -49,7 +49,7 @@
       });
 
         // Define o foco no input
-        
+        input.focus();
     });
    
 });
