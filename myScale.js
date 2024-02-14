@@ -20,6 +20,19 @@ let modalOn = false;
 const confirmBtn  = document.querySelector('.confirmBtn');
 const options = document.querySelectorAll('.dropdown-content a');
 const closeBtn = document.querySelector('.closeBtn');
+const nameBtn = document.querySelector('.dropBtn');
+let optionsOn = false;
+
+nameBtn.addEventListener('click', () => {
+  if (optionsOn) {
+    document.querySelector('.dropdown-content').style.visibility = 'hidden';
+    optionsOn = false;
+  } else {
+    document.querySelector('.dropdown-content').style.visibility = 'visible';
+    optionsOn = true;
+  }
+ 
+})
 
 closeBtn.addEventListener('click', () => {
   modalChave.style.display = 'none'; 
@@ -223,13 +236,14 @@ options.forEach(option => {
     
     buscarCelulas(selectedOption);
 
+    document.querySelector('.dropdown-content').style.visibility = 'hidden';
+    optionsOn = false;
+
   })
 })
 
 function buscarCelulas(option) {
   
-  
-
   plantoes.forEach(function(celula) {
     if (celula.textContent.trim() === option) {
       // Realiza a ação desejada para as células com o nome selecionado
