@@ -8,7 +8,7 @@
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
 
-        setNewRed(index);
+        
 
         // Armazena o conteúdo atual como um atributo da célula
         this.setAttribute('data-original-value', currentValue);
@@ -29,6 +29,10 @@
                 const newValue = input.value;
                 cell.textContent = newValue;
                 updateScale();
+
+                if (newValue !== currentValue) {
+                  setNewRed(index);
+                } 
 
                 location.reload();
                 alert('Alteração salva com sucesso!');
