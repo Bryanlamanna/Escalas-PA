@@ -3,10 +3,12 @@
 
 // Função para adicionar comportamento de edição às células da tabela
  
- plantoes.forEach(cell => {
+ plantoes.forEach((cell, index) => {
     cell.addEventListener('click', function() {
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
+
+        setNewRed(index);
 
         // Armazena o conteúdo atual como um atributo da célula
         this.setAttribute('data-original-value', currentValue);
@@ -88,5 +90,32 @@ function updateDatabase(newScale) {
       });
   }
   
+  function setNewRed(position) {
+     // Primeiro, verifica se a posição é válida
+  if (position >= 0 && position < plantoes.length) {
+    // Constrói o URL para atualizar o banco de dados na posição específica
+    const url = `https://positionsdb-45ad9-default-rtdb.firebaseio.com/positions/${position}.json`;
 
+    // Faz uma solicitação PUT para atualizar o valor para true na posição especificada
+    fetch(url, {
+      method: 'PUT',
+      body: JSON.stringify(true), // Define o valor para true
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log(`Posição ${position} alterada para true no banco de dados.`);
+        // Após a alteração bem-sucedida no banco de dados, atualize as cores na interface
+        updateColors();
+      } else {
+        console.error('Falha ao atualizar a posição no banco de dados.');
+      }
+    })
+    .catch(error => console.error('Ocorreu um erro ao atualizar a posição no banco de dados:', error));
+  } else {
+    console.error('Posição inválida.');
+  }
+  }
 

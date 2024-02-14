@@ -189,6 +189,39 @@ function createMyScale() {
   
  }
 
+ function updateColors() {
+
+  fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positions.json')
+   .then(response => response.json())
+   .then(data => {
+     // Verifique se os dados estão presentes e se é um array
+     if (data && Array.isArray(data)) {
+       // Crie um novo array com os valores booleanos
+       const positionsDB = data.map(item => !!item); // Converte para booleano
+ 
+       for (let i = 0; i < plantoes.length; i++) {
+        if (positionsDB[i] === true) {
+          plantoes[i].style.color = 'red';
+        } else {
+          plantoes[i].style.color = 'black';
+        }
+      }
+       console.log(positionsDB);
+     } else {
+       console.log('Os dados não são um array ou estão vazios.');
+     }
+   })
+   .catch(error => console.error('Ocorreu um erro ao obter os dados:', error));
+
+   
+
+  }
+
+  window.onload = () => {
+    updateColors();
+  }
+
+
 createMyScale();
 definirCoresNaTabela();
 setDayNum();
