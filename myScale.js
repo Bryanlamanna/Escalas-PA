@@ -18,7 +18,7 @@ const modalChave = document.querySelector('.modalChave');
 const modalBtn = document.querySelector('.editBtn');
 let modalOn = false;
 const confirmBtn  = document.querySelector('.confirmBtn');
-
+const options = document.querySelectorAll('.dropdown-content a');
 const closeBtn = document.querySelector('.closeBtn');
 
 closeBtn.addEventListener('click', () => {
@@ -217,12 +217,40 @@ function createMyScale() {
 
   }
 
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    const selectedOption = option.textContent;
+    
+    buscarCelulas(selectedOption);
+
+  })
+})
+
+function buscarCelulas(option) {
+  
+  var plantoes = document.querySelectorAll("#tabela tbody td");
+
+  plantoes.forEach(function(celula) {
+    if (celula.textContent.trim() === option) {
+      // Realiza a ação desejada para as células com o nome selecionado
+      celula.style.backgroundColor = "black";
+      celula.style.color = "white";  
+      // Exemplo: Altera a cor de fundo
+    } else {
+      // Reverte as alterações em células que não contêm o nome selecionado
+      celula.style.backgroundColor = ""; // Exemplo: Remove a cor de fundo
+      celula.style.color = "black";
+    }
+  });
+}
+
   window.onload = () => {
     updateColors();
+    createMyScale();
+    definirCoresNaTabela();
+    setDayNum();
+    setWeekNum();
   }
 
 
-createMyScale();
-definirCoresNaTabela();
-setDayNum();
-setWeekNum();
+

@@ -1597,7 +1597,7 @@ const scaleUpdated = [
   /* 2º segunda*/
   "ANA LUISA",
   "TELMO",
-  "ESTEVAO",
+  "ESTEVÃO",
   "ESTEVÃO",
 
   /*2º terça*/
