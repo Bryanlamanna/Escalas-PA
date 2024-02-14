@@ -233,7 +233,7 @@ function buscarCelulas(option) {
   plantoes.forEach(function(celula) {
     if (celula.textContent.trim() === option) {
       // Realiza a ação desejada para as células com o nome selecionado
-      document.querySelector('.dropdown-content').style.visibility = 'hidden';  
+       
       celula.style.backgroundColor = "black";
       celula.style.color = "white";  
       // Exemplo: Altera a cor de fundo
