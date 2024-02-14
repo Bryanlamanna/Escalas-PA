@@ -228,11 +228,12 @@ options.forEach(option => {
 
 function buscarCelulas(option) {
   
-  var plantoes = document.querySelectorAll("#tabela tbody td");
+  
 
   plantoes.forEach(function(celula) {
     if (celula.textContent.trim() === option) {
       // Realiza a ação desejada para as células com o nome selecionado
+      document.querySelector('.dropdown-content').style.display = 'none';  
       celula.style.backgroundColor = "black";
       celula.style.color = "white";  
       // Exemplo: Altera a cor de fundo
