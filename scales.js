@@ -178,7 +178,7 @@ const scaleSeg = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -390,7 +390,7 @@ const scaleTer = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -643,7 +643,7 @@ const scaleQua = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 ];
 //escala para meses que começam na quinta feira
 const scaleQui = [
@@ -858,7 +858,7 @@ const scaleQui = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -1072,7 +1072,7 @@ const scaleSex = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -1286,7 +1286,7 @@ const scaleSab = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -1498,7 +1498,7 @@ const scaleDom = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
@@ -1737,7 +1737,7 @@ const scaleUpdated = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "CRISTIANE",
+  "",
 
   /* 5º quarta */
   "MARLENE",
