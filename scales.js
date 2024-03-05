@@ -2,7 +2,7 @@
 const scaleSeg = [
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -123,7 +123,7 @@ const scaleSeg = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 4º segunda */
@@ -158,7 +158,7 @@ const scaleSeg = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -178,7 +178,7 @@ const scaleSeg = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -250,7 +250,7 @@ const scaleTer = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -332,7 +332,7 @@ const scaleTer = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
 
@@ -370,7 +370,7 @@ const scaleTer = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -390,7 +390,7 @@ const scaleTer = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -462,7 +462,7 @@ const scaleQua = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -543,7 +543,7 @@ const scaleQua = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 3º segunda*/
@@ -579,7 +579,7 @@ const scaleQua = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -643,7 +643,7 @@ const scaleQua = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 ];
 //escala para meses que começam na quinta feira
 const scaleQui = [
@@ -673,7 +673,7 @@ const scaleQui = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -754,7 +754,7 @@ const scaleQui = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 3º segunda*/
@@ -793,7 +793,7 @@ const scaleQui = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -858,7 +858,7 @@ const scaleQui = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -888,7 +888,7 @@ const scaleSex = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -970,7 +970,7 @@ const scaleSex = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1008,7 +1008,7 @@ const scaleSex = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -1072,7 +1072,7 @@ const scaleSex = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -1102,7 +1102,7 @@ const scaleSab = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -1184,7 +1184,7 @@ const scaleSab = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1221,7 +1221,7 @@ const scaleSab = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -1286,7 +1286,7 @@ const scaleSab = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -1316,7 +1316,7 @@ const scaleDom = [
 
   /*1º segunda*/
   'ROSA',
-  '',
+  'RASQUIM',
   'TELMO',
   'LUCIANE',
 
@@ -1397,7 +1397,7 @@ const scaleDom = [
   /* 3º domingo */
   "GILBERTO",
   '------',
-  "",
+  "RASQUIM",
   "LUZZI",
 
   /* 3º segunda*/
@@ -1476,7 +1476,7 @@ const scaleDom = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -1498,7 +1498,7 @@ const scaleDom = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",
@@ -1672,7 +1672,7 @@ const scaleUpdated = [
 
   /* 4º sabado */
   "JEAN",
-  "MARIANA",
+  "RASQUIM",
   "ADRIANO",
   "ESTEVÃO",
 
@@ -1737,7 +1737,7 @@ const scaleUpdated = [
   "KARINA",
   "ANA LUISA",
   "ADRIANO",
-  "",
+  "RASQUIM",
 
   /* 5º quarta */
   "MARLENE",

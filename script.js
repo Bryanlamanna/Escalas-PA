@@ -18,7 +18,7 @@ const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
 
 
 
-
+  
 
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;

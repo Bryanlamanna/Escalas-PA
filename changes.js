@@ -1,7 +1,6 @@
 
 
 
-// Função para adicionar comportamento de edição às células da tabela
  
  plantoes.forEach((cell, index) => {
     cell.addEventListener('click', function() {
@@ -44,7 +43,7 @@
 
         input.addEventListener('blur', function() {
           // Quando o input perde o foco, recarrega a página
-          
+          location.reload();
           
       });
 
@@ -63,7 +62,6 @@ function updateScale() {
     updateDatabase(newScale) 
     
 }
-
 
 function updateDatabase(newScale) {
     // URL do seu banco de dados
@@ -94,7 +92,7 @@ function updateDatabase(newScale) {
       });
   }
   
-  function setNewRed(position) {
+function setNewRed(position) {
      // Primeiro, verifica se a posição é válida
   if (position >= 0 && position < plantoes.length) {
     // Constrói o URL para atualizar o banco de dados na posição específica
