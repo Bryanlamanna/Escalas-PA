@@ -148,7 +148,7 @@ function createMyScale() {
     const mesAtual = dataAtual.getMonth();
   
     // Configurar a data para o primeiro dia do próximo mês
-    dataAtual.setMonth(mesAtual, 1);
+    dataAtual.setMonth(mesAtual+1, 1);
   
     // Obter o nome do mês seguinte
     let mesSeguinte = dataAtual.getMonth();
