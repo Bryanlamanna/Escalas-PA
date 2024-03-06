@@ -65,7 +65,7 @@ function updateScale() {
 
 function updateDatabase(newScale) {
     // URL do seu banco de dados
-    const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json";
+    const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json";
   
     // Convertendo o array em JSON
     const jsonData = JSON.stringify(newScale);
@@ -96,7 +96,7 @@ function setNewRed(position) {
      // Primeiro, verifica se a posição é válida
   if (position >= 0 && position < plantoes.length) {
     // Constrói o URL para atualizar o banco de dados na posição específica
-    const url = `https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThis/${position}.json`;
+    const url = `https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext/${position}.json`;
 
     // Faz uma solicitação PUT para atualizar o valor para true na posição especificada
     fetch(url, {

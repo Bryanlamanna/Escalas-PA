@@ -74,9 +74,9 @@ confirmBtn.addEventListener('click', () => {
 
 function includeScript() {
   var script = document.createElement('script');
-  script.src = 'changes.js'; // Substitua pelo caminho do seu script
+  script.src = 'changesNext.js'; // Substitua pelo caminho do seu script
   script.type = 'text/javascript';
-  script.id = 'changes'; // Atribui um ID ao script
+  script.id = 'changesNext'; // Atribui um ID ao script
   document.head.appendChild(script);
 }
 
@@ -182,7 +182,7 @@ function createMyScale() {
  
  function saveScale() {
  
-  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json";
+  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json";
 
   fetch(databaseURL)
     .then(response => {
@@ -205,7 +205,7 @@ function createMyScale() {
 
  function updateColors() {
 
-  fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThis.json')
+  fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext.json')
    .then(response => response.json())
    .then(data => {
      // Verifique se os dados estão presentes e se é um array
