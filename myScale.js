@@ -234,12 +234,15 @@ function createMyScale() {
 options.forEach(option => {
   option.addEventListener('click', () => {
     const selectedOption = option.textContent;
-    
-    buscarCelulas(selectedOption);
-
     document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;n  
+    optionsOn = false;
 
+    if (selectedOption === 'NENHUM') {
+      window.location.reload();
+    } else {
+      buscarCelulas(selectedOption);
+    }
+    
   })
 })
 
