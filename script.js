@@ -53,14 +53,13 @@ nextBtn.addEventListener('click', () => {
 })
 
 
-
-
-
 function fillScale(dia) {
     
     for (let i = 0; i < plantoes.length; i++) { 
         plantoes[i].innerHTML = scales[dia][i];
     }
+
+ 
 }
 
 function hideDays(dia) {
@@ -103,7 +102,6 @@ function nextMonth() {
 
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
-    console.log(ultimoDiaDoMes)
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
     hideDays(ultimoDiaDoMes)
   
@@ -144,7 +142,6 @@ function currentMonth() {
 
   //obter o ultimo dia do mes
   const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
-  console.log(ultimoDiaDoMes)
   //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
   hideDays(ultimoDiaDoMes)
 

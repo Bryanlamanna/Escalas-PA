@@ -1749,3 +1749,4 @@ const scaleUpdated = [
 const scales = [scaleDom, scaleSeg, scaleTer, scaleQua, scaleQui, scaleSex, scaleSab];
 
 
+

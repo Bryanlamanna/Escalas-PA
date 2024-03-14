@@ -23,6 +23,44 @@ const closeBtn = document.querySelector('.closeBtn');
 const nameBtn = document.querySelector('.dropBtn');
 let optionsOn = false;
 
+
+
+function contarPLantao(escalaAtual) {
+
+  //EXTRAIR OS NOTURNOS DA ESCALA
+  const namesNight = [];
+  for (let i = 3; i < escalaAtual.length; i += 4) {
+    namesNight.push(escalaAtual[i]);
+  }
+  
+  let escalaSomada = escalaAtual.concat(namesNight);
+
+  // Objeto para armazenar a contagem de cada nome
+  const nameCount = {};
+
+  // Iterar sobre o array e contar as ocorrências de cada nome
+  escalaSomada.forEach(name => {
+    // Se o nome já estiver no objeto, incrementar o contador
+    if (nameCount[name]) {
+      nameCount[name]++;
+    } else {
+      // Se não, inicializar o contador para 1
+      nameCount[name] = 1;
+    }
+  });
+
+  for (const chave in nameCount) {
+    if (nameCount.hasOwnProperty(chave)) {
+        nameCount[chave] *= 6;
+    }
+}
+
+    console.log(nameCount);
+
+  // Exibir o resultado
+  return nameCount;
+}
+
 nameBtn.addEventListener('click', () => {
   if (optionsOn) {
     document.querySelector('.dropdown-content').style.visibility = 'hidden';
@@ -79,7 +117,6 @@ function includeScript() {
   script.id = 'changes'; // Atribui um ID ao script
   document.head.appendChild(script);
 }
-
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');
@@ -160,7 +197,6 @@ function createMyScale() {
   
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
-    console.log(ultimoDiaDoMes)
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
     hideDays(ultimoDiaDoMes)
   
@@ -192,10 +228,12 @@ function createMyScale() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       for (let i = 0; i < plantoes.length; i++) {
         plantoes[i].innerHTML = data[i];
       }
+      
+      
+      contarPLantao(data);
     })
     .catch(error => {
       console.error('Erro:', error);
@@ -220,7 +258,6 @@ function createMyScale() {
           plantoes[i].style.color = 'black';
         }
       }
-       console.log(positionsDB);
      } else {
        console.log('Os dados não são um array ou estão vazios.');
      }
