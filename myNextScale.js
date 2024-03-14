@@ -121,7 +121,7 @@ function includeScript() {
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');
-  const linhas = document.querySelectorAll('tr');
+  const linhas = document.querySelectorAll('#tabela tr');
 
   // Array com as classes de cor
   const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
@@ -229,7 +229,7 @@ function createMyScale() {
       return response.json();
     })
     .then(data => {
-      for (let i = 0; i < plantoes.length; i++) {
+      for (let i = 0; i < plantoes.length; i++) { 
         plantoes[i].innerHTML = data[i];
       }
       contarPLantao(data);

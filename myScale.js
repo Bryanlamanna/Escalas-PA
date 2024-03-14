@@ -22,7 +22,29 @@ const options = document.querySelectorAll('.dropdown-content a');
 const closeBtn = document.querySelector('.closeBtn');
 const nameBtn = document.querySelector('.dropBtn');
 let optionsOn = false;
+const resumeBtn = document.querySelector('.resumeBtn');
+const modalResume = document.querySelector('.resumo');
+let resumeOn = false;
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (resumeOn) {
+      modalResume.style.display = 'none';
+      resumeOn = false;
+    }
+  }
+})
+
+resumeBtn.addEventListener('click', () => {
+  if (resumeOn) {
+    modalResume.style.display = 'none';
+    resumeOn = false;
+  } else {
+    modalResume.style.display = 'block';
+    modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
+    resumeOn = true;
+  }
+})
 
 
 function contarPLantao(escalaAtual) {
@@ -120,7 +142,7 @@ function includeScript() {
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');
-  const linhas = document.querySelectorAll('tr');
+  const linhas = document.querySelectorAll('#tabela tr');
 
   // Array com as classes de cor
   const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];

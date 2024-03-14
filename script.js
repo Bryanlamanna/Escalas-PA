@@ -16,10 +16,6 @@ const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira'
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 
 
-
-
-  
-
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
   
@@ -162,8 +158,8 @@ function currentMonth() {
 }
 
 function definirCoresNaTabela() {
-    const tabela = document.querySelector('.tabela');
-    const linhas = document.querySelectorAll('tr');
+    const linhas = document.querySelectorAll('#tabela tr');
+
   
     // Array com as classes de cor
     const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
