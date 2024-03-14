@@ -25,6 +25,7 @@ let optionsOn = false;
 const resumeBtn = document.querySelector('.resumeBtn');
 const modalResume = document.querySelector('.resumo');
 let resumeOn = false;
+const adrianoTD = document.querySelectorAll('.adriano td');
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
@@ -46,30 +47,36 @@ resumeBtn.addEventListener('click', () => {
   }
 })
 
+function prencherDiurnos(nameCount) {
+    adrianoTD[2].innerHTML = nameCount['ADRIANO'];
+}
 
-function contarPLantao(escalaAtual) {
+function prencherNoturnos(nameCount) {
+  adrianoTD[3].innerHTML = nameCount['ADRIANO'];  
+}
 
-  //EXTRAIR OS NOTURNOS DA ESCALA
-  const namesNight = [];
+function contarHoras(escalaAtual) {
+
+  let noturnos = [];
+
   for (let i = 3; i < escalaAtual.length; i += 4) {
-    namesNight.push(escalaAtual[i]);
+    noturnos.push(escalaAtual[i]);
   }
-  
-  let escalaSomada = escalaAtual.concat(namesNight);
 
-  // Objeto para armazenar a contagem de cada nome
-  const nameCount = {};
+  let escalaSomada = escalaAtual.concat(noturnos);
 
-  // Iterar sobre o array e contar as ocorrências de cada nome
+
+  //CRIAR OBJETO COM A QUANTIDADE DE HORAS POR NOME
+
+  let nameCount = {};
+
   escalaSomada.forEach(name => {
-    // Se o nome já estiver no objeto, incrementar o contador
     if (nameCount[name]) {
-      nameCount[name]++;
+      nameCount[name] += 1;
     } else {
-      // Se não, inicializar o contador para 1
       nameCount[name] = 1;
     }
-  });
+  })
 
   for (const chave in nameCount) {
     if (nameCount.hasOwnProperty(chave)) {
@@ -77,11 +84,65 @@ function contarPLantao(escalaAtual) {
     }
 }
 
-    console.log(nameCount);
-
-  // Exibir o resultado
-  return nameCount;
+  prencherHoras(nameCount);
 }
+
+function prencherHoras(nameCount) {
+  adrianoTD[4].innerHTML = nameCount['ADRIANO'];
+}
+
+function contarPLantaoDiurno(escalaAtual) {
+
+  
+  //EXTRAIR OS NOTURNOS DA ESCALA
+  
+  for (let i = 3; i < escalaAtual.length; i += 3  ) {
+    escalaAtual.splice(i, 1);
+  }
+
+  //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
+
+  let nameCount = {};
+
+  escalaAtual.forEach(name => {
+    if (nameCount[name]) {
+      nameCount[name] += 1;
+    } else {
+      nameCount[name] = 1;
+    }
+  });
+
+
+  prencherDiurnos(nameCount);
+
+  }
+  
+function contarPLantaoNoturno(escalaAtual) {
+
+    //EXTRAIR OS NOTURNOS DA ESCALA
+       
+    let namesNight = [];
+
+    for (let i = 3; i < escalaAtual.length; i += 4) {
+      namesNight.push(escalaAtual[i]);      
+    }
+
+    
+    //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
+
+    let nameCount = {};
+
+    namesNight.forEach(name => {
+      if (nameCount[name]) {
+        nameCount[name] += 1;
+      } else {
+        nameCount[name] = 1;
+      }
+    })
+
+    prencherNoturnos(nameCount);
+
+  }
 
 nameBtn.addEventListener('click', () => {
   if (optionsOn) {
@@ -253,9 +314,10 @@ function createMyScale() {
       for (let i = 0; i < plantoes.length; i++) {
         plantoes[i].innerHTML = data[i];
       }
+      contarHoras(data);
+      contarPLantaoNoturno(data);
+      contarPLantaoDiurno(data);
       
-      
-      contarPLantao(data);
     })
     .catch(error => {
       console.error('Erro:', error);
