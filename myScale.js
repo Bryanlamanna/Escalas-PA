@@ -26,6 +26,28 @@ const resumeBtn = document.querySelector('.resumeBtn');
 const modalResume = document.querySelector('.resumo');
 let resumeOn = false;
 const adrianoTD = document.querySelectorAll('.adriano td');
+ const anaLuisaTD = document.querySelectorAll('.anaLuisa td');
+ const anaPetryTD = document.querySelectorAll('.anaPetry td');
+ const luzziTD = document.querySelectorAll('.carlos td');
+ const crisTD = document.querySelectorAll('.cristiane td');
+ const estevaoTD = document.querySelectorAll('.estevao td');
+ const gilbertoTD = document.querySelectorAll('.gilberto td');
+ const greiceTD = document.querySelectorAll('.greice td');
+ const gustavoTD = document.querySelectorAll('.gustavo td');
+ const jeanTD = document.querySelectorAll('.jean td');
+ const jessicaTD = document.querySelectorAll('.jessica td');
+ const juvenalTD = document.querySelectorAll('.juvenal td');
+ const karinaTD = document.querySelectorAll('.karina td');
+ const leilaTD = document.querySelectorAll('.leila td');
+ const lucianeTD = document.querySelectorAll('.luciane td');
+ const marciaTD = document.querySelectorAll('.marcia td');
+ const marianaTD = document.querySelectorAll('.mariana td');
+ const marleneTD = document.querySelectorAll('.marlene td');
+ const pauloTD = document.querySelectorAll('.paulo td');
+ const raquelTD = document.querySelectorAll('.raquel td');
+ const rosaTD = document.querySelectorAll('.rosa td');
+ const stavrosTD = document.querySelectorAll('.stavros td');
+ const telmoTD = document.querySelectorAll('.telmo td');
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
@@ -49,10 +71,58 @@ resumeBtn.addEventListener('click', () => {
 
 function prencherDiurnos(nameCount) {
     adrianoTD[2].innerHTML = nameCount['ADRIANO'];
+    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA'];
+    anaPetryTD[2].innerHTML = nameCount['ANA PETRY'];
+    luzziTD[2].innerHTML = nameCount['LUZZI'];
+    crisTD[2].innerHTML = nameCount['CRISTIANE'];
+    estevaoTD[2].innerHTML = nameCount['ESTEVÃO'];
+    gilbertoTD[2].innerHTML = nameCount['GILBERTO'];
+    greiceTD[2].innerHTML = nameCount['GREICE'] || '0';
+    gustavoTD[2].innerHTML = nameCount['GUSTAVO'];
+    jeanTD[2].innerHTML = nameCount['JEAN'];
+    jessicaTD[2].innerHTML = nameCount['JESSICA'];
+    juvenalTD[2].innerHTML = nameCount['JUVENAL'];
+    karinaTD[2].innerHTML = nameCount['KARINA'];
+    leilaTD[2].innerHTML = nameCount['LEILA'];
+    lucianeTD[2].innerHTML = nameCount['LUCIANE'];
+    marciaTD[2].innerHTML = nameCount['MARCIA'];
+    marianaTD[2].innerHTML = nameCount['MARIANA'];
+    marleneTD[2].innerHTML = nameCount['MARLENE'];
+    pauloTD[2].innerHTML = nameCount['COUTINHO'];
+    raquelTD[2].innerHTML = nameCount['RAQUEL'];
+    rosaTD[2].innerHTML = nameCount['ROSA'];
+    stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
+    telmoTD[2].innerHTML = nameCount['TELMO'];
+    
+
 }
 
 function prencherNoturnos(nameCount) {
-  adrianoTD[3].innerHTML = nameCount['ADRIANO'];  
+  adrianoTD[3].innerHTML = nameCount['ADRIANO'] || '0';  
+  anaLuisaTD[3].innerHTML = nameCount['ANA LUISA'] || '0';
+  anaPetryTD[3].innerHTML = nameCount['ANA PETRY'] || '0';
+  luzziTD[3].innerHTML = nameCount['LUZZI'] || '0';
+  crisTD[3].innerHTML = nameCount['CRISTIANE'] || '0';
+  estevaoTD[3].innerHTML = nameCount['ESTEVÃO'] || '0';
+  gilbertoTD[3].innerHTML = nameCount['GILBERTO'] || '0';
+  greiceTD[3].innerHTML = nameCount['GREICE'] || '0';
+  gustavoTD[3].innerHTML = nameCount['GUSTAVO'] || '0';
+  jeanTD[3].innerHTML = nameCount['JEAN'] || '0';
+  jessicaTD[3].innerHTML = nameCount['JESSICA'] || '0';
+  juvenalTD[3].innerHTML = nameCount['JUVENAL'] || '0';
+  karinaTD[3].innerHTML = nameCount['KARINA'] || '0';
+  leilaTD[3].innerHTML = nameCount['LEILA'] || '0';
+  lucianeTD[3].innerHTML = nameCount['LUCIANE'] || '0';
+  marciaTD[3].innerHTML = nameCount['MARCIA'] || '0';
+  marianaTD[3].innerHTML = nameCount['MARIANA'] || '0';
+  marleneTD[3].innerHTML = nameCount['MARLENE'] || '0';
+  pauloTD[3].innerHTML = nameCount['COUTINHO'] || '0';
+  raquelTD[3].innerHTML = nameCount['RAQUEL'] || '0';
+  rosaTD[3].innerHTML = nameCount['ROSA'] || '0';
+  stavrosTD[3].innerHTML = nameCount['STAVROS'] || '0';
+  telmoTD[3].innerHTML = nameCount['TELMO'] || '0';
+
+
 }
 
 function contarHoras(escalaAtual) {
@@ -88,7 +158,30 @@ function contarHoras(escalaAtual) {
 }
 
 function prencherHoras(nameCount) {
-  adrianoTD[4].innerHTML = nameCount['ADRIANO'];
+  adrianoTD[4].innerHTML = nameCount['ADRIANO'] || '0';
+  anaLuisaTD[4].innerHTML = nameCount['ANA LUISA'] || '0';
+  anaPetryTD[4].innerHTML = nameCount['ANA PETRY'] || '0';
+  luzziTD[4].innerHTML = nameCount['LUZZI'] || '0';
+  crisTD[4].innerHTML = nameCount['CRISTIANE']  || '0';
+  estevaoTD[4].innerHTML = nameCount['ESTEVÃO'] || '0';
+  gilbertoTD[4].innerHTML = nameCount['GILBERTO'] || '0';
+  greiceTD[4].innerHTML = nameCount['GREICE'] || '0';
+  gustavoTD[4].innerHTML = nameCount['GUSTAVO'] || '0';
+  jeanTD[4].innerHTML = nameCount['JEAN'] || '0';
+  jessicaTD[4].innerHTML = nameCount['JESSICA'] || '0';
+  juvenalTD[4].innerHTML = nameCount['JUVENAL'] || '0';
+  karinaTD[4].innerHTML = nameCount['KARINA'] || '0';
+  leilaTD[4].innerHTML = nameCount['LEILA'] || '0';
+  lucianeTD[4].innerHTML = nameCount['LUCIANE'] || '0';
+  marciaTD[4].innerHTML = nameCount['MARCIA'] || '0';
+  marianaTD[4].innerHTML = nameCount['MARIANA'] || '0';
+  marleneTD[4].innerHTML = nameCount['MARLENE'] || '0';
+  pauloTD[4].innerHTML = nameCount['COUTINHO'] || '0';
+  raquelTD[4].innerHTML = nameCount['RAQUEL'] || '0';
+  rosaTD[4].innerHTML = nameCount['ROSA'] || '0';
+  stavrosTD[4].innerHTML = nameCount['STAVROS'] || '0';
+  telmoTD[4].innerHTML = nameCount['TELMO'] || '0';
+
 }
 
 function contarPLantaoDiurno(escalaAtual) {
