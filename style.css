@@ -7,7 +7,8 @@
 }
 
 body {
-  margin: 0;
+  padding-bottom: 2em;
+  margin: 0 auto;
 }
 
 .dropdown {

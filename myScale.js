@@ -76,29 +76,29 @@ resumeBtn.addEventListener('click', () => {
 })
 
 function prencherDiurnos(nameCount) {
-    adrianoTD[2].innerHTML = nameCount['ADRIANO'];
-    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA'];
-    anaPetryTD[2].innerHTML = nameCount['ANA PETRY'];
-    luzziTD[2].innerHTML = nameCount['LUZZI'];
-    crisTD[2].innerHTML = nameCount['CRISTIANE'];
-    estevaoTD[2].innerHTML = nameCount['ESTEVÃO'];
-    gilbertoTD[2].innerHTML = nameCount['GILBERTO'];
+    adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
+    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA'] || '0';
+    anaPetryTD[2].innerHTML = nameCount['ANA PETRY'] || '0';
+    luzziTD[2].innerHTML = nameCount['LUZZI'] || '0';
+    crisTD[2].innerHTML = nameCount['CRISTIANE'] || '0';
+    estevaoTD[2].innerHTML = nameCount['ESTEVÃO'] || '0';
+    gilbertoTD[2].innerHTML = nameCount['GILBERTO'] || '0';
     greiceTD[2].innerHTML = nameCount['GREICE'] || '0';
-    gustavoTD[2].innerHTML = nameCount['GUSTAVO'];
-    jeanTD[2].innerHTML = nameCount['JEAN'];
-    jessicaTD[2].innerHTML = nameCount['JESSICA'];
-    juvenalTD[2].innerHTML = nameCount['JUVENAL'];
-    karinaTD[2].innerHTML = nameCount['KARINA'];
-    leilaTD[2].innerHTML = nameCount['LEILA'];
-    lucianeTD[2].innerHTML = nameCount['LUCIANE'];
-    marciaTD[2].innerHTML = nameCount['MARCIA'];
-    marianaTD[2].innerHTML = nameCount['MARIANA'];
-    marleneTD[2].innerHTML = nameCount['MARLENE'];
-    pauloTD[2].innerHTML = nameCount['COUTINHO'];
-    raquelTD[2].innerHTML = nameCount['RAQUEL'];
-    rosaTD[2].innerHTML = nameCount['ROSA'];
+    gustavoTD[2].innerHTML = nameCount['GUSTAVO'] || '0';
+    jeanTD[2].innerHTML = nameCount['JEAN'] || '0';
+    jessicaTD[2].innerHTML = nameCount['JESSICA'] || '0';
+    juvenalTD[2].innerHTML = nameCount['JUVENAL'] || '0';
+    karinaTD[2].innerHTML = nameCount['KARINA'] || '0';
+    leilaTD[2].innerHTML = nameCount['LEILA'] || '0';
+    lucianeTD[2].innerHTML = nameCount['LUCIANE'] || '0';
+    marciaTD[2].innerHTML = nameCount['MARCIA'] || '0';
+    marianaTD[2].innerHTML = nameCount['MARIANA'] || '0';
+    marleneTD[2].innerHTML = nameCount['MARLENE'] || '0';
+    pauloTD[2].innerHTML = nameCount['COUTINHO'] || '0';
+    raquelTD[2].innerHTML = nameCount['RAQUEL'] || '0';
+    rosaTD[2].innerHTML = nameCount['ROSA'] || '0';
     stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
-    telmoTD[2].innerHTML = nameCount['TELMO'];
+    telmoTD[2].innerHTML = nameCount['TELMO'] || '0';
     
 
 }
@@ -380,7 +380,6 @@ function createMyScale() {
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
-    hideDays(ultimoDiaDoMes)
   
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -391,14 +390,14 @@ function createMyScale() {
       weekdays[i].textContent = diasDaSemana[diaDaSemanaAtual];
     }
   
-    saveScale();
+    saveScale(ultimoDiaDoMes);
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
     document.querySelector('.title').innerHTML =('Escala ATUAL do o mês de ' + mesSeguinte +'/'+ anoAtual + '.');
   
  }
  
- function saveScale() {
+ function saveScale(lastDay) {
  
   const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json";
 
@@ -410,6 +409,15 @@ function createMyScale() {
       return response.json();
     })
     .then(data => {
+
+      if (lastDay == 30) {
+        data.splice(120, 4);
+      } else if (lastDay == 29) {
+        data.splice(116, 8);
+      } else if (lastDay == 28) {
+        data.splice(112, 12);
+      }
+
       for (let i = 0; i < plantoes.length; i++) {
         plantoes[i].innerHTML = data[i];
       }

@@ -22,31 +22,137 @@ const options = document.querySelectorAll('.dropdown-content a');
 const closeBtn = document.querySelector('.closeBtn');
 const nameBtn = document.querySelector('.dropBtn');
 let optionsOn = false;
+const resumeBtn = document.querySelector('.resumeBtn');
+const modalResume = document.querySelector('.resumo');
+let resumeOn = false;
+const adrianoTD = document.querySelectorAll('.adriano td');
+ const anaLuisaTD = document.querySelectorAll('.anaLuisa td');
+ const anaPetryTD = document.querySelectorAll('.anaPetry td');
+ const luzziTD = document.querySelectorAll('.carlos td');
+ const crisTD = document.querySelectorAll('.cristiane td');
+ const estevaoTD = document.querySelectorAll('.estevao td');
+ const gilbertoTD = document.querySelectorAll('.gilberto td');
+ const greiceTD = document.querySelectorAll('.greice td');
+ const gustavoTD = document.querySelectorAll('.gustavo td');
+ const jeanTD = document.querySelectorAll('.jean td');
+ const jessicaTD = document.querySelectorAll('.jessica td');
+ const juvenalTD = document.querySelectorAll('.juvenal td');
+ const karinaTD = document.querySelectorAll('.karina td');
+ const leilaTD = document.querySelectorAll('.leila td');
+ const lucianeTD = document.querySelectorAll('.luciane td');
+ const marciaTD = document.querySelectorAll('.marcia td');
+ const marianaTD = document.querySelectorAll('.mariana td');
+ const marleneTD = document.querySelectorAll('.marlene td');
+ const pauloTD = document.querySelectorAll('.paulo td');
+ const raquelTD = document.querySelectorAll('.raquel td');
+ const rosaTD = document.querySelectorAll('.rosa td');
+ const stavrosTD = document.querySelectorAll('.stavros td');
+ const telmoTD = document.querySelectorAll('.telmo td');
+ const closeResume = document.querySelector('.closeResume');
 
+ closeResume.addEventListener('click', () => {
+   modalResume.style.display = 'none';
+   resumeOn = false;
+ })
 
-function contarPLantao(escalaAtual) {
-
-  //EXTRAIR OS NOTURNOS DA ESCALA
-  const namesNight = [];
-  for (let i = 3; i < escalaAtual.length; i += 4) {
-    namesNight.push(escalaAtual[i]);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    if (resumeOn) {
+      modalResume.style.display = 'none';
+      resumeOn = false;
+    }
   }
-  
-  let escalaSomada = escalaAtual.concat(namesNight);
+})
 
-  // Objeto para armazenar a contagem de cada nome
-  const nameCount = {};
+resumeBtn.addEventListener('click', () => {
+  if (resumeOn) {
+    modalResume.style.display = 'none';
+    resumeOn = false;
+  } else {
+    modalResume.style.display = 'flex';
+    modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
+    resumeOn = true;
+  }
+})
 
-  // Iterar sobre o array e contar as ocorrências de cada nome
+function prencherDiurnos(nameCount) {
+    adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
+    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA']  || '0';
+    anaPetryTD[2].innerHTML = nameCount['ANA PETRY'] || '0';
+    luzziTD[2].innerHTML = nameCount['LUZZI'] || '0';
+    crisTD[2].innerHTML = nameCount['CRISTIANE']  || '0';
+    estevaoTD[2].innerHTML = nameCount['ESTEVÃO'] || '0';
+    gilbertoTD[2].innerHTML = nameCount['GILBERTO'] || '0';
+    greiceTD[2].innerHTML = nameCount['GREICE'] || '0';
+    gustavoTD[2].innerHTML = nameCount['GUSTAVO'] || '0';
+    jeanTD[2].innerHTML = nameCount['JEAN'] || '0';
+    jessicaTD[2].innerHTML = nameCount['JESSICA'] || '0';
+    juvenalTD[2].innerHTML = nameCount['JUVENAL'] || '0';
+    karinaTD[2].innerHTML = nameCount['KARINA'] || '0';
+    leilaTD[2].innerHTML = nameCount['LEILA'] || '0';
+    lucianeTD[2].innerHTML = nameCount['LUCIANE'] || '0';
+    marciaTD[2].innerHTML = nameCount['MARCIA'] || '0';
+    marianaTD[2].innerHTML = nameCount['MARIANA'] || '0';
+    marleneTD[2].innerHTML = nameCount['MARLENE'] || '0';
+    pauloTD[2].innerHTML = nameCount['COUTINHO'] || '0';
+    raquelTD[2].innerHTML = nameCount['RAQUEL'] || '0';
+    rosaTD[2].innerHTML = nameCount['ROSA'] || '0';
+    stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
+    telmoTD[2].innerHTML = nameCount['TELMO']   || '0';
+    
+
+}
+
+function prencherNoturnos(nameCount) {
+  adrianoTD[3].innerHTML = nameCount['ADRIANO'] || '0';  
+  anaLuisaTD[3].innerHTML = nameCount['ANA LUISA'] || '0';
+  anaPetryTD[3].innerHTML = nameCount['ANA PETRY'] || '0';
+  luzziTD[3].innerHTML = nameCount['LUZZI'] || '0';
+  crisTD[3].innerHTML = nameCount['CRISTIANE'] || '0';
+  estevaoTD[3].innerHTML = nameCount['ESTEVÃO'] || '0';
+  gilbertoTD[3].innerHTML = nameCount['GILBERTO'] || '0';
+  greiceTD[3].innerHTML = nameCount['GREICE'] || '0';
+  gustavoTD[3].innerHTML = nameCount['GUSTAVO'] || '0';
+  jeanTD[3].innerHTML = nameCount['JEAN'] || '0';
+  jessicaTD[3].innerHTML = nameCount['JESSICA'] || '0';
+  juvenalTD[3].innerHTML = nameCount['JUVENAL'] || '0';
+  karinaTD[3].innerHTML = nameCount['KARINA'] || '0';
+  leilaTD[3].innerHTML = nameCount['LEILA'] || '0';
+  lucianeTD[3].innerHTML = nameCount['LUCIANE'] || '0';
+  marciaTD[3].innerHTML = nameCount['MARCIA'] || '0';
+  marianaTD[3].innerHTML = nameCount['MARIANA'] || '0';
+  marleneTD[3].innerHTML = nameCount['MARLENE'] || '0';
+  pauloTD[3].innerHTML = nameCount['COUTINHO'] || '0';
+  raquelTD[3].innerHTML = nameCount['RAQUEL'] || '0';
+  rosaTD[3].innerHTML = nameCount['ROSA'] || '0';
+  stavrosTD[3].innerHTML = nameCount['STAVROS'] || '0';
+  telmoTD[3].innerHTML = nameCount['TELMO'] || '0';
+
+
+}
+
+function contarHoras(escalaAtual) {
+
+  let noturnos = [];
+
+  for (let i = 3; i < escalaAtual.length; i += 4) {
+    noturnos.push(escalaAtual[i]);
+  }
+
+  let escalaSomada = escalaAtual.concat(noturnos);
+
+
+  //CRIAR OBJETO COM A QUANTIDADE DE HORAS POR NOME
+
+  let nameCount = {};
+
   escalaSomada.forEach(name => {
-    // Se o nome já estiver no objeto, incrementar o contador
     if (nameCount[name]) {
-      nameCount[name]++;
+      nameCount[name] += 1;
     } else {
-      // Se não, inicializar o contador para 1
       nameCount[name] = 1;
     }
-  });
+  })
 
   for (const chave in nameCount) {
     if (nameCount.hasOwnProperty(chave)) {
@@ -54,11 +160,88 @@ function contarPLantao(escalaAtual) {
     }
 }
 
-    console.log(nameCount);
-
-  // Exibir o resultado
-  return nameCount;
+  prencherHoras(nameCount);
 }
+
+function prencherHoras(nameCount) {
+  adrianoTD[4].innerHTML = nameCount['ADRIANO'] || '0';
+  anaLuisaTD[4].innerHTML = nameCount['ANA LUISA'] || '0';
+  anaPetryTD[4].innerHTML = nameCount['ANA PETRY'] || '0';
+  luzziTD[4].innerHTML = nameCount['LUZZI'] || '0';
+  crisTD[4].innerHTML = nameCount['CRISTIANE']  || '0';
+  estevaoTD[4].innerHTML = nameCount['ESTEVÃO'] || '0';
+  gilbertoTD[4].innerHTML = nameCount['GILBERTO'] || '0';
+  greiceTD[4].innerHTML = nameCount['GREICE'] || '0';
+  gustavoTD[4].innerHTML = nameCount['GUSTAVO'] || '0';
+  jeanTD[4].innerHTML = nameCount['JEAN'] || '0';
+  jessicaTD[4].innerHTML = nameCount['JESSICA'] || '0';
+  juvenalTD[4].innerHTML = nameCount['JUVENAL'] || '0';
+  karinaTD[4].innerHTML = nameCount['KARINA'] || '0';
+  leilaTD[4].innerHTML = nameCount['LEILA'] || '0';
+  lucianeTD[4].innerHTML = nameCount['LUCIANE'] || '0';
+  marciaTD[4].innerHTML = nameCount['MARCIA'] || '0';
+  marianaTD[4].innerHTML = nameCount['MARIANA'] || '0';
+  marleneTD[4].innerHTML = nameCount['MARLENE'] || '0';
+  pauloTD[4].innerHTML = nameCount['COUTINHO'] || '0';
+  raquelTD[4].innerHTML = nameCount['RAQUEL'] || '0';
+  rosaTD[4].innerHTML = nameCount['ROSA'] || '0';
+  stavrosTD[4].innerHTML = nameCount['STAVROS'] || '0';
+  telmoTD[4].innerHTML = nameCount['TELMO'] || '0';
+
+}
+
+function contarPLantaoDiurno(escalaAtual) {
+
+  
+  //EXTRAIR OS NOTURNOS DA ESCALA
+  
+  for (let i = 3; i < escalaAtual.length; i += 3  ) {
+    escalaAtual.splice(i, 1);
+  }
+
+  //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
+
+  let nameCount = {};
+
+  escalaAtual.forEach(name => {
+    if (nameCount[name]) {
+      nameCount[name] += 1;
+    } else {
+      nameCount[name] = 1;
+    }
+  });
+
+
+  prencherDiurnos(nameCount);
+
+  }
+  
+function contarPLantaoNoturno(escalaAtual) {
+
+    //EXTRAIR OS NOTURNOS DA ESCALA
+       
+    let namesNight = [];
+
+    for (let i = 3; i < escalaAtual.length; i += 4) {
+      namesNight.push(escalaAtual[i]);      
+    }
+
+    
+    //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
+
+    let nameCount = {};
+
+    namesNight.forEach(name => {
+      if (nameCount[name]) {
+        nameCount[name] += 1;
+      } else {
+        nameCount[name] = 1;
+      }
+    })
+
+    prencherNoturnos(nameCount);
+
+  }
 
 
 nameBtn.addEventListener('click', () => {
@@ -158,15 +341,37 @@ for (let i = 28; i < weeknums.length; i++) {
 }
 
 function hideDays(dia) {
+  const shortTd = document.querySelectorAll('.shortday td');
+  const normalTd = document.querySelectorAll('.normalday td');
+  const longTd = document.querySelectorAll('.longday td');
+
   if (dia == 28) {
+      shortTd.forEach(td => {
+          td.textContent = '';
+      })
+      normalTd.forEach(td => {
+          td.textContent = '';
+      })
+      longTd.forEach(td => {
+          td.textContent = '';
+      })
       shortMonth.style.opacity = '0';
       normalMonth.style.opacity = '0';
       longMonth.style.opacity = '0';
   } if (dia == 29) {
+      normalTd.forEach(td => {
+          td.textContent = '';
+      })
+      longTd.forEach(td => {
+          td.textContent = '';
+      })
       shortMonth.style.opacity = '1';
       normalMonth.style.opacity = '0';
       longMonth.style.opacity = '0';
   } if (dia == 30) {
+      longTd.forEach(td => {
+          console.log(td);
+      })
       shortMonth.style.opacity = '1';
       normalMonth.style.opacity = '1';
       longMonth.style.opacity = '0';
@@ -199,7 +404,8 @@ function createMyScale() {
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
-    hideDays(ultimoDiaDoMes)
+    
+    saveScale(ultimoDiaDoMes);
   
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -210,14 +416,14 @@ function createMyScale() {
       weekdays[i].textContent = diasDaSemana[diaDaSemanaAtual];
     }
   
-    saveScale();
+    
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
     document.querySelector('.title').innerHTML =('Escala ATUAL do o mês de ' + mesSeguinte +'/'+ anoAtual + '.');
   
  }
  
- function saveScale() {
+ function saveScale(lastDay) {
  
   const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json";
 
@@ -229,10 +435,23 @@ function createMyScale() {
       return response.json();
     })
     .then(data => {
+      
+      if (lastDay == 30) {
+        data.splice(120, 4);
+      } else if (lastDay == 29) {
+        data.splice(116, 8);
+      } else if (lastDay == 28) {
+        data.splice(112, 12);
+      }
+
       for (let i = 0; i < plantoes.length; i++) { 
         plantoes[i].innerHTML = data[i];
       }
-      contarPLantao(data);
+
+      hideDays(lastDay);
+      contarHoras(data);
+      contarPLantaoNoturno(data);
+      contarPLantaoDiurno(data);
     })
     .catch(error => {
       console.error('Erro:', error);
