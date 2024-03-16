@@ -48,6 +48,12 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const rosaTD = document.querySelectorAll('.rosa td');
  const stavrosTD = document.querySelectorAll('.stavros td');
  const telmoTD = document.querySelectorAll('.telmo td');
+ const closeResume = document.querySelector('.closeResume');
+
+ closeResume.addEventListener('click', () => {
+   modalResume.style.display = 'none';
+   resumeOn = false;
+ })
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
@@ -63,7 +69,7 @@ resumeBtn.addEventListener('click', () => {
     modalResume.style.display = 'none';
     resumeOn = false;
   } else {
-    modalResume.style.display = 'block';
+    modalResume.style.display = 'flex';
     modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
     resumeOn = true;
   }
