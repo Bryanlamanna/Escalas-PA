@@ -45,6 +45,7 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const marleneTD = document.querySelectorAll('.marlene td');
  const pauloTD = document.querySelectorAll('.paulo td');
  const raquelTD = document.querySelectorAll('.raquel td');
+ const rasquinTD = document.querySelectorAll('.rasquin td');
  const rosaTD = document.querySelectorAll('.rosa td');
  const stavrosTD = document.querySelectorAll('.stavros td');
  const telmoTD = document.querySelectorAll('.telmo td');
@@ -96,6 +97,7 @@ function prencherDiurnos(nameCount) {
     marleneTD[2].innerHTML = nameCount['MARLENE'] || '0';
     pauloTD[2].innerHTML = nameCount['COUTINHO'] || '0';
     raquelTD[2].innerHTML = nameCount['RAQUEL'] || '0';
+    rasquinTD[2].innerHTML = nameCount['RASQUIN'] || '0';
     rosaTD[2].innerHTML = nameCount['ROSA'] || '0';
     stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
     telmoTD[2].innerHTML = nameCount['TELMO'] || '0';
@@ -124,6 +126,7 @@ function prencherNoturnos(nameCount) {
   marleneTD[3].innerHTML = nameCount['MARLENE'] || '0';
   pauloTD[3].innerHTML = nameCount['COUTINHO'] || '0';
   raquelTD[3].innerHTML = nameCount['RAQUEL'] || '0';
+  rasquinTD[3].innerHTML = nameCount['RASQUIN'] || '0';
   rosaTD[3].innerHTML = nameCount['ROSA'] || '0';
   stavrosTD[3].innerHTML = nameCount['STAVROS'] || '0';
   telmoTD[3].innerHTML = nameCount['TELMO'] || '0';
@@ -184,6 +187,7 @@ function prencherHoras(nameCount) {
   marleneTD[4].innerHTML = nameCount['MARLENE'] || '0';
   pauloTD[4].innerHTML = nameCount['COUTINHO'] || '0';
   raquelTD[4].innerHTML = nameCount['RAQUEL'] || '0';
+  rasquinTD[4].innerHTML = nameCount['RASQUIN'] || '0';
   rosaTD[4].innerHTML = nameCount['ROSA'] || '0';
   stavrosTD[4].innerHTML = nameCount['STAVROS'] || '0';
   telmoTD[4].innerHTML = nameCount['TELMO'] || '0';
