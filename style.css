@@ -31,6 +31,7 @@ body {
 }
 
 .resumoTable {
+  border-collapse: collapse;
   margin: 0 auto;
   width: 75%;
   height: 95%;
@@ -46,6 +47,7 @@ body {
 }
 
 .resumoTable td {
+  white-space: nowrap;
   width: 4em;
   padding: 2px;
   text-align: center;
@@ -189,6 +191,46 @@ h1 {
 
 
     @media screen and (max-width: 600px) {
+      .resumo {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        top: 0;
+        display: none;
+        position: fixed;
+        font-size: 1.5em;
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+       
+      }
+      
+      .resumoTable {
+        margin: 0 auto;
+        width: 97%;
+        height: 80%;
+        border-collapse: collapse;
+      }
+      
+      .closeResume {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        color: rgb(255, 255, 255);
+        font-size: larger;
+        cursor: pointer;
+      }
+      
+      .resumoTable td {
+        white-space: nowrap;
+        overflow: hidden;
+        width: 4em;
+        padding: 0;
+        text-align: center;
+        background-color: #ffffff;
+      }
+      
+     
 
       .dropdown-content {
         max-width: .5em;
