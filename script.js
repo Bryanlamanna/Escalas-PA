@@ -24,6 +24,9 @@ var scales = [
   []
 ];
 
+plantoes.forEach(plantao => {
+  plantao.textContent = '';
+})
 
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
@@ -240,8 +243,10 @@ function setWeekNum () {
 
 
 window.onload = () => {
- 
-  currentMonth()
+  
+  setTimeout(() => {
+    currentBtn.click();
+  }, 300)
 }
 
 currentMonth();
