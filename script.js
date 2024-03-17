@@ -14,6 +14,15 @@ const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+var scales = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
 
 
 previousBtn.addEventListener('click', () => {
@@ -49,14 +58,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 
-function fillScale(dia) {
-    
-    for (let i = 0; i < plantoes.length; i++) { 
-        plantoes[i].innerHTML = scales[dia][i];
-    }
 
- 
-}
 
 function hideDays(dia) {
     if (dia == 28) {
@@ -119,6 +121,38 @@ function nextMonth() {
 }
 
 function currentMonth() {
+  
+  const databaseURLs = [
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaDomingo.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSegunda.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaTerca.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaQuarta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaQuinta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSexta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSabado.json"
+  ];
+  
+  for (let i = 0; i < databaseURLs.length; i++) {
+    fetchAndProcessData(i);
+  }
+  
+  function fetchAndProcessData(index) {
+    fetch(databaseURLs[index])
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao recuperar os dados.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          for (let e = 0; e < data.length; e++) {
+            scales[index].push(data[e]);
+          }
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+        });
+  }
   // Criar um objeto Date para a data atual
   const dataAtual = new Date();
   
@@ -154,6 +188,15 @@ function currentMonth() {
 
   // Atualizar o titulo da pagina com o primeiro dia do mes
   document.querySelector('.title').innerHTML =('Escala de plantões FIXOS para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
+
+}
+
+function fillScale(dia) {
+    
+  for (let i = 0; i < plantoes.length; i++) { 
+      plantoes[i].innerHTML = scales[dia][i];
+  }
+
 
 }
 
@@ -195,10 +238,13 @@ function setWeekNum () {
   }
 }
 
+
 window.onload = () => {
+ 
   currentMonth()
 }
 
+currentMonth();
 definirCoresNaTabela();
 setDayNum();
 setWeekNum();
