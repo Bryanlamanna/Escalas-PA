@@ -378,7 +378,7 @@ function createMyScale() {
     mesSeguinte = mesesDoAno[mesSeguinte];
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
-    const diaDaSemanaProximoMes = dataAtual.getDay();
+    const diaDaSemanaProximoMes = dataAtual.getDay()+3;
     let anoAtual = dataAtual.getFullYear();
   
     //obter o ultimo dia do mes
