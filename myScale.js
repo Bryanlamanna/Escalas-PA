@@ -397,7 +397,7 @@ function createMyScale() {
     saveScale(ultimoDiaDoMes);
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala ATUAL do o mês de ' + mesSeguinte + ' de ' + anoAtual + '.');
+    document.querySelector('.title').innerHTML =('Escala ATUAL para mês de ' + mesSeguinte + ' de ' + anoAtual + '.');
   
  }
  
