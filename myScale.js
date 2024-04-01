@@ -378,7 +378,7 @@ function createMyScale() {
     mesSeguinte = mesesDoAno[mesSeguinte];
   
     // Obter o dia da semana para o primeiro dia do próximo mês (0 a 6)
-    const diaDaSemanaProximoMes = dataAtual.getDay()+3;
+    const diaDaSemanaProximoMes = dataAtual.getDay();
     let anoAtual = dataAtual.getFullYear();
   
     //obter o ultimo dia do mes
@@ -397,7 +397,7 @@ function createMyScale() {
     saveScale(ultimoDiaDoMes);
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala ATUAL do o mês de Abril/'+ anoAtual + '.');
+    document.querySelector('.title').innerHTML =('Escala ATUAL do o mês de ' + mesSeguinte + ' de ' + anoAtual + '.');
   
  }
  
