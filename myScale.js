@@ -425,6 +425,7 @@ function createMyScale() {
       for (let i = 0; i < plantoes.length; i++) {
         plantoes[i].innerHTML = data[i];
       }
+      hideDays(lastDay);
       contarHoras(data);
       contarPLantaoNoturno(data);
       contarPLantaoDiurno(data);
