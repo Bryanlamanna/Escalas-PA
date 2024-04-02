@@ -50,6 +50,24 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const stavrosTD = document.querySelectorAll('.stavros td');
  const telmoTD = document.querySelectorAll('.telmo td');
  const closeResume = document.querySelector('.closeResume');
+ const menuBtn = document.querySelector('.menuBtn');
+ const menu = document.querySelector('.menu');
+ const closeMenuBtn = document.querySelector('.closeMenu'); 
+
+
+ menuBtn.addEventListener('click', () => {
+  menu.style.display = 'block';
+  setTimeout(() => {
+    menu.style.right = '0px';
+  }, 50);
+})
+ 
+ closeMenuBtn.addEventListener('click', () => {
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  }, 50);
+ })
 
  closeResume.addEventListener('click', () => {
    modalResume.style.display = 'none';
@@ -263,17 +281,21 @@ closeBtn.addEventListener('click', () => {
   modalChave.style.display = 'none'; 
     modalOn = false;
 })
-/*
+
 modalBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChave.style.display = 'none'; 
     modalOn = false;
   } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
     modalChave.style.display = 'block';
     modalOn = true;
   }
 })
-*/
+
 document.querySelector('.chave').addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     confirmBtn.click();
@@ -289,6 +311,7 @@ confirmBtn.addEventListener('click', () => {
     modalOn = false;
     plantoes.forEach(cell => {
       cell.style.backgroundColor = 'white';
+      cell.style.color = 'black';
     })
   } else {
     alert('Chave Incorreta!');
