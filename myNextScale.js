@@ -50,24 +50,6 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const stavrosTD = document.querySelectorAll('.stavros td');
  const telmoTD = document.querySelectorAll('.telmo td');
  const closeResume = document.querySelector('.closeResume');
- const menuBtn = document.querySelector('.menuBtn');
- const menu = document.querySelector('.menu');
- const closeMenuBtn = document.querySelector('.closeMenu'); 
-
-
- menuBtn.addEventListener('click', () => {
-  menu.style.display = 'block';
-  setTimeout(() => {
-    menu.style.right = '0px';
-  }, 50);
-})
- 
- closeMenuBtn.addEventListener('click', () => {
-  menu.style.right = '-100%';
-  setTimeout(() => {
-    menu.style.display = 'none';
-  }, 50);
- })
 
  closeResume.addEventListener('click', () => {
    modalResume.style.display = 'none';
@@ -96,10 +78,10 @@ resumeBtn.addEventListener('click', () => {
 */
 function prencherDiurnos(nameCount) {
     adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
-    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA'] || '0';
+    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA']  || '0';
     anaPetryTD[2].innerHTML = nameCount['ANA PETRY'] || '0';
     luzziTD[2].innerHTML = nameCount['LUZZI'] || '0';
-    crisTD[2].innerHTML = nameCount['CRISTIANE'] || '0';
+    crisTD[2].innerHTML = nameCount['CRISTIANE']  || '0';
     estevaoTD[2].innerHTML = nameCount['ESTEVÃO'] || '0';
     gilbertoTD[2].innerHTML = nameCount['GILBERTO'] || '0';
     greiceTD[2].innerHTML = nameCount['GREICE'] || '0';
@@ -118,7 +100,7 @@ function prencherDiurnos(nameCount) {
     rasquinTD[2].innerHTML = nameCount['RASQUIN'] || '0';
     rosaTD[2].innerHTML = nameCount['ROSA'] || '0';
     stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
-    telmoTD[2].innerHTML = nameCount['TELMO'] || '0';
+    telmoTD[2].innerHTML = nameCount['TELMO']   || '0';
     
 
 }
@@ -264,6 +246,7 @@ function contarPLantaoNoturno(escalaAtual) {
     prencherNoturnos(nameCount);
 
   }
+
 /*
 nameBtn.addEventListener('click', () => {
   if (optionsOn) {
@@ -280,21 +263,17 @@ closeBtn.addEventListener('click', () => {
   modalChave.style.display = 'none'; 
     modalOn = false;
 })
-
+/*
 modalBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChave.style.display = 'none'; 
     modalOn = false;
   } else {
-    menu.style.right = '-100%';
-    setTimeout(() => {
-      menu.style.display = 'none';
-    }, 50);
     modalChave.style.display = 'block';
     modalOn = true;
   }
 })
-
+*/
 document.querySelector('.chave').addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     confirmBtn.click();
@@ -320,11 +299,12 @@ confirmBtn.addEventListener('click', () => {
 
 function includeScript() {
   var script = document.createElement('script');
-  script.src = 'changes.js'; // Substitua pelo caminho do seu script
+  script.src = 'changesNext.js'; // Substitua pelo caminho do seu script
   script.type = 'text/javascript';
-  script.id = 'changes'; // Atribui um ID ao script
+  script.id = 'changesNext'; // Atribui um ID ao script
   document.head.appendChild(script);
 }
+
 
 function definirCoresNaTabela() {
   const tabela = document.querySelector('.tabela');
@@ -365,15 +345,37 @@ for (let i = 28; i < weeknums.length; i++) {
 }
 
 function hideDays(dia) {
+  const shortTd = document.querySelectorAll('.shortday td');
+  const normalTd = document.querySelectorAll('.normalday td');
+  const longTd = document.querySelectorAll('.longday td');
+
   if (dia == 28) {
+      shortTd.forEach(td => {
+          td.textContent = '';
+      })
+      normalTd.forEach(td => {
+          td.textContent = '';
+      })
+      longTd.forEach(td => {
+          td.textContent = '';
+      })
       shortMonth.style.opacity = '0';
       normalMonth.style.opacity = '0';
       longMonth.style.opacity = '0';
   } if (dia == 29) {
+      normalTd.forEach(td => {
+          td.textContent = '';
+      })
+      longTd.forEach(td => {
+          td.textContent = '';
+      })
       shortMonth.style.opacity = '1';
       normalMonth.style.opacity = '0';
       longMonth.style.opacity = '0';
   } if (dia == 30) {
+      longTd.forEach(td => {
+          console.log(td);
+      })
       shortMonth.style.opacity = '1';
       normalMonth.style.opacity = '1';
       longMonth.style.opacity = '0';
@@ -393,7 +395,7 @@ function createMyScale() {
     const mesAtual = dataAtual.getMonth();
   
     // Configurar a data para o primeiro dia do próximo mês
-    dataAtual.setMonth(mesAtual, 1);
+    dataAtual.setMonth(mesAtual+1, 1);
   
     // Obter o nome do mês seguinte
     let mesSeguinte = dataAtual.getMonth();
@@ -406,6 +408,8 @@ function createMyScale() {
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
+    
+    saveScale(ultimoDiaDoMes);
   
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -416,16 +420,16 @@ function createMyScale() {
       weekdays[i].textContent = diasDaSemana[diaDaSemanaAtual];
     }
   
-    saveScale(ultimoDiaDoMes);
+    
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala de ' + mesSeguinte + '/' + anoAtual);
+    document.querySelector('.title').innerHTML =('Escala de ' + mesSeguinte + '/'+ anoAtual + '.');
   
  }
  
  function saveScale(lastDay) {
  
-  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json";
+  const databaseURL = "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json";
 
   fetch(databaseURL)
     .then(response => {
@@ -435,7 +439,7 @@ function createMyScale() {
       return response.json();
     })
     .then(data => {
-
+      
       if (lastDay == 30) {
         data.splice(120, 4);
       } else if (lastDay == 29) {
@@ -444,14 +448,14 @@ function createMyScale() {
         data.splice(112, 12);
       }
 
-      for (let i = 0; i < plantoes.length; i++) {
+      for (let i = 0; i < plantoes.length; i++) { 
         plantoes[i].innerHTML = data[i];
       }
+
       hideDays(lastDay);
       contarHoras(data);
       contarPLantaoNoturno(data);
       contarPLantaoDiurno(data);
-      
     })
     .catch(error => {
       console.error('Erro:', error);
@@ -461,7 +465,7 @@ function createMyScale() {
 
  function updateColors() {
 
-  fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThis.json')
+  fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext.json')
    .then(response => response.json())
    .then(data => {
      // Verifique se os dados estão presentes e se é um array
@@ -486,20 +490,21 @@ function createMyScale() {
 
   }
 
-options.forEach(option => {
-  option.addEventListener('click', () => {
-    const selectedOption = option.textContent;
-    document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;
-
-    if (selectedOption === 'NENHUM') {
-      window.location.reload();
-    } else {
-      buscarCelulas(selectedOption);
-    }
-    
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const selectedOption = option.textContent;
+      document.querySelector('.dropdown-content').style.visibility = 'hidden';
+      optionsOn = false;
+  
+      if (selectedOption === 'NENHUM') {
+        window.location.reload();
+      } else {
+        buscarCelulas(selectedOption);
+      }
+      
+    })
   })
-})
+  
 
 function buscarCelulas(option) {
   

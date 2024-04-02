@@ -14,6 +14,20 @@ const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+var scales = [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+];
+
+
+plantoes.forEach(plantao => {
+  plantao.textContent = '';
+})
 
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
@@ -49,14 +63,6 @@ nextBtn.addEventListener('click', () => {
 
 
 
-
-
-function fillScale(dia) {
-    
-    for (let i = 0; i < plantoes.length; i++) { 
-        plantoes[i].innerHTML = scales[dia][i];
-    }
-}
 
 function hideDays(dia) {
     if (dia == 28) {
@@ -98,7 +104,6 @@ function nextMonth() {
 
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
-    console.log(ultimoDiaDoMes)
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
     hideDays(ultimoDiaDoMes)
   
@@ -120,6 +125,38 @@ function nextMonth() {
 }
 
 function currentMonth() {
+  
+  const databaseURLs = [
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaDomingo.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSegunda.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaTerca.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaQuarta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaQuinta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSexta.json",
+  "https://scalesdb-76ec1-default-rtdb.firebaseio.com/scalaSabado.json"
+  ];
+  
+  for (let i = 0; i < databaseURLs.length; i++) {
+    fetchAndProcessData(i);
+  }
+  
+  function fetchAndProcessData(index) {
+    fetch(databaseURLs[index])
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao recuperar os dados.');
+          }
+          return response.json();
+        })
+        .then(data => {
+          for (let e = 0; e < data.length; e++) {
+            scales[index].push(data[e]);
+          }
+        })
+        .catch(error => {
+          console.error('Erro:', error);
+        });
+  }
   // Criar um objeto Date para a data atual
   const dataAtual = new Date();
   
@@ -139,7 +176,6 @@ function currentMonth() {
 
   //obter o ultimo dia do mes
   const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
-  console.log(ultimoDiaDoMes)
   //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
   hideDays(ultimoDiaDoMes)
 
@@ -159,9 +195,18 @@ function currentMonth() {
 
 }
 
+function fillScale(dia) {
+    
+  for (let i = 0; i < plantoes.length; i++) { 
+      plantoes[i].innerHTML = scales[dia][i];
+  }
+
+
+}
+
 function definirCoresNaTabela() {
-    const tabela = document.querySelector('.tabela');
-    const linhas = document.querySelectorAll('tr');
+    const linhas = document.querySelectorAll('#tabela tr');
+
   
     // Array com as classes de cor
     const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
@@ -197,10 +242,15 @@ function setWeekNum () {
   }
 }
 
+
 window.onload = () => {
-  currentMonth()
+  
+  setTimeout(() => {
+    currentBtn.click();
+  }, 300)
 }
 
+currentMonth();
 definirCoresNaTabela();
 setDayNum();
 setWeekNum();
