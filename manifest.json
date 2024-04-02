@@ -4,9 +4,9 @@
     "display": "minimal-ui",
     "name": "Uni-Escala",
     "orientation": "portrait",
-    "scope": "/https://uniodonto-escalas.netlify.app/",
+    "scope": "https://uniescala.netlify.app/",
     "short_name": "Uni-Escala",
-    "start_url": "https://uniodonto-escalas.netlify.app/",
+    "start_url": "https://uniescala.netlify.app/",
     "theme_color": "#9e234a",
     "icons": [
         {
