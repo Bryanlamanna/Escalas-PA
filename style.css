@@ -133,7 +133,7 @@ body {
   top: 0;
   right: -100%;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 20%;
   background-color: #919191;
 }
@@ -205,6 +205,7 @@ h1 {
 
 .day {
   overflow: hidden;
+  background-color: #5e5e5e;
 
 }
 

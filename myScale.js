@@ -88,12 +88,38 @@ resumeBtn.addEventListener('click', () => {
     modalResume.style.display = 'none';
     resumeOn = false;
   } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
     modalResume.style.display = 'flex';
     modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
     resumeOn = true;
   }
 })
 */
+function presentDay() {
+
+  const today = new Date();
+  const day = today.getDay();
+  const tableLines = document.querySelectorAll('#tabela tr');
+
+  for (let i = 0; i < tableLines.length; i++) {
+    if (i == day) {
+
+      const tds = tableLines[i+1].querySelectorAll('td');
+      console.log(tds);
+      tds.forEach(td => {
+        console.log(td.innerHTML);
+        td.style.backgroundColor = '#a6016a97';
+      })
+    }
+  }
+
+} 
+
+presentDay();
+
 function prencherDiurnos(nameCount) {
     adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
     anaLuisaTD[2].innerHTML = nameCount['ANA LUISA'] || '0';
@@ -264,18 +290,7 @@ function contarPLantaoNoturno(escalaAtual) {
     prencherNoturnos(nameCount);
 
   }
-/*
-nameBtn.addEventListener('click', () => {
-  if (optionsOn) {
-    document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;
-  } else {
-    document.querySelector('.dropdown-content').style.visibility = 'visible';
-    optionsOn = true;
-  }
- 
-})
-*/
+
 closeBtn.addEventListener('click', () => {
   modalChave.style.display = 'none'; 
     modalOn = false;
@@ -520,11 +535,11 @@ function buscarCelulas(option) {
 }
 
   window.onload = () => {
-    updateColors();
+    updateColors()
     createMyScale();
-    definirCoresNaTabela();
     setDayNum();
     setWeekNum();
+
   }
 
 
