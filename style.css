@@ -132,7 +132,7 @@ body {
   z-index: 2;
   top: 0;
   right: -100%;
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 20%;
   background-color: #919191;
