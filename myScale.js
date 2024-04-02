@@ -310,6 +310,7 @@ confirmBtn.addEventListener('click', () => {
     modalOn = false;
     plantoes.forEach(cell => {
       cell.style.backgroundColor = 'white';
+      cell.style.color = 'black';
     })
   } else {
     alert('Chave Incorreta!');
