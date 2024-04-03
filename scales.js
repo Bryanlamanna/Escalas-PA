@@ -40,5 +40,9 @@ for (let i = 0; i < databaseURLs.length; i++) {
         });
   }
   
-  console.log(scales);
+
+  setTimeout(() => {
+    location.reload();
+  },900000);
+  
 
