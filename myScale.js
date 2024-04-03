@@ -100,6 +100,7 @@ resumeBtn.addEventListener('click', () => {
 */
 function presentDay() {
 
+  const hour = new Date().getHours();
   const today = new Date();
   const day = today.getDay();
   const tableLines = document.querySelectorAll('#tabela tr');
@@ -107,16 +108,42 @@ function presentDay() {
   for (let i = 0; i < tableLines.length; i++) {
     if (i == day) {
 
-      const tds = tableLines[i+1].querySelectorAll('td');
-      console.log(tds);
-      tds.forEach(td => {
-        console.log(td.innerHTML);
-        td.style.backgroundColor = '#a6016a97';
-      })
-    }
-  }
+      if (hour < 8) {
+          const tds = tableLines[i].querySelectorAll('td');
+          tds[2].style.backgroundColor = '#5e5e5e';
+          tds[3].style.backgroundColor = '#5e5e5e';
+          tds[4].style.backgroundColor = '#5e5e5e';
+          tds[5].style.backgroundColor = '#7d004f';
+        } else if (hour > 8 && hour < 12) {
+          const tds = tableLines[i+1].querySelectorAll('td');
+          tds[2].style.backgroundColor = '#7d004f';
+          tds[3].style.backgroundColor = '#5e5e5e';
+          tds[4].style.backgroundColor = '#5e5e5e';
+          tds[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour > 12 && hour < 14) {
+          const tds = tableLines[i+1].querySelectorAll('td');
+          tds[2].style.backgroundColor = '#7d004f';
+          tds[3].style.backgroundColor = '#7d004f';
+          tds[4].style.backgroundColor = '#5e5e5e';
+          tds[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour > 14 && hour < 18) {
+          const tds = tableLines[i+1].querySelectorAll('td');
+          tds[2].style.backgroundColor = '#5e5e5e';
+          tds[3].style.backgroundColor = '#7d004f';
+          tds[4].style.backgroundColor = '#7d004f';
+          tds[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour > 18) {
+          const tds = tableLines[i+1].querySelectorAll('td');
+          tds[2].style.backgroundColor = '#5e5e5e';
+          tds[3].style.backgroundColor = '#5e5e5e';
+          tds[4].style.backgroundColor = '#5e5e5e';
+          tds[5].style.backgroundColor = '#7d004f';
+        }
 
-} 
+    }
+
+  } 
+}
 
 presentDay();
 
