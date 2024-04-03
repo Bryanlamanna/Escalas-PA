@@ -39,5 +39,9 @@ function fetchAndProcessData(index) {
           console.error('Erro:', error);
         });
   }
+
+  setTimeout(() => {
+    location.reload();
+  },900000);
   
 
