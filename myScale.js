@@ -100,7 +100,7 @@ resumeBtn.addEventListener('click', () => {
 */
 function presentDay() {
 
-  const hour =  12/*new Date().getHours()*/;
+  const hour =  new Date().getHours();
   const today = new Date();
   const day = today.getDate();
   const tableLines = document.querySelectorAll('#tabela tr');
