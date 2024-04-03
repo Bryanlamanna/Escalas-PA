@@ -100,7 +100,7 @@ resumeBtn.addEventListener('click', () => {
 */
 function presentDay() {
 
-  const hour = new Date().getHours();
+  const hour =  12/*new Date().getHours()*/;
   const today = new Date();
   const day = today.getDate();
   const tableLines = document.querySelectorAll('#tabela tr');
@@ -112,17 +112,17 @@ function presentDay() {
           linhaOntem[3].style.backgroundColor = '#5e5e5e';
           linhaOntem[4].style.backgroundColor = '#5e5e5e';
           linhaOntem[5].style.backgroundColor = '#7d004f';
-        } else if (hour >= 8 && hour <= 12) {
+        } else if (hour >= 8 && hour < 12) {
           linhaHoje[2].style.backgroundColor = '#7d004f';
           linhaHoje[3].style.backgroundColor = '#5e5e5e';
           linhaHoje[4].style.backgroundColor = '#5e5e5e';
           linhaHoje[5].style.backgroundColor = '#5e5e5e';
-        } else if (hour >= 12 && hour <= 14) {
+        } else if (hour >= 12 && hour < 14) {
           linhaHoje[2].style.backgroundColor = '#7d004f';
           linhaHoje[3].style.backgroundColor = '#7d004f';
           linhaHoje[4].style.backgroundColor = '#5e5e5e';
           linhaHoje[5].style.backgroundColor = '#5e5e5e';
-        } else if (hour >= 14 && hour <= 18) {
+        } else if (hour >= 14 && hour < 18) {
           linhaHoje[2].style.backgroundColor = '#5e5e5e';
           linhaHoje[3].style.backgroundColor = '#7d004f';
           linhaHoje[4].style.backgroundColor = '#7d004f';
