@@ -184,7 +184,17 @@ h1 {
   margin: 0 auto;
 }
 
-.closeBtn, .closeMenu {
+.closeMenu {
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  right: .8em;
+  color: white;
+}
+
+.closeBtn {
   border: none;
   transition: .3s;
   cursor: pointer;
