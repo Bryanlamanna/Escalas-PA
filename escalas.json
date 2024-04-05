@@ -1,0 +1,264 @@
+{
+    "escalas": {
+        "segundas": {
+                "primeiraSegunda" : 
+                [
+                    "ROSA",
+                    "RASQUIN",
+                    "TELMO",
+                    "LUCIANE"
+                ],
+                "segundaSegunda" :
+                [
+                    "MARLENE",
+                    "MARIANA",
+                    "GUSTAVO",
+                    "ESTEVÃO"            
+                ],
+                "terceiraSegunda" :
+                [
+                    "MARIANA",
+                    "TELMO",
+                    "JEAN",
+                    "LUCIANE"
+                ],
+                "quartaSegunda" :
+                [
+                    "MARCIA",
+                    "ADRIANO",
+                    "JESSICA",
+                    "CRISTIANE"
+                ],
+                "quintaSegunda" :
+                [
+                    "LUCIANE",
+                    "TELMO",
+                    "GUSTAVO",
+                    "CRISTIANE"
+                ]  
+        },
+        "tercas": {
+                "primeiraTerca" :
+                [
+                    "KARINA",
+                    "ANA LUISA",
+                    "ADRIANO",
+                    "ADRIANO"
+                ],
+                "segundaTerca" :
+                [
+                    "ANA LUISA",
+                    "TELMO",
+                    "ADRIANO",
+                    "ADRIANO"
+                ],
+                "terceiraTerca" :
+                [   
+                    "KARINA",
+                    "ANA LUISA",
+                    "ADRIANO",
+                    "ADRIANO"
+                ],
+                "quartaTerca" :
+                [
+                    "ANA PETRY",
+                    "ANA LUISA",
+                    "CRISTIANE",
+                    "ADRIANO"
+                ],
+                "quintaTerca" :
+                [
+                    "KARINA",
+                    "ANA LUISA",
+                    "ADRIANO",
+                    "RASQUIN"
+                ]
+        },
+        "quartas": {
+                "primeiraQuarta" :
+                [
+                    "MARLENE",
+                    "JEAN",
+                    "MARIANA",
+                    "STAVROS"
+                ],
+                "segundaQuarta" :
+                [
+                    "MARLENE",
+                    "TELMO",
+                    "JEAN",
+                    "STAVROS"
+                ],
+                "terceiraQuarta" :
+                [
+                    "MARLENE",
+                    "LEILA",
+                    "MARIANA",
+                    "STAVROS"
+                ],
+                "quartaQuarta" :
+                [
+                    "MARLENE",
+                    "JEAN",
+                    "MARIANA",
+                    "STAVROS"
+                ],
+                "quintaQuarta" :
+                [
+                    "MARLENE",
+                    "JEAN",
+                    "TELMO",
+                    "JUVENAL"
+                ]
+        },
+        "quintas": {
+                "primeiraQuinta" :
+                [
+                    "ANA LUISA",
+                    "TELMO",
+                    "ANA PETRY",
+                    "LUCIANE"
+                ],
+                "segundaQuinta" :
+                [
+                    "MARCIA",
+                    "LEILA",
+                    "ANA PETRY",
+                    "GILBERTO"
+                ],
+                "terceiraQuinta" :
+                [
+                    "MARLENE",
+                    "ANA PETRY",
+                    "ADRIANO",
+                    "LUCIANE"
+                ],
+                "quartaQuinta" :
+                [
+                    "ANA LUISA",
+                    "ROSA",
+                    "ANA PETRY",
+                    "GILBERTO"
+                ],
+                "quintaQuinta" :
+                [
+                    "ANA LUISA",
+                    "ANA PETRY",
+                    "CRISTIANE",
+                    "RASQUIN"
+                ]
+        },
+        "sextas": {
+                "primeiraSexta" :
+                [
+                    "ROSA",
+                    "CRISTIANE",
+                    "TELMO",
+                    "GILBERTO"
+                ],
+                "segundaSexta" :
+                [
+                    "ROSA",
+                    "MARIANA",
+                    "CRISTIANE",
+                    "COUTINHO"
+                ],
+                "terceiraSexta" :
+                [
+                    "CRISTIANE",
+                    "TELMO",
+                    "ANA PETRY",
+                    "LUZZI"
+                ],
+                "quartaSexta" :
+                [
+                    "MARCIA",
+                    "GUSTAVO",
+                    "ROSA",
+                    "JESSICA"
+                ],
+                "quintaSexta" :
+                [
+                    "ROSA",
+                    "MARIANA",
+                    "JEAN",
+                    "CRISTIANE"
+                ]
+        },
+        "sabados": {
+                "primeiroSabado" :
+                [
+                    "ANA LUISA",
+                    "JEAN",
+                    "CRISTIANE",
+                    "LUZZI"
+                ],
+                "segundoSabado" :
+                [
+                    "RAQUEL",
+                    "JEAN",
+                    "TELMO",
+                    "ESTEVÃO"
+                ],
+                "terceiroSabado" :
+                [
+                    "GILBERTO",
+                    "JEAN",
+                    "GILBERTO",
+                    "LUCIANE"
+                ],
+                "quartoSabado" :
+                [
+                    "JEAN",
+                    "RASQUIN",
+                    "ADRIANO",
+                    "ESTEVÃO"
+                ],
+                "quintoSabado" :
+                [
+                    "GILBERTO",
+                    "GUSTAVO",
+                    "JEAN",
+                    "CRISTIANE"
+                ]
+        },
+        "domingos": {
+                "primeiroDomingo" :
+                [
+                    "LUCIANE",
+                    "------",
+                    "CRISTIANE",
+                    "LUZZI"
+                ],
+                "segundoDomingo" :
+                [
+                    "GILBERTO",
+                    "------",
+                    "GILBERTO",
+                    "ESTEVÃO"
+                ],
+                "terceiroDomingo" :
+                [
+                    "GILBERTO",
+                    "------",
+                    "RASQUIN",
+                    "LUZZI"
+                ],
+                "quartoDomingo" :
+                [
+                    "ESTEVÃO",
+                    "------",
+                    "GILBERTO",
+                    "GILBERTO"
+                ],
+                "quintoDomingo" :
+                [
+                    "GUSTAVO",
+                    "------",
+                    "GUSTAVO",
+                    "JESSICA"
+                ]
+        }
+    }
+}
+

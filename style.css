@@ -20,6 +20,10 @@ body {
   display: inline-block;
 }
 
+input {
+  max-width: 3em;
+}
+
 .resumo {
   justify-content: center;
   align-items: center;
