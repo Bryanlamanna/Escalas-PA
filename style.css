@@ -298,6 +298,10 @@ h1 {
         overflow-x: hidden;
       }
 
+      .menuList li i {
+        width: 1.2em;
+      }
+
       
       .resumo {
         justify-content: center;
