@@ -11,9 +11,18 @@
   
   left: 1.5em;
 }
+.closeMenu {
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+  position: absolute;
+  top: 1em;
+  right: .8em;
+  color: white;
+}
 
 .menuList a {
-  font-size: large;
+  font-size: 1.2em;
   text-decoration: none;
   color: white;
   margin-left: 5px;
@@ -31,6 +40,10 @@
   text-decoration: none;
 }
 
+.menuList li i {
+  width: 2em;
+}
+
 .menu {
   display: none;
   transition: .2s;
@@ -39,21 +52,13 @@
   right: -100%;
   position: fixed;
   height: 100%;
-  width: 40%;
+  width: 20%;
   background-color: #7d004f;
 }
-.closeMenu {
-  border: none;
-  transition: .3s;
-  cursor: pointer;
-  position: absolute;
-  top: 1em;
-  right: .8em;
-  color: white;
-}
+
 .menuBtn {
   z-index: 1;
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
   position: absolute;
   right: .5em;
@@ -142,6 +147,14 @@ table {
         
       }
 
+      .menuList li i {
+        width: 1.5em;
+        font-size: 1.2em;
+      }
+
+      .menuList a {
+        font-size: 1.2em;
+      }
 
       .content {
         margin: 0 ;

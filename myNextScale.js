@@ -12,7 +12,7 @@ const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
-const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 const modalChave = document.querySelector('.modalChave');
 const modalBtn = document.querySelector('.editBtn');
@@ -392,20 +392,17 @@ function hideDays(dia) {
       longTd.forEach(td => {
           td.textContent = '';
       })
-      shortMonth.style.opacity = '1';
-      normalMonth.style.opacity = '0';
-      longMonth.style.opacity = '0';
+      shortMonth.style.visibility = 'visible';
+      normalMonth.visibility = 'hidden';
+      longMonth.visibility = 'hidden';
   } if (dia == 30) {
-      longTd.forEach(td => {
-          console.log(td);
-      })
-      shortMonth.style.opacity = '1';
-      normalMonth.style.opacity = '1';
-      longMonth.style.opacity = '0';
+      shortMonth.style.visibility = 'visible';
+      normalMonth.style.visibility = 'visible';
+      longMonth.style.visibility = 'hidden';
   } else if (dia == 31) {
-      shortMonth.style.opacity = '1';
-      normalMonth.style.opacity = '1';
-      longMonth.style.opacity = '1';
+      shortMonth.style.visibility = 'visible';
+      normalMonth.style.visibility = 'visible';
+      longMonth.style.visibility = 'visible';
   }
 
 }

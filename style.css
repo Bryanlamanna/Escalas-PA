@@ -119,6 +119,7 @@ input {
 
 
 .weekday {
+  max-width: .2em;
   background-color: #303030;
   overflow: hidden;
 }
@@ -128,7 +129,7 @@ input {
 }
 
 .menuList a {
-  font-size: 2em;
+  font-size: 1em;
   text-decoration: none;
   color: white;
   margin-left: 5px;
@@ -146,6 +147,10 @@ input {
   text-decoration: none;
 }
 
+.menuList li i {
+  width: 1.5em;
+}
+
 .menu {
   display: none;
   transition: .2s;
@@ -154,7 +159,7 @@ input {
   right: -100%;
   position: fixed;
   height: 100%;
-  width: 40%;
+  width: 20%;
   background-color: #7d004f;
 }
 
@@ -186,6 +191,7 @@ button i {
 }
 
 button {
+  z-index: 5;
   background-color: #7d004f;
   color: white;
   transition: .3s;
@@ -247,7 +253,7 @@ h1 {
     transition: .68s;
     width: 95%;
     margin: 0 auto ;
-      border-collapse: collapse;
+    border-collapse: collapse;
     align-items: start;
   }
 
@@ -259,7 +265,6 @@ h1 {
     background-color: #303030;
   }
   th, td {
-    max-width: 2em;
     border: 1px solid black;
     padding: 10px;
     text-align: center;
@@ -289,8 +294,12 @@ h1 {
 
     @media screen and (max-width: 600px) {
 
+      .weekday {
+        max-width: .2em;
+      }
+
       .menu {
-        width: 70%;
+        width: 50%;
       }
 
       .conteudo {
@@ -299,7 +308,7 @@ h1 {
       }
 
       .menuList li i {
-        width: 1.2em;
+        width: 1.5em;
       }
 
       
@@ -341,9 +350,12 @@ h1 {
         text-align: center;
         background-color: #ffffff;
       }
-      
+      .menuList a {
+        font-size: 1.5em;
+      }
       .menuList i {
         font-size: 1.5em;
+        width: 1.5em;
       }
 
       .dropdown-content {
@@ -370,7 +382,7 @@ h1 {
 
       button {
         font-size: 1.4em;
-        min-height: 3em;
+        
       }
       #tabela {
         width: 100%;
@@ -386,7 +398,6 @@ h1 {
       }
 
       th, td {
-        max-width: 2em;
         border: 1px solid black;
         padding: 5px;
         text-align: center;
