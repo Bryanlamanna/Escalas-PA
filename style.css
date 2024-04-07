@@ -154,7 +154,7 @@ input {
 
 .menuBtn {
   z-index: 1;
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
   position: absolute;
   right: .5em;
@@ -358,7 +358,7 @@ h1 {
       }
 
       button {
-        font-size: 1em;
+        font-size: 1.3em;
         min-height: 3em;
       }
       #tabela {
