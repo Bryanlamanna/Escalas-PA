@@ -99,6 +99,7 @@ function updateEscala (diaSemana, dia) {
 
         document.querySelectorAll(`.${diaSemana} td`).forEach((td, index) => {
                 td.addEventListener("click", () => {
+
                     const input = document.createElement("input");
                     input.type = "text";
                     input.style.width = '6em';
