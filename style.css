@@ -51,9 +51,15 @@ input {
 }
 
 .fixedBtn {
+  justify-content: space-around;
+  width: 100%;
   position: fixed;
   bottom: 1%;
-  right: 5%;
+}
+
+.fixedButton {
+  margin: 0 auto;
+  bottom: 1%;
 }
 
 .closeResume {
@@ -154,7 +160,7 @@ input {
 
 .menuBtn {
   z-index: 1;
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
   position: absolute;
   right: .5em;
@@ -190,7 +196,6 @@ button {
   padding: .5em;
   margin-top: .5em;
   margin-bottom: 1em;
-  margin-left: .5EM;
 }
 
 h1 {
@@ -358,12 +363,11 @@ h1 {
       }
 
       button {
-        font-size: 1.3em;
+        font-size: 1.2em;
         min-height: 3em;
       }
       #tabela {
         width: 100%;
-        margin-bottom: 4em;
       }
 
       *{
