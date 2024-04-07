@@ -12,7 +12,7 @@ const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
-const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 const modalChave = document.querySelector('.modalChave');
 const modalBtn = document.querySelector('.editBtn');
@@ -50,6 +50,24 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const stavrosTD = document.querySelectorAll('.stavros td');
  const telmoTD = document.querySelectorAll('.telmo td');
  const closeResume = document.querySelector('.closeResume');
+ const menuBtn = document.querySelector('.menuBtn');
+ const menu = document.querySelector('.menu');
+ const closeMenuBtn = document.querySelector('.closeMenu'); 
+
+
+ menuBtn.addEventListener('click', () => {
+  menu.style.display = 'block';
+  setTimeout(() => {
+    menu.style.right = '0px';
+  }, 50);
+})
+ 
+ closeMenuBtn.addEventListener('click', () => {
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  }, 50);
+ })
 
  closeResume.addEventListener('click', () => {
    modalResume.style.display = 'none';
@@ -64,17 +82,66 @@ document.addEventListener('keydown', (event) => {
     }
   }
 })
-
+/*
 resumeBtn.addEventListener('click', () => {
   if (resumeOn) {
     modalResume.style.display = 'none';
     resumeOn = false;
   } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
     modalResume.style.display = 'flex';
     modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
     resumeOn = true;
   }
 })
+*/
+function presentDay() {
+
+  const hour =  new Date().getHours();
+  const today = new Date();
+  const day = today.getDate();
+  const tableLines = document.querySelectorAll('#tabela tr');
+  const linhaHoje = tableLines[day+1].querySelectorAll('td');
+  const linhaOntem = tableLines[day].querySelectorAll('td');  
+
+      if (hour < 8) {
+          linhaOntem[2].style.backgroundColor = '#5e5e5e';
+          linhaOntem[3].style.backgroundColor = '#5e5e5e';
+          linhaOntem[4].style.backgroundColor = '#5e5e5e';
+          linhaOntem[5].style.backgroundColor = '#7d004f';
+        } else if (hour >= 8 && hour < 12) {
+          linhaHoje[2].style.backgroundColor = '#7d004f';
+          linhaHoje[3].style.backgroundColor = '#5e5e5e';
+          linhaHoje[4].style.backgroundColor = '#5e5e5e';
+          linhaHoje[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour >= 12 && hour < 14) {
+          linhaHoje[2].style.backgroundColor = '#7d004f';
+          linhaHoje[3].style.backgroundColor = '#7d004f';
+          linhaHoje[4].style.backgroundColor = '#5e5e5e';
+          linhaHoje[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour >= 14 && hour < 18) {
+          linhaHoje[2].style.backgroundColor = '#5e5e5e';
+          linhaHoje[3].style.backgroundColor = '#7d004f';
+          linhaHoje[4].style.backgroundColor = '#7d004f';
+          linhaHoje[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour >= 18 && hour < 20) {
+          linhaHoje[2].style.backgroundColor = '#5e5e5e';
+          linhaHoje[3].style.backgroundColor = '#5e5e5e';
+          linhaHoje[4].style.backgroundColor = '#7d004f';
+          linhaHoje[5].style.backgroundColor = '#5e5e5e';
+        } else if (hour >= 20) {
+          linhaHoje[2].style.backgroundColor = '#5e5e5e';
+          linhaHoje[3].style.backgroundColor = '#5e5e5e';
+          linhaHoje[4].style.backgroundColor = '#5e5e5e';
+          linhaHoje[5].style.backgroundColor = '#7d004f';
+        }
+
+}
+
+presentDay();
 
 function prencherDiurnos(nameCount) {
     adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
@@ -247,17 +314,6 @@ function contarPLantaoNoturno(escalaAtual) {
 
   }
 
-nameBtn.addEventListener('click', () => {
-  if (optionsOn) {
-    document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;
-  } else {
-    document.querySelector('.dropdown-content').style.visibility = 'visible';
-    optionsOn = true;
-  }
- 
-})
-
 closeBtn.addEventListener('click', () => {
   modalChave.style.display = 'none'; 
     modalOn = false;
@@ -268,6 +324,10 @@ modalBtn.addEventListener('click', () => {
     modalChave.style.display = 'none'; 
     modalOn = false;
   } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
     modalChave.style.display = 'block';
     modalOn = true;
   }
@@ -288,7 +348,7 @@ confirmBtn.addEventListener('click', () => {
     modalOn = false;
     plantoes.forEach(cell => {
       cell.style.backgroundColor = 'white';
-      cell.style.color = "black";
+      cell.style.color = 'black';
     })
   } else {
     alert('Chave Incorreta!');
@@ -398,7 +458,7 @@ function createMyScale() {
     saveScale(ultimoDiaDoMes);
   
     // Atualizar o titulo da pagina com o primeiro dia do mes
-    document.querySelector('.title').innerHTML =('Escala ATUAL para mês de ' + mesSeguinte + ' de ' + anoAtual + '.');
+    document.querySelector('.title').innerHTML =('Escala de ' + mesSeguinte + '/' + anoAtual);
   
  }
  
@@ -452,7 +512,7 @@ function createMyScale() {
         if (positionsDB[i] === true) {
           plantoes[i].style.color = 'red';
         } else {
-          plantoes[i].style.color = 'black';
+          plantoes[i].style.color = 'unset';
         }
       }
      } else {
@@ -492,17 +552,17 @@ function buscarCelulas(option) {
     } else {
       // Reverte as alterações em células que não contêm o nome selecionado
       celula.style.backgroundColor = ""; // Exemplo: Remove a cor de fundo
-      celula.style.color = "black";
+      celula.style.color = "unset";
     }
   });
 }
 
   window.onload = () => {
-    updateColors();
+    updateColors()
     createMyScale();
-    definirCoresNaTabela();
     setDayNum();
     setWeekNum();
+
   }
 
 

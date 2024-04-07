@@ -1,0 +1,64 @@
+
+  body {
+    background-color: #464646;
+  }
+
+table {
+  border-radius: 8px;
+  font-weight: bold;
+    border-collapse: collapse;
+    white-space: nowrap;
+    width: 100%;
+    margin: 1em;
+    table-layout: fixed;
+  }
+  th {
+    font-size: medium;
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+    width: 3em;
+  }
+
+  h2 {
+    margin-left: 4%;
+    color: white;
+  }
+
+  td {
+    font-size: medium;
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+    width: 6em;
+  }
+
+  .domingo {
+    background-color: #65c7ef;
+  }
+
+  .segunda {
+    background-color: #fcffff;
+  }
+
+  .terca {
+    background-color: #f7ffd2;
+  }
+
+  .quarta {
+    background-color: #aaeffd;
+  }
+
+  .quinta {
+    background-color: #ffffe1;
+  }
+
+  .sexta {
+    background-color: #ffffca;
+  }
+
+  .sabado {
+    background-color: #fff6f6;  
+  }
+
+  

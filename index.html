@@ -14,496 +14,470 @@
 </head>
 <body>
 
-  <div class="modalChave">
-    <i class="closeBtn fa-solid fa-square-xmark"></i>
-    <input type="text" id="inputValor" class="chave" placeholder="chave">
-    <button class="confirmBtn">Confirmar</button>
-  </div>
-
-  <main style="text-align: center;">
-    
-   
-    <a href="fixos.html" target="_self">
-    <button class="currentBtn" style="background-color: rgb(255, 255, 133);">
-      VER ESCALA FIXA
-      <i class="fa-regular fa-calendar-check"></i>
-    </button>
-    </a>
-    
-
-   
-    <h1 class="title" style="margin-bottom: 1em; margin-top: .5em;"></h1>
-    <div class="dropdown">
-      <button class="dropBtn">
-        SELECIONAR NOME
-        <i class="fa-solid fa-user-pen"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="#">NENHUM</a>
-        <a href="#">ADRIANO</a>
-        <a href="#">ANA PETRY</a>
-        <a href="#">ANA LUISA</a>
-        <a href="#">LUZZI</a>
-        <a href="#">CRISTIANE</a>
-        <a href="#">ESTEVÃO</a>
-        <a href="#">GILBERTO</a>
-        <a href="#">GREICE</a>
-        <a href="#">GUSTAVO</a>
-        <a href="#">JEAN</a>
-        <a href="#">JESSICA</a>
-        <a href="#">JUVENAL</a>
-        <a href="#">KARINA</a>
-        <a href="#">LEILA</a>
-        <a href="#">LUCIANE</a>
-        <a href="#">MARCIA</a>
-        <a href="#">MARIANA</a>
-        <a href="#">MARLENE</a>
-        <a href="#">COUTINHO</a>
-        <a href="#">RAQUEL</a>
-        <a href="#">RASQUIN</a>
-        <a href="#">ROSA</a>
-        <a href="#">STAVROS</a>
-        <a href="#">TELMO</a>
-      </div>
+  <div class="conteudo">
+    <div class="modalChave">
+      <i class="closeBtn fa-solid fa-square-xmark"></i>
+      <input type="text" id="inputValor" class="chave" placeholder="chave">
+      <button class="confirmBtn">Confirmar</button>
     </div>
-    <button disabled class="resumeBtn"> 
-      RESUMO
-      <i class="fa-solid fa-hand-holding-dollar"></i>
-    </button>
-  
-      <a href="next.html" target="_self">
-      <button class="currentBtn">
-        MAIO/2024
-        <i class="fa-solid fa-circle-arrow-right"></i>
-      </button>
+    <div class="menu">
+      <h1 style="margin-top: 1em;">Menu</h1>
+      <i style="font-size: larger;" class="closeMenu fa-solid fa-x"></i>
+      <ul class="menuList">
+        <li>
+          <i class="fa-regular fa-pen-to-square"></i>
+          <a href="#" target="_self" class="editBtn">Editar</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-lock"></i>
+          <a href="fixos.html" target="_self">Fixos</a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <a href="https://www.uniodontopoa.com.br/" target="_blank">Uniodonto</a>
+        </li>
+
+      </ul>
+    </div>
+    <main style="text-align: center;">
+
+      <img src="assets/logo.png" style="width: 4em; margin-top: 1em;" alt="logotipo-uniodonto" class="logotipo">
+      <a href="#" class="menuBtn">
+        <i class="fa-solid fa-bars" id="menuBtn"></i>
       </a>
-         
-       
-      
-      
-  </main>
-  <table id="tabela" style="border-radius: 4px;">
-    <tr  class="cabec">
-      <th style="visibility: hidden; border: none;"></th>
-      <th style="border: none;">
-        <button style="margin: 0 0 0 0;" class="editBtn">
-          EDITAR
-         <i class="fa-solid fa-pen-to-square"></i>
-        </button>
-      </th>
-      <th>8h - 14h</th>
-      <th>12h - 18h</th>
-      <th>14h - 20h</th>
-      <th>20h - 8h</th>
-      
-    </tr>  
+      <h1 class="title" style="margin-bottom: .5em; margin-top: .5em;"></h1>
     
-    <tr>
-        <th style="width: 1em;">Num</th>
-        <th>Dia</th>
-        <th>Manhã</th>
-        <th>Intermed</th>
-        <th>Tarde</th>
-        <th>Noturno</th>
-        <th style="width: 1em; border-top-right-radius: 4px;" class="weekhd">S</th>
-      </tr>
+        <a href="next.html" target="_self">
+        <button class="currentBtn">
+          MAIO/2024
+          <i class="fa-solid fa-circle-arrow-right"></i>
+        </button>
+        </a>
+        
+    </main>
+    <table id="tabela" style="border-radius: 4px;">
+      <tr  class="cabec">
+        <th style="visibility: hidden; border: none;"></th>
+        <th style="border: none;">
+          
+        </th>
+        <th>8h - 14h</th>
+        <th>12h - 18h</th>
+        <th>14h - 20h</th>
+        <th>20h - 8h</th>
+        
+      </tr>  
       
       <tr>
-         <!-- dia 1 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 2 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 3 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day "></td>
-        <td class="day "></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 4 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 5 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 6 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 7 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 8 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 9 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 10 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 11 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 12 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 13 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 14 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 15 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 16 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 17 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 18 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 19 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 20 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 21 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 22 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 23 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 24 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 25 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 26 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 27 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day switch"></td>
-        <td class="day switch"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr>
-        <!-- dia 28 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr class="shortday">
-        <!-- dia 29 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr class="normalday">
-        <!-- dia 30 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-      <tr class="longday">
-        <!-- dia 31 -->
-        <td class="daynum"></td>
-        <td class="weekday"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="day"></td>
-        <td class="weeknum"></td>
-      </tr>
-  </table>
-  <div class="resumo">
-    <table class="resumoTable">
-      <thead>
+          <th style="width: 1em;">Num</th>
+          <th>Dia</th>
+          <th>Manhã</th>
+          <th>Intermed</th>
+          <th>Tarde</th>
+          <th>Noturno</th>
+          <th style="width: 1em; border-top-right-radius: 4px;" class="weekhd">S</th>
+        </tr>
+        
         <tr>
-          <th>CRO</th><th>Plantonista</th><th>Diurnos:</th><th>Noturnos:</th><th>Horas:</th>
+          <!-- dia 1 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
         </tr>
-      </thead>
-      <tbody>
-        <tr class="adriano">
-          <td>8750</td><td>ADRIANO ERCOLANI</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 2 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="anaPetry">
-          <td>9109</td><td>ANA PETRY</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 3 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day "></td>
+          <td class="day "></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="anaLuisa">
-          <td>7447</td><td>ANA LUISA</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 4 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="carlos">
-          <td>7117</td><td>CARLOS LUZZI</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 5 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="cristiane">
-          <td>12182</td><td>CRISTIANE PAGLIARIN</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 6 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="estevao">
-          <td>4549</td><td>ESTEVÃO GASTAL</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 7 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="gilberto">
-          <td>16759</td><td>GILBERTO PANDOLFO</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 8 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="greice">
-          <td>6011</td><td>GREICE SILVEIRA</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 9 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="gustavo">
-          <td>13623</td><td>GUSTAVO FERNANDES</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 10 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="jean">
-          <td>17983</td><td>JEAN BALBINOTTI</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 11 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="jessica">
-          <td>23002</td><td>JESSICA SBABO</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 12 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="juvenal">
-          <td>7517</td><td>JUVENAL DAL CASTEL</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 13 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="karina">
-          <td>17664</td><td>KARINA VIDAL</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 14 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="leila">
-          <td>6232</td><td>LEILA VIANNA</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 15 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="luciane">
-          <td>10526</td><td>LUCIANE PANDOLFO</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 16 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="marcia">
-          <td>10380</td><td>MARCIA NEJAR</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 17 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="mariana">
-          <td>24604</td><td>MARIANA FIGUEIREDO</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 18 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="marlene">
-          <td>7298</td><td>MARLENE BANDEIRA</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 19 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="paulo">
-          <td>7241</td><td>PAULO COUTINHO</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 20 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="raquel">
-          <td>12546</td><td>RAQUEL VENTURA</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 21 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="rasquin">
-          <td></td><td>JOÃO RASQUIN</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 22 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="rosa">
-          <td>7939</td><td>ROSA CEREZER</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 23 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="stavros">
-          <td>12031</td><td>STAVROS GEORGIADIS</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 24 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
         </tr>
-        <tr class="telmo">
-          <td>3062</td><td>TELMO GOMES</td><td></td><td></td><td></td>
+        <tr>
+          <!-- dia 25 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
         </tr>
-      </tbody>
+        <tr>
+          <!-- dia 26 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="weeknum"></td>
+        </tr>
+        <tr>
+          <!-- dia 27 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day switch"></td>
+          <td class="day switch"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
+        </tr>
+        <tr>
+          <!-- dia 28 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
+        </tr>
+        <tr class="shortday">
+          <!-- dia 29 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
+        </tr>
+        <tr class="normalday">
+          <!-- dia 30 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
+        </tr>
+        <tr class="longday">
+          <!-- dia 31 -->
+          <td class="daynum"></td>
+          <td class="weekday"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="day"></td>
+          <td class="weeknum"></td>
+        </tr>
     </table>
-    <i class="fa-solid fa-square-xmark closeResume"></i>
+    <div class="resumo">
+      <table class="resumoTable">
+        <thead>
+          <tr>
+            <th>CRO</th><th>Plantonista</th><th>Diurnos:</th><th>Noturnos:</th><th>Horas:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="adriano">
+            <td>8750</td><td>ADRIANO ERCOLANI</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="anaPetry">
+            <td>9109</td><td>ANA PETRY</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="anaLuisa">
+            <td>7447</td><td>ANA LUISA</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="carlos">
+            <td>7117</td><td>CARLOS LUZZI</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="cristiane">
+            <td>12182</td><td>CRISTIANE PAGLIARIN</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="estevao">
+            <td>4549</td><td>ESTEVÃO GASTAL</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="gilberto">
+            <td>16759</td><td>GILBERTO PANDOLFO</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="greice">
+            <td>6011</td><td>GREICE SILVEIRA</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="gustavo">
+            <td>13623</td><td>GUSTAVO FERNANDES</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="jean">
+            <td>17983</td><td>JEAN BALBINOTTI</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="jessica">
+            <td>23002</td><td>JESSICA SBABO</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="juvenal">
+            <td>7517</td><td>JUVENAL DAL CASTEL</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="karina">
+            <td>17664</td><td>KARINA VIDAL</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="leila">
+            <td>6232</td><td>LEILA VIANNA</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="luciane">
+            <td>10526</td><td>LUCIANE PANDOLFO</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="marcia">
+            <td>10380</td><td>MARCIA NEJAR</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="mariana">
+            <td>24604</td><td>MARIANA FIGUEIREDO</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="marlene">
+            <td>7298</td><td>MARLENE BANDEIRA</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="paulo">
+            <td>7241</td><td>PAULO COUTINHO</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="raquel">
+            <td>12546</td><td>RAQUEL VENTURA</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="rasquin">
+            <td></td><td>JOÃO RASQUIN</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="rosa">
+            <td>7939</td><td>ROSA CEREZER</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="stavros">
+            <td>12031</td><td>STAVROS GEORGIADIS</td><td></td><td></td><td></td>
+          </tr>
+          <tr class="telmo">
+            <td>3062</td><td>TELMO GOMES</td><td></td><td></td><td></td>
+          </tr>
+        </tbody>
+      </table>
+      <i class="fa-solid fa-square-xmark closeResume"></i>
+    </div>
   </div>
+
   <script src="scales.js"></script>
   <script src="myScale.js"></script>
+  <script src="swTheme.js"></script>
 </body>
 </html>

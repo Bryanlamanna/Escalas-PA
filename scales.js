@@ -22,7 +22,7 @@ for (let i = 0; i < databaseURLs.length; i++) {
     fetchAndProcessData(i);
   }
   
-  function fetchAndProcessData(index) {
+function fetchAndProcessData(index) {
     fetch(databaseURLs[index])
         .then(response => {
           if (!response.ok) {
@@ -39,7 +39,6 @@ for (let i = 0; i < databaseURLs.length; i++) {
           console.error('Erro:', error);
         });
   }
-  
 
   setTimeout(() => {
     location.reload();

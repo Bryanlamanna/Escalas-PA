@@ -24,6 +24,7 @@ var scales = [
   []
 ];
 
+
 plantoes.forEach(plantao => {
   plantao.textContent = '';
 })
