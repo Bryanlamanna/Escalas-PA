@@ -128,7 +128,7 @@ input {
 }
 
 .menuList a {
-  font-size: large;
+  font-size: 2em;
   text-decoration: none;
   color: white;
   margin-left: 5px;
@@ -160,7 +160,7 @@ input {
 
 .menuBtn {
   z-index: 1;
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
   position: absolute;
   right: .5em;
@@ -363,7 +363,7 @@ h1 {
       }
 
       button {
-        font-size: 1.2em;
+        font-size: 1.4em;
         min-height: 3em;
       }
       #tabela {
