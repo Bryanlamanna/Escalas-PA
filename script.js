@@ -12,7 +12,7 @@ const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
 const myScale = document.querySelector('.myScale');
-const diasDaSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 var scales = [
   [],
