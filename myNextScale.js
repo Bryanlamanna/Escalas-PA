@@ -291,7 +291,7 @@ modalBtn.addEventListener('click', () => {
     setTimeout(() => {
       menu.style.display = 'none';
     }, 50);
-    modalChave.style.display = 'block';
+    modalChave.style.display = 'flex';
     modalOn = true;
   }
 })

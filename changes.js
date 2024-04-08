@@ -16,6 +16,7 @@
         const input = document.createElement('input');
         input.value = currentValue;
         input.classList.add('input-cell');
+        input.style.width = '6em';
         
         // Substitui o conteúdo da célula pelo input
         this.innerHTML = '';

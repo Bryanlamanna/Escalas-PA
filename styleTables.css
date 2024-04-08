@@ -5,12 +5,8 @@
     display: flex;
   }
 
-  
-.logotipo {
-  position: absolute;
-  
-  left: 1.5em;
-}
+
+
 .closeMenu {
   border: none;
   transition: .3s;
@@ -56,9 +52,13 @@
   background-color: #7d004f;
 }
 
+.logotipo {
+  width: 13em; 
+}
+
 .menuBtn {
   z-index: 1;
-  font-size: 2em;
+  font-size: 1.95em;
   color: white;
   position: absolute;
   right: .5em;
@@ -90,9 +90,9 @@ table {
   }
 
   h1 {
-    margin-top: 1em;
     color: white;
     text-align: center;
+    font-size: 2em;
   }
 
   td {
@@ -136,7 +136,10 @@ table {
       width: 50%;
     }
 
-    
+
+    .menuList li i {
+      width: 1.5em;
+    }
 
     table {
       border-radius: 8px;
@@ -146,21 +149,30 @@ table {
         width: 100%;
         
       }
-
-      .menuList li i {
-        width: 1.5em;
-        font-size: 1.2em;
+      *{
+        font-size: .95em;
       }
 
       .menuList a {
-        font-size: 1.2em;
+        font-size: 1.5em;
+      }
+      .menuList i {
+        font-size: 1.5em;
+        width: 1.5em;
+      }
+
+      .row {
+        max-width: 100%;
       }
 
       .content {
         margin: 0 ;
         padding-left: 0;
         padding-right: .1em;
-          max-width: 90%;
+          max-width: 100%;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
       }
       
       th {
@@ -178,10 +190,9 @@ table {
       }
     
       h1 {
-        margin-top: 1em;
         color: white;
         text-align: center;
-        font-size: larger;
+        font-size: 1.5em;
       }
     
       td {
