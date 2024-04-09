@@ -11,6 +11,8 @@ const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
+const confirmBtn  = document.querySelector('.confirmBtn');
+const fixosBtn = document.querySelector('.goToFixos');
 const myScale = document.querySelector('.myScale');
 const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
@@ -23,10 +25,43 @@ var scales = [
   [],
   []
 ];
+let modalOn = false;
+const closeBtn = document.querySelector('.closeBtn');
 const menuBtn = document.querySelector('.menuBtn');
- const menu = document.querySelector('.menu');
- const closeMenuBtn = document.querySelector('.closeMenu'); 
+const menu = document.querySelector('.menu');
+const closeMenuBtn = document.querySelector('.closeMenu'); 
+const modalChave = document.querySelector('.modalChave');
 
+ closeBtn.addEventListener('click', () => {
+  modalChave.style.display = 'none'; 
+    modalOn = false;
+})
+
+ confirmBtn.addEventListener('click', () => {
+  let chave = document.querySelector('.chave').value;
+
+  if (chave === '4000') {
+    location.href = 'trocaFixos.html';
+  } else {
+    alert('Chave Incorreta!');
+    document.querySelector('.chave').value = '';
+  }
+  
+})
+
+ fixosBtn.addEventListener('click', () => {
+  if (modalOn) {
+    modalChave.style.display = 'none'; 
+    modalOn = false;
+  } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
+    modalChave.style.display = 'flex';
+    modalOn = true;
+  }
+ })
 
  menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';

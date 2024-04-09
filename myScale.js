@@ -53,7 +53,21 @@ const adrianoTD = document.querySelectorAll('.adriano td');
  const menuBtn = document.querySelector('.menuBtn');
  const menu = document.querySelector('.menu');
  const closeMenuBtn = document.querySelector('.closeMenu'); 
+ const fixosBtn = document.querySelector('.goToFixos');
 
+ fixosBtn.addEventListener('click', () => {
+  if (modalOn) {
+    modalChave.style.display = 'none'; 
+    modalOn = false;
+  } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
+    modalChave.style.display = 'flex';
+    modalOn = true;
+  }
+ })
 
  menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
@@ -358,6 +372,8 @@ confirmBtn.addEventListener('click', () => {
       cell.style.backgroundColor = 'white';
       cell.style.color = 'black';
     })
+  } else if (chave === '4000') {
+    location.href = 'trocaFixos.html';
   } else {
     alert('Chave Incorreta!');
     document.querySelector('.chave').value = '';
