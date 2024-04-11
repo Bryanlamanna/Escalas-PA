@@ -1,8 +1,4 @@
-
-
-
- 
- plantoes.forEach((cell, index) => {
+plantoes.forEach((cell, index) => {
     cell.addEventListener('click', function() {
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
@@ -16,6 +12,7 @@
         const input = document.createElement('input');
         input.value = currentValue;
         input.classList.add('input-cell');
+        input.style.width = '6em';
         
         // Substitui o conteúdo da célula pelo input
         this.innerHTML = '';
@@ -119,5 +116,5 @@ function setNewRed(position) {
   } else {
     console.error('Posição inválida.');
   }
-  }
+}
 

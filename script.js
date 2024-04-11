@@ -11,8 +11,10 @@ const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
+const confirmBtn  = document.querySelector('.confirmBtn');
+const fixosBtn = document.querySelector('.goToFixos');
 const myScale = document.querySelector('.myScale');
-const diasDaSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 var scales = [
   [],
@@ -23,24 +25,13 @@ var scales = [
   [],
   []
 ];
+let modalOn = false;
+const closeBtn = document.querySelector('.closeBtn');
 const menuBtn = document.querySelector('.menuBtn');
- const menu = document.querySelector('.menu');
- const closeMenuBtn = document.querySelector('.closeMenu'); 
-
-
- menuBtn.addEventListener('click', () => {
-  menu.style.display = 'block';
-  setTimeout(() => {
-    menu.style.right = '0px';
-  }, 50);
-})
- 
- closeMenuBtn.addEventListener('click', () => {
-  menu.style.right = '-100%';
-  setTimeout(() => {
-    menu.style.display = 'none';
-  }, 50);
- })
+const menu = document.querySelector('.menu');
+const closeMenuBtn = document.querySelector('.closeMenu'); 
+const confirmBtnFixo = document.querySelector('.confirmBtnFixo');
+const modalChaveFixo = document.querySelector('.modalChaveFixo');
 
 fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json')
     .then(response => response.json())
@@ -312,10 +303,49 @@ fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json')
     })
     .catch(error => console.error(error));
 
-
-plantoes.forEach(plantao => {
-  plantao.textContent = '';
+closeBtn.addEventListener('click', () => {
+  modalChaveFixo.style.display = 'none'; 
+    modalOn = false;
 })
+
+confirmBtnFixo.addEventListener('click', () => {
+  let chave = document.querySelector('.chave').value;
+
+  if (chave === '4024') {
+    location.href = 'trocaFixos.html';
+  } else {
+    alert('Chave Incorreta!');
+    document.querySelector('.chave').value = '';
+  }
+})
+
+ fixosBtn.addEventListener('click', () => {
+  if (modalOn) {
+    modalChaveFixo.style.display = 'none'; 
+    modalOn = false;
+  } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    }, 50);
+    modalChaveFixo.style.display = 'flex';
+    modalOn = true;
+  }
+ })
+
+menuBtn.addEventListener('click', () => {
+  menu.style.display = 'block';
+  setTimeout(() => {
+    menu.style.right = '0px';
+  }, 50);
+})
+ 
+closeMenuBtn.addEventListener('click', () => {
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  }, 50);
+ })
 
 previousBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
@@ -329,7 +359,6 @@ previousBtn.addEventListener('click', () => {
 
 currentBtn.addEventListener('click', () => {
   tabela.style.opacity = .5;
-  
   setTimeout(() => {
     index = 0;
     currentMonth()
@@ -349,10 +378,7 @@ nextBtn.addEventListener('click', () => {
 
 })
 
-
-
-
-function hideDays(dia) {
+function hiddeDays(dia) {
     if (dia == 28) {
         shortMonth.style.opacity = '0';
         normalMonth.style.opacity = '0';
@@ -372,6 +398,7 @@ function hideDays(dia) {
     }
 
 }
+
 function nextMonth() {
     // Criar um objeto Date para a data atual
     const dataAtual = new Date();
@@ -393,7 +420,7 @@ function nextMonth() {
     //obter o ultimo dia do mes
     const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
     //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
-    hideDays(ultimoDiaDoMes)
+    hiddeDays(ultimoDiaDoMes)
   
     // Obter o nome do dia da semana
     const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -413,8 +440,6 @@ function nextMonth() {
 }
 
 function currentMonth() {
-  
-  
   // Criar um objeto Date para a data atual
   const dataAtual = new Date();
   
@@ -435,7 +460,7 @@ function currentMonth() {
   //obter o ultimo dia do mes
   const ultimoDiaDoMes = new Date(dataAtual.getFullYear(), dataAtual.getMonth() + 1, 0).getDate()
   //passando o ultimo dia do mes como parametro para a função que oculta o dia 29, 30 e/ou 31
-  hideDays(ultimoDiaDoMes)
+  hiddeDays(ultimoDiaDoMes)
 
   // Obter o nome do dia da semana
   const nomeDoDiaDaSemana = diasDaSemana[diaDaSemanaProximoMes];
@@ -450,30 +475,12 @@ function currentMonth() {
 
   // Atualizar o titulo da pagina com o primeiro dia do mes
   document.querySelector('.title').innerHTML =('Escala de plantões FIXOS para o mes de ' + mesSeguinte +'/'+ anoAtual + '.');
-
 }
 
 function fillScale(dia) {
-    
   for (let i = 0; i < plantoes.length; i++) { 
       plantoes[i].innerHTML = scales[dia][i];
   }
-
-
-}
-
-function definirCoresNaTabela() {
-    const linhas = document.querySelectorAll('#tabela tr');
-
-  
-    // Array com as classes de cor
-    const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
-  
-    // Loop para atribuir classes de cor às linhas
-    linhas.forEach((linha, indice) => {
-      const classeDeCor = classesDeCor[indice % classesDeCor.length];
-      linha.classList.add(classeDeCor);
-    });
 }
 
 function setDayNum () {
@@ -500,21 +507,14 @@ function setWeekNum () {
   }
 }
 
-
 window.onload = () => {
-  
+  currentMonth();
+  setDayNum();
+  setWeekNum();
   setTimeout(() => {
     currentBtn.click();
     setTimeout(() => {
       currentBtn.click();
     },200)
   }, 500)
-
 }
-
-currentMonth();
-definirCoresNaTabela();
-setDayNum();
-setWeekNum();
-
-
