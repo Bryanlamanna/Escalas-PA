@@ -10,15 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-    <title>Escala PA</title>
+    <title>Uni-Escala | Próximo Mês</title>
 </head>
 <body>
-
   <div class="conteudo">
-    <div class="modalChave">
-      <i class="closeBtn fa-solid fa-square-xmark"></i>
-      <input type="text" id="inputValor" class="chave" placeholder="chave"> <br>
-      <button class="confirmBtn" style="padding: 2px; margin: 0;">Confirmar</button>
+    <div class="modalChaveFixo">
+      <i class="closeBtnFixo fa-solid fa-square-xmark"></i>
+      <input type="text" id="inputValor" class="chaveFixo" placeholder="chave"> <br>
+      <button class="confirmBtnFixo" style="padding: 2px; margin: 0;">Confirmar</button>
+    </div>
+    <div class="modalChaveTroca">
+      <i class="closeBtnTroca fa-solid fa-square-xmark"></i>
+      <input type="text" id="inputValor" class="chaveTroca" placeholder="chave"> <br>
+      <button class="confirmBtnTroca" style="padding: 2px; margin: 0;">Confirmar</button>
     </div>
     <div class="menu">
       <h1 style="margin-top: 1em;">Menu</h1>
@@ -42,8 +46,7 @@
         </li>
       </ul>
     </div>
-    <main style="text-align: center;">
-         
+    <main style="text-align: center;"> 
       <img src="assets/logo.png" style="margin-top: 1em;" alt="logotipo-uniodonto" class="logotipo">
         <br>
       <a href="#" class="menuBtn">
@@ -55,12 +58,9 @@
           <i class="fa-solid fa-circle-arrow-left"></i>
           ABRIL/2024
         </button>
-        </a>
+      </a>
       </div>
       <h1 class="title" style="margin-bottom: 1em;"></h1>
-    
-     
-    
     </main>
     <table id="tabela" style="border-radius: 4px;">
       <tr  class="cabec">
@@ -398,101 +398,13 @@
         
         
     </table>
-    <div class="resumo">
-      <table class="resumoTable">
-        <thead>
-          <tr>
-            <th>CRO</th><th>Plantonista</th><th>Diurnos:</th><th>Noturnos:</th><th>Horas:</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="adriano">
-            <td>8750</td><td>ADRIANO ERCOLANI</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="anaPetry">
-            <td>9109</td><td>ANA PETRY</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="anaLuisa">
-            <td>7447</td><td>ANA LUISA</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="carlos">
-            <td>7117</td><td>CARLOS LUZZI</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="cristiane">
-            <td>12182</td><td>CRISTIANE PAGLIARIN</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="estevao">
-            <td>4549</td><td>ESTEVÃO GASTAL</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="gilberto">
-            <td>16759</td><td>GILBERTO PANDOLFO</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="greice">
-            <td>6011</td><td>GREICE SILVEIRA</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="gustavo">
-            <td>13623</td><td>GUSTAVO FERNANDES</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="jean">
-            <td>17983</td><td>JEAN BALBINOTTI</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="jessica">
-            <td>23002</td><td>JESSICA SBABO</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="juvenal">
-            <td>7517</td><td>JUVENAL DAL CASTEL</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="karina">
-            <td>17664</td><td>KARINA VIDAL</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="leila">
-            <td>6232</td><td>LEILA VIANNA</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="luciane">
-            <td>10526</td><td>LUCIANE PANDOLFO</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="marcia">
-            <td>10380</td><td>MARCIA NEJAR</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="mariana">
-            <td>24604</td><td>MARIANA FIGUEIREDO</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="marlene">
-            <td>7298</td><td>MARLENE BANDEIRA</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="paulo">
-            <td>7241</td><td>PAULO COUTINHO</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="raquel">
-            <td>12546</td><td>RAQUEL VENTURA</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="rasquin">
-            <td>xxxx</td><td>JOÃO RASQUIN</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="rosa">
-            <td>7939</td><td>ROSA CEREZER</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="stavros">
-            <td>12031</td><td>STAVROS GEORGIADIS</td><td></td><td></td><td></td>
-          </tr>
-          <tr class="telmo">
-            <td>3062</td><td>TELMO GOMES</td><td></td><td></td><td></td>
-          </tr>
-        </tbody>
-      </table>
-      <i class="fa-solid fa-square-xmark closeResume"></i>
-    </div>
-
   </div>
-   
-
-
   <script src="myNextScale.js"></script>
   <script>
     setTimeout(() => {
       location.reload();
     }, 60000);
   </script>
-  
+
 </body>
 </html>

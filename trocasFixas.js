@@ -7,18 +7,19 @@ const quintas = document.querySelectorAll(".quinta td");
 const sextas = document.querySelectorAll(".sexta td");
 const sabados = document.querySelectorAll(".sabado td");
 const menuBtn = document.querySelector('.menuBtn');
- const menu = document.querySelector('.menu');
- const closeMenuBtn = document.querySelector('.closeMenu'); 
-
-
- menuBtn.addEventListener('click', () => {
+const menu = document.querySelector('.menu');
+const closeMenuBtn = document.querySelector('.closeMenu'); 
+/*
+const dias = ["domingos", "segundas", "tercas", "quartas", "quintas", "sextas", "sabados"];
+*/
+menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
   }, 50);
 })
  
- closeMenuBtn.addEventListener('click', () => {
+closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
@@ -97,6 +98,7 @@ function fillTable(escalas) {
 
 function updateEscala (diaSemana, dia) {
 
+
         document.querySelectorAll(`.${diaSemana} td`).forEach((td, index) => {
                 td.addEventListener("click", () => {
 
@@ -158,6 +160,17 @@ function updateEscala (diaSemana, dia) {
 
 }
 
+const dias = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
+const ordinais = ["primeiro", "segundo", "terceiro", "quarto", "quinto"];
+
+dias.forEach((dia, indexDia) => {
+    ordinais.forEach((ordinal, indexOrdinal) => {
+        let nomeEscala = `${ordinal}${dia.charAt(0).toUpperCase() + dia.slice(1)}`;
+        updateEscala(nomeEscala, dias[indexDia]);
+    });
+});
+
+/*
 const dias = ["domingos", "segundas", "tercas", "quartas", "quintas", "sextas", "sabados"];
 
 updateEscala("primeiroDomingo", dias[0]);
@@ -170,11 +183,11 @@ updateEscala("segundoSabado" , dias[6]);
 updateEscala("terceiroSabado" , dias[6]);
 updateEscala("quartoSabado" , dias[6]);
 updateEscala("quintoSabado" , dias[6]);
-updateEscala("primeiraQuarta ", dias[3]);
+updateEscala("primeiraQuarta", dias[3]);
 updateEscala("segundaQuarta" , dias[3]);
-updateEscala("terceiraQuarta ", dias[3]);
-updateEscala("quartaQuarta " , dias[3]);
-updateEscala("quintaQuarta " , dias[3]);
+updateEscala("terceiraQuarta", dias[3]);
+updateEscala("quartaQuarta" , dias[3]);
+updateEscala("quintaQuarta" , dias[3]);
 updateEscala("primeiraQuinta" , dias[4]);
 updateEscala("segundaQuinta" , dias[4]);
 updateEscala("terceiraQuinta" , dias[4]);
@@ -196,6 +209,6 @@ updateEscala("terceiraTerca" , dias[2]);
 updateEscala("quartaTerca" , dias[2]);
 updateEscala("quintaTerca" , dias[2]);
 
-
+*/
 
 

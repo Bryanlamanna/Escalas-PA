@@ -2,8 +2,6 @@ const weekdays = document.querySelectorAll('.weekday');
 const daynums = document.querySelectorAll('.daynum');
 const weeknums = document.querySelectorAll('.weeknum');
 const plantoes = document.querySelectorAll('.day');
-let index = 0;
-let indice = 0;
 const shortMonth = document.querySelector('.shortday');
 const normalMonth = document.querySelector('.normalday');
 const longMonth = document.querySelector('.longday');
@@ -11,332 +9,100 @@ const tabela = document.querySelector('#tabela');
 const nextBtn = document.querySelector('.nextBtn');
 const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
-const myScale = document.querySelector('.myScale');
-const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
-const modalChave = document.querySelector('.modalChave');
-const modalBtn = document.querySelector('.editBtn');
+const confirmBtnTroca  = document.querySelector('.confirmBtnTroca');
+const confirmBtnFixo = document.querySelector('.confirmBtnFixo');
+const modalChaveFixo = document.querySelector('.modalChaveFixo');
+const modalChaveTroca = document.querySelector('.modalChaveTroca');
+const trocasBtn = document.querySelector('.editBtn');
+const fixosBtn = document.querySelector('.goToFixos');
 let modalOn = false;
-const confirmBtn  = document.querySelector('.confirmBtn');
-const options = document.querySelectorAll('.dropdown-content a');
-const closeBtn = document.querySelector('.closeBtn');
-const nameBtn = document.querySelector('.dropBtn');
-let optionsOn = false;
-const resumeBtn = document.querySelector('.resumeBtn');
-const modalResume = document.querySelector('.resumo');
-let resumeOn = false;
-const adrianoTD = document.querySelectorAll('.adriano td');
- const anaLuisaTD = document.querySelectorAll('.anaLuisa td');
- const anaPetryTD = document.querySelectorAll('.anaPetry td');
- const luzziTD = document.querySelectorAll('.carlos td');
- const crisTD = document.querySelectorAll('.cristiane td');
- const estevaoTD = document.querySelectorAll('.estevao td');
- const gilbertoTD = document.querySelectorAll('.gilberto td');
- const greiceTD = document.querySelectorAll('.greice td');
- const gustavoTD = document.querySelectorAll('.gustavo td');
- const jeanTD = document.querySelectorAll('.jean td');
- const jessicaTD = document.querySelectorAll('.jessica td');
- const juvenalTD = document.querySelectorAll('.juvenal td');
- const karinaTD = document.querySelectorAll('.karina td');
- const leilaTD = document.querySelectorAll('.leila td');
- const lucianeTD = document.querySelectorAll('.luciane td');
- const marciaTD = document.querySelectorAll('.marcia td');
- const marianaTD = document.querySelectorAll('.mariana td');
- const marleneTD = document.querySelectorAll('.marlene td');
- const pauloTD = document.querySelectorAll('.paulo td');
- const raquelTD = document.querySelectorAll('.raquel td');
- const rasquinTD = document.querySelectorAll('.rasquin td');
- const rosaTD = document.querySelectorAll('.rosa td');
- const stavrosTD = document.querySelectorAll('.stavros td');
- const telmoTD = document.querySelectorAll('.telmo td');
- const closeResume = document.querySelector('.closeResume');
- const menuBtn = document.querySelector('.menuBtn');
- const menu = document.querySelector('.menu');
- const closeMenuBtn = document.querySelector('.closeMenu'); 
- const fixosBtn = document.querySelector('.goToFixos');
+const closeBtnFixo = document.querySelector('.closeBtnFixo');
+const closeBtnTroca = document.querySelector('.closeBtnTroca');
+const menuBtn = document.querySelector('.menuBtn');
+const menu = document.querySelector('.menu');
+const closeMenuBtn = document.querySelector('.closeMenu'); 
+const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.'];
+const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 
- fixosBtn.addEventListener('click', () => {
+fixosBtn.addEventListener('click', () => {
   if (modalOn) {
-    modalChave.style.display = 'none'; 
+    modalChaveFixo.style.display = 'none'; 
     modalOn = false;
   } else {
     menu.style.right = '-100%';
     setTimeout(() => {
       menu.style.display = 'none';
     }, 50);
-    modalChave.style.display = 'flex';
+    modalChaveFixo.style.display = 'flex';
     modalOn = true;
   }
- })
+})
 
-
- menuBtn.addEventListener('click', () => {
+menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
   }, 50);
 })
  
- closeMenuBtn.addEventListener('click', () => {
+closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
   }, 50);
- })
-
- closeResume.addEventListener('click', () => {
-   modalResume.style.display = 'none';
-   resumeOn = false;
- })
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    if (resumeOn) {
-      modalResume.style.display = 'none';
-      resumeOn = false;
-    }
-  }
 })
-/*
-resumeBtn.addEventListener('click', () => {
-  if (resumeOn) {
-    modalResume.style.display = 'none';
-    resumeOn = false;
-  } else {
-    modalResume.style.display = 'flex';
-    modalResume.style.backgroundColor = 'rgb(0, 0, 0, 0.6)';
-    resumeOn = true;
-  }
-})
-*/
-function prencherDiurnos(nameCount) {
-    adrianoTD[2].innerHTML = nameCount['ADRIANO'] || '0';
-    anaLuisaTD[2].innerHTML = nameCount['ANA LUISA']  || '0';
-    anaPetryTD[2].innerHTML = nameCount['ANA PETRY'] || '0';
-    luzziTD[2].innerHTML = nameCount['LUZZI'] || '0';
-    crisTD[2].innerHTML = nameCount['CRISTIANE']  || '0';
-    estevaoTD[2].innerHTML = nameCount['ESTEVÃO'] || '0';
-    gilbertoTD[2].innerHTML = nameCount['GILBERTO'] || '0';
-    greiceTD[2].innerHTML = nameCount['GREICE'] || '0';
-    gustavoTD[2].innerHTML = nameCount['GUSTAVO'] || '0';
-    jeanTD[2].innerHTML = nameCount['JEAN'] || '0';
-    jessicaTD[2].innerHTML = nameCount['JESSICA'] || '0';
-    juvenalTD[2].innerHTML = nameCount['JUVENAL'] || '0';
-    karinaTD[2].innerHTML = nameCount['KARINA'] || '0';
-    leilaTD[2].innerHTML = nameCount['LEILA'] || '0';
-    lucianeTD[2].innerHTML = nameCount['LUCIANE'] || '0';
-    marciaTD[2].innerHTML = nameCount['MARCIA'] || '0';
-    marianaTD[2].innerHTML = nameCount['MARIANA'] || '0';
-    marleneTD[2].innerHTML = nameCount['MARLENE'] || '0';
-    pauloTD[2].innerHTML = nameCount['COUTINHO'] || '0';
-    raquelTD[2].innerHTML = nameCount['RAQUEL'] || '0';
-    rasquinTD[2].innerHTML = nameCount['RASQUIN'] || '0';
-    rosaTD[2].innerHTML = nameCount['ROSA'] || '0';
-    stavrosTD[2].innerHTML = nameCount['STAVROS'] || '0';
-    telmoTD[2].innerHTML = nameCount['TELMO']   || '0';
-    
 
-}
-
-function prencherNoturnos(nameCount) {
-  adrianoTD[3].innerHTML = nameCount['ADRIANO'] || '0';  
-  anaLuisaTD[3].innerHTML = nameCount['ANA LUISA'] || '0';
-  anaPetryTD[3].innerHTML = nameCount['ANA PETRY'] || '0';
-  luzziTD[3].innerHTML = nameCount['LUZZI'] || '0';
-  crisTD[3].innerHTML = nameCount['CRISTIANE'] || '0';
-  estevaoTD[3].innerHTML = nameCount['ESTEVÃO'] || '0';
-  gilbertoTD[3].innerHTML = nameCount['GILBERTO'] || '0';
-  greiceTD[3].innerHTML = nameCount['GREICE'] || '0';
-  gustavoTD[3].innerHTML = nameCount['GUSTAVO'] || '0';
-  jeanTD[3].innerHTML = nameCount['JEAN'] || '0';
-  jessicaTD[3].innerHTML = nameCount['JESSICA'] || '0';
-  juvenalTD[3].innerHTML = nameCount['JUVENAL'] || '0';
-  karinaTD[3].innerHTML = nameCount['KARINA'] || '0';
-  leilaTD[3].innerHTML = nameCount['LEILA'] || '0';
-  lucianeTD[3].innerHTML = nameCount['LUCIANE'] || '0';
-  marciaTD[3].innerHTML = nameCount['MARCIA'] || '0';
-  marianaTD[3].innerHTML = nameCount['MARIANA'] || '0';
-  marleneTD[3].innerHTML = nameCount['MARLENE'] || '0';
-  pauloTD[3].innerHTML = nameCount['COUTINHO'] || '0';
-  raquelTD[3].innerHTML = nameCount['RAQUEL'] || '0';
-  rasquinTD[3].innerHTML = nameCount['RASQUIN'] || '0';
-  rosaTD[3].innerHTML = nameCount['ROSA'] || '0';
-  stavrosTD[3].innerHTML = nameCount['STAVROS'] || '0';
-  telmoTD[3].innerHTML = nameCount['TELMO'] || '0';
-
-
-}
-
-function contarHoras(escalaAtual) {
-
-  let noturnos = [];
-
-  for (let i = 3; i < escalaAtual.length; i += 4) {
-    noturnos.push(escalaAtual[i]);
-  }
-
-  let escalaSomada = escalaAtual.concat(noturnos);
-
-
-  //CRIAR OBJETO COM A QUANTIDADE DE HORAS POR NOME
-
-  let nameCount = {};
-
-  escalaSomada.forEach(name => {
-    if (nameCount[name]) {
-      nameCount[name] += 1;
-    } else {
-      nameCount[name] = 1;
-    }
-  })
-
-  for (const chave in nameCount) {
-    if (nameCount.hasOwnProperty(chave)) {
-        nameCount[chave] *= 6;
-    }
-}
-
-  prencherHoras(nameCount);
-}
-
-function prencherHoras(nameCount) {
-  adrianoTD[4].innerHTML = nameCount['ADRIANO'] || '0';
-  anaLuisaTD[4].innerHTML = nameCount['ANA LUISA'] || '0';
-  anaPetryTD[4].innerHTML = nameCount['ANA PETRY'] || '0';
-  luzziTD[4].innerHTML = nameCount['LUZZI'] || '0';
-  crisTD[4].innerHTML = nameCount['CRISTIANE']  || '0';
-  estevaoTD[4].innerHTML = nameCount['ESTEVÃO'] || '0';
-  gilbertoTD[4].innerHTML = nameCount['GILBERTO'] || '0';
-  greiceTD[4].innerHTML = nameCount['GREICE'] || '0';
-  gustavoTD[4].innerHTML = nameCount['GUSTAVO'] || '0';
-  jeanTD[4].innerHTML = nameCount['JEAN'] || '0';
-  jessicaTD[4].innerHTML = nameCount['JESSICA'] || '0';
-  juvenalTD[4].innerHTML = nameCount['JUVENAL'] || '0';
-  karinaTD[4].innerHTML = nameCount['KARINA'] || '0';
-  leilaTD[4].innerHTML = nameCount['LEILA'] || '0';
-  lucianeTD[4].innerHTML = nameCount['LUCIANE'] || '0';
-  marciaTD[4].innerHTML = nameCount['MARCIA'] || '0';
-  marianaTD[4].innerHTML = nameCount['MARIANA'] || '0';
-  marleneTD[4].innerHTML = nameCount['MARLENE'] || '0';
-  pauloTD[4].innerHTML = nameCount['COUTINHO'] || '0';
-  raquelTD[4].innerHTML = nameCount['RAQUEL'] || '0';
-  rasquinTD[4].innerHTML = nameCount['RASQUIN'] || '0';
-  rosaTD[4].innerHTML = nameCount['ROSA'] || '0';
-  stavrosTD[4].innerHTML = nameCount['STAVROS'] || '0';
-  telmoTD[4].innerHTML = nameCount['TELMO'] || '0';
-
-}
-
-function contarPLantaoDiurno(escalaAtual) {
-
-  
-  //EXTRAIR OS NOTURNOS DA ESCALA
-  
-  for (let i = 3; i < escalaAtual.length; i += 3  ) {
-    escalaAtual.splice(i, 1);
-  }
-
-  //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
-
-  let nameCount = {};
-
-  escalaAtual.forEach(name => {
-    if (nameCount[name]) {
-      nameCount[name] += 1;
-    } else {
-      nameCount[name] = 1;
-    }
-  });
-
-
-  prencherDiurnos(nameCount);
-
-  }
-  
-function contarPLantaoNoturno(escalaAtual) {
-
-    //EXTRAIR OS NOTURNOS DA ESCALA
-       
-    let namesNight = [];
-
-    for (let i = 3; i < escalaAtual.length; i += 4) {
-      namesNight.push(escalaAtual[i]);      
-    }
-
-    
-    //CRIAR UM OBJETO COM A QUANTIDADE DE PLANTOES POR NOME
-
-    let nameCount = {};
-
-    namesNight.forEach(name => {
-      if (nameCount[name]) {
-        nameCount[name] += 1;
-      } else {
-        nameCount[name] = 1;
-      }
-    })
-
-    prencherNoturnos(nameCount);
-
-  }
-
-/*
-nameBtn.addEventListener('click', () => {
-  if (optionsOn) {
-    document.querySelector('.dropdown-content').style.visibility = 'hidden';
-    optionsOn = false;
-  } else {
-    document.querySelector('.dropdown-content').style.visibility = 'visible';
-    optionsOn = true;
-  }
- 
-})
-*/
-closeBtn.addEventListener('click', () => {
-  modalChave.style.display = 'none'; 
+closeBtnFixo.addEventListener('click', () => {
+  modalChaveFixo.style.display = 'none'; 
     modalOn = false;
 })
 
-modalBtn.addEventListener('click', () => {
+closeBtnTroca.addEventListener('click', () => {
+  modalChaveTroca.style.display = 'none'; 
+    modalOn = false;
+})
+
+trocasBtn.addEventListener('click', () => {
   if (modalOn) {
-    modalChave.style.display = 'none'; 
+    modalChaveTroca.style.display = 'none'; 
     modalOn = false;
   } else {
     menu.style.right = '-100%';
     setTimeout(() => {
       menu.style.display = 'none';
     }, 50);
-    modalChave.style.display = 'flex';
+    modalChaveTroca.style.display = 'flex';
     modalOn = true;
   }
 })
 
-document.querySelector('.chave').addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    confirmBtn.click();
-  }
-})
-
-confirmBtn.addEventListener('click', () => {
-  let chave = document.querySelector('.chave').value;
+confirmBtnTroca.addEventListener('click', () => {
+  let chave = document.querySelector('.chaveTroca').value;
 
   if (chave === '4024') {
     includeScript();
-    modalChave.style.display = 'none'; 
+    modalChaveTroca.style.display = 'none'; 
     modalOn = false;
     plantoes.forEach(cell => {
       cell.style.backgroundColor = 'white';
       cell.style.color = 'black';
     })
-  } else if (chave === '4000') {
-    location.href = 'trocaFixos.html';
   } else {
     alert('Chave Incorreta!');
-    document.querySelector('.chave').value = '';
+    document.querySelector('.chaveTroca').value = '';
   }
   
 })
 
+confirmBtnFixo.addEventListener('click', () => {
+  let chave = document.querySelector('.chave').value;
+   if (chave === '4024') {
+    location.href = 'trocaFixos.html';
+  } else {
+    alert('Chave Incorreta!');
+  }
+  
+})
 
 function includeScript() {
   var script = document.createElement('script');
@@ -344,21 +110,6 @@ function includeScript() {
   script.type = 'text/javascript';
   script.id = 'changesNext'; // Atribui um ID ao script
   document.head.appendChild(script);
-}
-
-
-function definirCoresNaTabela() {
-  const tabela = document.querySelector('.tabela');
-  const linhas = document.querySelectorAll('#tabela tr');
-
-  // Array com as classes de cor
-  const classesDeCor = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7'];
-
-  // Loop para atribuir classes de cor às linhas
-  linhas.forEach((linha, indice) => {
-    const classeDeCor = classesDeCor[indice % classesDeCor.length];
-    linha.classList.add(classeDeCor);
-  });
 }
 
 function setDayNum () {
@@ -385,7 +136,7 @@ for (let i = 28; i < weeknums.length; i++) {
 }
 }
 
-function hideDays(dia) {
+function hiddeDays(dia) {
   const shortTd = document.querySelectorAll('.shortday td');
   const normalTd = document.querySelectorAll('.normalday td');
   const longTd = document.querySelectorAll('.longday td');
@@ -463,7 +214,7 @@ function createMyScale() {
     // Atualizar o titulo da pagina com o primeiro dia do mes
     document.querySelector('.title').innerHTML =('Escala de ' + mesSeguinte + '/'+ anoAtual + '.');
   
- }
+}
  
  function saveScale(lastDay) {
  
@@ -489,17 +240,13 @@ function createMyScale() {
       for (let i = 0; i < plantoes.length; i++) { 
         plantoes[i].innerHTML = data[i];
       }
-
-      hideDays(lastDay);
-      contarHoras(data);
-      contarPLantaoNoturno(data);
-      contarPLantaoDiurno(data);
+      hiddeDays(lastDay);   
     })
     .catch(error => {
       console.error('Erro:', error);
     });
   
- }
+}
 
  function updateColors() {
 
@@ -526,48 +273,11 @@ function createMyScale() {
 
    
 
-  }
-
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      const selectedOption = option.textContent;
-      document.querySelector('.dropdown-content').style.visibility = 'hidden';
-      optionsOn = false;
-  
-      if (selectedOption === 'NENHUM') {
-        window.location.reload();
-      } else {
-        buscarCelulas(selectedOption);
-      }
-      
-    })
-  })
-  
-
-function buscarCelulas(option) {
-  
-  plantoes.forEach(function(celula) {
-    if (celula.textContent.trim() === option) {
-      // Realiza a ação desejada para as células com o nome selecionado
-       
-      celula.style.backgroundColor = "black";
-      celula.style.color = "white";  
-      // Exemplo: Altera a cor de fundo
-    } else {
-      // Reverte as alterações em células que não contêm o nome selecionado
-      celula.style.backgroundColor = ""; // Exemplo: Remove a cor de fundo
-      celula.style.color = "unset";
-    }
-  });
 }
 
-  window.onload = () => {
+window.onload = () => {
     updateColors();
     createMyScale();
-    definirCoresNaTabela();
     setDayNum();
     setWeekNum();
-  }
-
-
-
+ }

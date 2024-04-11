@@ -1,8 +1,4 @@
-
-
-
- 
- plantoes.forEach((cell, index) => {
+plantoes.forEach((cell, index) => {
     cell.addEventListener('click', function() {
         // Guarda o conteúdo atual da célula
         const currentValue = this.textContent;
@@ -92,7 +88,7 @@ function updateDatabase(newScale) {
       .catch(error => {
         console.error('Erro:', error);
       });
-  }
+}
   
 function setNewRed(position) {
      // Primeiro, verifica se a posição é válida
@@ -121,5 +117,5 @@ function setNewRed(position) {
   } else {
     console.error('Posição inválida.');
   }
-  }
+}
 
