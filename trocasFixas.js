@@ -98,6 +98,7 @@ function fillTable(escalas) {
 
 function updateEscala (diaSemana, dia) {
 
+
         document.querySelectorAll(`.${diaSemana} td`).forEach((td, index) => {
                 td.addEventListener("click", () => {
 
