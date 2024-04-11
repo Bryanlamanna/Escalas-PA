@@ -26,7 +26,7 @@ var scales = [
   []
 ];
 let modalOn = false;
-const closeBtn = document.querySelector('.closeBtn');
+const closeBtnFixo = document.querySelector('.closeBtnFixo');
 const menuBtn = document.querySelector('.menuBtn');
 const menu = document.querySelector('.menu');
 const closeMenuBtn = document.querySelector('.closeMenu'); 
@@ -303,7 +303,7 @@ fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json')
     })
     .catch(error => console.error(error));
 
-closeBtn.addEventListener('click', () => {
+closeBtnFixo.addEventListener('click', () => {
   modalChaveFixo.style.display = 'none'; 
     modalOn = false;
 })
