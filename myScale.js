@@ -1,3 +1,4 @@
+const overlay = document.getElementById('pageOverlay'); 
 const weekdays = document.querySelectorAll('.weekday');
 const daynums = document.querySelectorAll('.daynum');
 const weeknums = document.querySelectorAll('.weeknum');
@@ -11,37 +12,60 @@ const currentBtn = document.querySelector('.currentBtn');
 const previousBtn = document.querySelector('.previousBtn');
 const confirmBtnTroca  = document.querySelector('.confirmBtnTroca');
 const confirmBtnFixo = document.querySelector('.confirmBtnFixo');
+const confirmBtnMes = document.querySelector('.confirmBtnMes');
 const modalChaveFixo = document.querySelector('.modalChaveFixo');
 const modalChaveTroca = document.querySelector('.modalChaveTroca');
+const modalNextMonth = document.querySelector('.modalTrocaMes');
 const trocasBtn = document.querySelector('.editBtn');
 const fixosBtn = document.querySelector('.goToFixos');
+const nextScaleBtn = document.querySelector('.goToNext');
 let modalOn = false;
 const closeBtnFixo = document.querySelector('.closeBtnFixo');
 const closeBtnTroca = document.querySelector('.closeBtnTroca');
+const closeBtnMes = document.querySelector('.closeBtnMes');
 const menuBtn = document.querySelector('.menuBtn');
 const menu = document.querySelector('.menu');
 const closeMenuBtn = document.querySelector('.closeMenu'); 
 const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.'];
-const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
+const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+nextScaleBtn.addEventListener('click', () => {
+  if (modalOn) {
+    modalNextMonth.style.display = 'none'; 
+    modalOn = false;
+    overlay.style.display = 'none';
+  } else {
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+  }, 50);
+    modalNextMonth.style.display = 'flex';
+    overlay.style.display = 'block';
+    modalOn = true;
+}
+})
 
 fixosBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveFixo.style.display = 'none'; 
     modalOn = false;
+    overlay.style.display = 'none';
   } else {
     menu.style.right = '-100%';
     setTimeout(() => {
       menu.style.display = 'none';
     }, 50);
     modalChaveFixo.style.display = 'flex';
+    overlay.style.display = 'block';
     modalOn = true;
   }
- })
+})
 
 menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
+    overlay.style.display = 'block';
   }, 50);
 })
  
@@ -49,22 +73,32 @@ closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
+    overlay.style.display = 'none';
   }, 50);
- })
+})
 
 closeBtnTroca.addEventListener('click', () => {
   modalChaveTroca.style.display = 'none'; 
+  overlay.style.display = 'none';
     modalOn = false;
 })
 
 closeBtnFixo.addEventListener('click', () => {
   modalChaveFixo.style.display = 'none'; 
+  overlay.style.display = 'none';
+    modalOn = false;
+})
+
+closeBtnMes.addEventListener('click', () => {
+  modalNextMonth.style.display = 'none';
+  overlay.style.display = 'none';
     modalOn = false;
 })
 
 trocasBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveTroca.style.display = 'none'; 
+    overlay.style.display = 'none';
     modalOn = false;
   } else {
     menu.style.right = '-100%';
@@ -72,7 +106,23 @@ trocasBtn.addEventListener('click', () => {
       menu.style.display = 'none';
     }, 50);
     modalChaveTroca.style.display = 'flex';
+    overlay.style.display = 'block';
     modalOn = true;
+  }
+})
+
+confirmBtnMes.addEventListener('click', () => {
+  let chave = document.querySelector('.chaveMes').value;
+
+  if (chave === '4024') {
+    if (confirm('Confirma a troca de mês?')) {
+      switchMonth();
+    } else {
+      alert('Operação cancelada');
+    }
+  } else {
+    alert('Chave Incorreta!');
+    document.querySelector('.chaveMes').value = '';
   }
 })
 
@@ -83,6 +133,7 @@ confirmBtnTroca.addEventListener('click', () => {
     includeScript();
     modalChaveTroca.style.display = 'none'; 
     modalOn = false;
+    overlay.style.display = 'none';
     plantoes.forEach(cell => {
       cell.style.backgroundColor = 'white';
       cell.style.color = 'black';
@@ -302,8 +353,346 @@ function updateColors() {
    .catch(error => console.error('Ocorreu um erro ao obter os dados:', error));
 }
 
+async function makeScale(day) {
+  try {
+const response = await fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json');
+const escalas = await response.json();
+var scales = [
+ [],
+ [],
+ [],
+ [],
+ [],
+ [],
+ []
+];
+// BLOCO PARA CRIAR AS ESCALAS PARA CADA MÊS         
+const escalaDom = []
+ .concat(escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado);
+
+const escalaSeg = []
+ .concat(escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo);
+
+const escalaTer = []
+ .concat(escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda);
+
+const escalaQua = []
+ .concat(escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca);
+
+const escalaQui = []
+ .concat(escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta);
+
+const escalaSex = []
+ .concat(escalas.sextas.primeiraSexta,
+   escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quintaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta);
+
+const escalaSab = []
+ .concat(escalas.sabados.primeiroSabado,
+   escalas.domingos.primeiroDomingo,
+   escalas.segundas.primeiraSegunda,
+   escalas.tercas.primeiraTerca,
+   escalas.quartas.primeiraQuarta,
+   escalas.quintas.primeiraQuinta,
+   escalas.sextas.primeiraSexta,
+   escalas.sabados.segundoSabado,
+   escalas.domingos.segundoDomingo,
+   escalas.segundas.segundaSegunda,
+   escalas.tercas.segundaTerca,
+   escalas.quartas.segundaQuarta,
+   escalas.quintas.segundaQuinta,
+   escalas.sextas.segundaSexta,
+   escalas.sabados.terceiroSabado,
+   escalas.domingos.terceiroDomingo,
+   escalas.segundas.terceiraSegunda,
+   escalas.tercas.terceiraTerca,
+   escalas.quartas.terceiraQuarta,
+   escalas.quintas.terceiraQuinta,
+   escalas.sextas.terceiraSexta,
+   escalas.sabados.quartoSabado,
+   escalas.domingos.quartoDomingo,
+   escalas.segundas.quartaSegunda,
+   escalas.tercas.quartaTerca,
+   escalas.quartas.quartaQuarta,
+   escalas.quintas.quartaQuinta,
+   escalas.sextas.quartaSexta,
+   escalas.sabados.quintoSabado,
+   escalas.domingos.quintoDomingo,
+   escalas.segundas.quintaSegunda,
+   escalas.tercas.quintaTerca,
+   escalas.quartas.quintaQuarta,
+   escalas.quintas.quintaQuinta,
+   escalas.sextas.quintaSexta);
+
+scales = [escalaDom, escalaSeg, escalaTer, escalaQua, escalaQui, escalaSex, escalaSab];
+return scales[day];
+} catch (error) {
+return console.error(error);
+}
+   
+}
+
+function switchMonth() {  
+ const escalaProximo = fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json')
+                     .then(response => response.json())
+                     .then( data => {
+                       fetch ('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThisTeste.json', {
+                         method: 'PUT',
+                         body: JSON.stringify(data),
+                         headers: {
+                           'Content-Type': 'application/json'
+                         }
+                       })  
+                     });
+ 
+ const coresProximo = fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext.json')
+                     .then(response => response.json())
+                     .then( data => {
+                       fetch ('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThisTeste.json', {
+                         method: 'PUT',
+                         body: JSON.stringify(data),
+                         headers: {
+                           'Content-Type': 'application/json'
+                         }
+                       })
+                     });
+
+ const today = new Date();
+ const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+ const firstDayNextMonth = nextMonth.getDay();
+ const register = `${mesesDoAno[today.getMonth()]}-${today.getFullYear()}`;                 
+
+ const escalaAtual = fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json')
+                     .then(response => response.json())
+                     .then( data => {
+                       fetch (`https://scalesdb-76ec1-default-rtdb.firebaseio.com/escala${register}.json`, {
+                         method: 'PUT',
+                         body: JSON.stringify(data),
+                         headers: {
+                           'Content-Type': 'application/json'
+                         }
+                     })
+                     });
+
+
+ makeScale(firstDayNextMonth).then(data => {
+       fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNextTeste.json', {
+         method: 'PUT',
+         body: JSON.stringify(data),
+         headers: {
+           'Content-Type': 'application/json'
+         }
+       })
+       .catch(error => console.error(error));
+ });    
+
+}
+
+
 window.onload = () => {
-    updateColors()
+    updateColors();
     createMyScale();
     setDayNum();
     setWeekNum();

@@ -13,6 +13,7 @@
     <title>Uni-Escala | Mês Atual</title>
 </head>
 <body>
+  <div id="pageOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;"></div>
   <div class="conteudo">
     <div class="modalChaveFixo">
       <i class="closeBtnFixo fa-solid fa-square-xmark"></i>
@@ -23,6 +24,12 @@
       <i class="closeBtnTroca fa-solid fa-square-xmark"></i>
       <input type="text" id="inputValor" class="chaveTroca" placeholder="chave"> <br>
       <button class="confirmBtnTroca" style="padding: 2px; margin: 0;">Confirmar</button>
+    </div>
+    <div class="modalTrocaMes" style="width: 40%; justify-content: center;">
+      <i class="closeBtnMes fa-solid fa-square-xmark"></i>
+      <h1 style="margin-bottom: 1em;" class="mes">Trocar escala para o proximo mês? <br> (esta ação é irreversível!)</h1>
+      <input type="text" id="inputValor" class="chaveMes" placeholder="chave" style="margin: 0 auto; width: 6em;"> <br>
+      <button class="confirmBtnMes" style="padding: 2px; margin: 0 auto; width: 6em;">Confirmar</button>
     </div>
     <div class="menu">
       <h1 style="margin-top: 1em;">Menu</h1>
@@ -40,11 +47,14 @@
           <i class="fa-solid fa-user-pen"></i>
           <a href="#" target="_self">Trocar Fixo</a>
         </li>
+        <li class="goToNext">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <a href="#" target="_self">Avançar Escala</a>
+        </li>
         <li>
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <a href="https://www.uniodontopoa.com.br/" target="_blank">Uniodonto</a>
         </li>
-
       </ul>
     </div>
     <main style="text-align: center;">

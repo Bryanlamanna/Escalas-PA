@@ -1,3 +1,4 @@
+const overlay = document.getElementById('pageOverlay'); 
 const weekdays = document.querySelectorAll('.weekday');
 const daynums = document.querySelectorAll('.daynum');
 const weeknums = document.querySelectorAll('.weeknum');
@@ -27,6 +28,7 @@ const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
 fixosBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveFixo.style.display = 'none'; 
+    overlay.style.display = 'none';
     modalOn = false;
   } else {
     menu.style.right = '-100%';
@@ -34,12 +36,14 @@ fixosBtn.addEventListener('click', () => {
       menu.style.display = 'none';
     }, 50);
     modalChaveFixo.style.display = 'flex';
+    overlay.style.display = 'block';
     modalOn = true;
   }
 })
 
 menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
+  overlay.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
   }, 50);
@@ -49,22 +53,26 @@ closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
+    overlay.style.display = 'none';
   }, 50);
 })
 
 closeBtnFixo.addEventListener('click', () => {
   modalChaveFixo.style.display = 'none'; 
+    overlay.style.display = 'none';
     modalOn = false;
 })
 
 closeBtnTroca.addEventListener('click', () => {
   modalChaveTroca.style.display = 'none'; 
+  overlay.style.display = 'none';
     modalOn = false;
 })
 
 trocasBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveTroca.style.display = 'none'; 
+    overlay.style.display = 'none';
     modalOn = false;
   } else {
     menu.style.right = '-100%';
@@ -72,6 +80,7 @@ trocasBtn.addEventListener('click', () => {
       menu.style.display = 'none';
     }, 50);
     modalChaveTroca.style.display = 'flex';
+    overlay.style.display = 'block';
     modalOn = true;
   }
 })
@@ -87,6 +96,7 @@ confirmBtnTroca.addEventListener('click', () => {
       cell.style.backgroundColor = 'white';
       cell.style.color = 'black';
     })
+    overlay.style.display = 'none';
   } else {
     alert('Chave Incorreta!');
     document.querySelector('.chaveTroca').value = '';

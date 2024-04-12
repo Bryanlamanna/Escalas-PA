@@ -1,3 +1,4 @@
+const overlay = document.getElementById('pageOverlay'); 
 const weekdays = document.querySelectorAll('.weekday');
 const daynums = document.querySelectorAll('.daynum');
 const weeknums = document.querySelectorAll('.weeknum');
@@ -305,6 +306,7 @@ fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json')
 
 closeBtnFixo.addEventListener('click', () => {
   modalChaveFixo.style.display = 'none'; 
+  overlay.style.display = 'none';
     modalOn = false;
 })
 
@@ -322,6 +324,7 @@ confirmBtnFixo.addEventListener('click', () => {
  fixosBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveFixo.style.display = 'none'; 
+    overlay.style.display = 'none';
     modalOn = false;
   } else {
     menu.style.right = '-100%';
@@ -329,12 +332,14 @@ confirmBtnFixo.addEventListener('click', () => {
       menu.style.display = 'none';
     }, 50);
     modalChaveFixo.style.display = 'flex';
+    overlay.style.display = 'block';
     modalOn = true;
   }
  })
 
 menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
+  overlay.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
   }, 50);
@@ -344,6 +349,7 @@ closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
+    overlay.style.display = 'none';
   }, 50);
  })
 

@@ -1,3 +1,4 @@
+const overlay = document.getElementById('pageOverlay'); 
 const URL = 'https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json';
 const domingos = document.querySelectorAll(".domingo td");
 const segundas = document.querySelectorAll(".segunda td");
@@ -9,13 +10,12 @@ const sabados = document.querySelectorAll(".sabado td");
 const menuBtn = document.querySelector('.menuBtn');
 const menu = document.querySelector('.menu');
 const closeMenuBtn = document.querySelector('.closeMenu'); 
-/*
-const dias = ["domingos", "segundas", "tercas", "quartas", "quintas", "sextas", "sabados"];
-*/
+
 menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
   setTimeout(() => {
     menu.style.right = '0px';
+    overlay.style.display = 'block';
   }, 50);
 })
  
@@ -23,6 +23,7 @@ closeMenuBtn.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
+    overlay.style.display = 'none';
   }, 50);
  })
 
@@ -169,46 +170,3 @@ dias.forEach((dia, indexDia) => {
         updateEscala(nomeEscala, dias[indexDia]);
     });
 });
-
-/*
-const dias = ["domingos", "segundas", "tercas", "quartas", "quintas", "sextas", "sabados"];
-
-updateEscala("primeiroDomingo", dias[0]);
-updateEscala("segundoDomingo", dias[0]);
-updateEscala("terceiroDomingo", dias[0]);
-updateEscala("quartoDomingo" , dias[0]);
-updateEscala("quintoDomingo" , dias[0]);
-updateEscala("primeiroSabado", dias[6]);
-updateEscala("segundoSabado" , dias[6]);
-updateEscala("terceiroSabado" , dias[6]);
-updateEscala("quartoSabado" , dias[6]);
-updateEscala("quintoSabado" , dias[6]);
-updateEscala("primeiraQuarta", dias[3]);
-updateEscala("segundaQuarta" , dias[3]);
-updateEscala("terceiraQuarta", dias[3]);
-updateEscala("quartaQuarta" , dias[3]);
-updateEscala("quintaQuarta" , dias[3]);
-updateEscala("primeiraQuinta" , dias[4]);
-updateEscala("segundaQuinta" , dias[4]);
-updateEscala("terceiraQuinta" , dias[4]);
-updateEscala("quartaQuinta" , dias[4]);
-updateEscala("quintaQuinta" , dias[4]);
-updateEscala("primeiraSexta" , dias[5]);
-updateEscala("segundaSexta" , dias[5]);
-updateEscala("terceiraSexta" , dias[5]);
-updateEscala("quartaSexta" , dias[5]);
-updateEscala("quintaSexta" , dias[5]);  
-updateEscala("primeiraSegunda" , dias[1]);
-updateEscala("segundaSegunda" , dias[1]);
-updateEscala("terceiraSegunda" , dias[1]);
-updateEscala("quartaSegunda" , dias[1]);
-updateEscala("quintaSegunda" , dias[1]);
-updateEscala("primeiraTerca" , dias[2]);
-updateEscala("segundaTerca" , dias[2]);
-updateEscala("terceiraTerca" , dias[2]);
-updateEscala("quartaTerca" , dias[2]);
-updateEscala("quintaTerca" , dias[2]);
-
-*/
-
-
