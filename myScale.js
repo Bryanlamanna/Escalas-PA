@@ -117,6 +117,7 @@ confirmBtnMes.addEventListener('click', () => {
   if (chave === '4024') {
     if (confirm('Confirma a troca de mês?')) {
       switchMonth();
+
     } else {
       alert('Operação cancelada');
     }
@@ -124,6 +125,8 @@ confirmBtnMes.addEventListener('click', () => {
     alert('Chave Incorreta!');
     document.querySelector('.chaveMes').value = '';
   }
+
+  window.location.reload();
 })
 
 confirmBtnTroca.addEventListener('click', () => {
