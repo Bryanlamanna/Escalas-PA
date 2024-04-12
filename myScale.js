@@ -116,9 +116,8 @@ confirmBtnMes.addEventListener('click', () => {
 
   if (chave === '4024') {
     if (confirm('Confirma a troca de mês?')) {
-      switchMonth();
-
-    } else {
+      switchMonth()
+      } else {
       alert('Operação cancelada');
     }
   } else {
@@ -126,7 +125,6 @@ confirmBtnMes.addEventListener('click', () => {
     document.querySelector('.chaveMes').value = '';
   }
 
-  window.location.reload();
 })
 
 confirmBtnTroca.addEventListener('click', () => {
@@ -687,6 +685,8 @@ function switchMonth() {
          headers: {
            'Content-Type': 'application/json'
          }
+       }).then(() => {
+         location.reload();
        })
        .catch(error => console.error(error));
  });    
