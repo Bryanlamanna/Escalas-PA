@@ -302,9 +302,14 @@ function setBtnText() {
 }
 
 window.onload = () => {
-    updateColors();
-    createMyScale();
-    setDayNum();
-    setWeekNum();
-    setBtnText();
- }
+
+  createMyScale()
+  updateColors()
+  setDayNum();
+  setWeekNum();
+  setBtnText()
+
+  document.body.style.opacity = '1';
+
+
+}

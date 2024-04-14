@@ -645,7 +645,6 @@ return scales[day];
 } catch (error) {
 return console.error(error);
 }
-   
 }
 
 function switchMonth() {  
@@ -712,11 +711,16 @@ function setBtnText() {
   document.querySelector('.currentBtn span').textContent = `${month}/${today.getFullYear()}`;
 }
 
-window.onload = () => {
-    updateColors();
-    createMyScale();
-    setDayNum();
-    setWeekNum();
-    presentDay();
-    setBtnText();
-}
+  window.onload = () => {
+
+          createMyScale()
+          updateColors()
+          setDayNum();
+          setWeekNum();
+          presentDay();
+          setBtnText()
+
+          document.body.style.opacity = '1';
+
+    
+  }

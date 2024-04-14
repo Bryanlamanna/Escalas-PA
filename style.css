@@ -11,7 +11,8 @@ body {
   align-items: center;
   padding-bottom: 2em;
   margin: 0 auto;
-  
+  opacity: 0;
+  transition: opacity .2s;
 }
 
 .menuList li  {

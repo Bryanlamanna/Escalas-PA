@@ -532,6 +532,7 @@ window.onload = () => {
     currentBtn.click();
     setTimeout(() => {
       currentBtn.click();
+      document.body.style.opacity = '1';
     },200)
   }, 500)
 }
