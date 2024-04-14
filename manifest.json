@@ -1,7 +1,7 @@
 {
     "background_color": "#585454",
     "dir": "ltr",
-    "display": "standalone",
+    "display": "fullscreen",
     "name": "Uni-Escala",
     "orientation": "portrait",
     "scope": "/https://uniodonto-escalas.netlify.app/",
