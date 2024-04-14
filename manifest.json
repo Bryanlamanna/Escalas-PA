@@ -463,6 +463,7 @@
     "lang": "pt",
     "display_override": [
       "window-controls-overlay",
-      "fullscreen"
+      "minimal-ui",
+      "standalone"
     ]
   }
