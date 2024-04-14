@@ -462,7 +462,7 @@
     "description": "App para acompanhar a escala de trabalho do plantão 24h da Uniodonto Porto Alegre",
     "lang": "pt",
     "display_override": [
-      "fullscreen",
-      "window-controls-overlay"
+      "window-controls-overlay",
+      "fullscreen"
     ]
   }
