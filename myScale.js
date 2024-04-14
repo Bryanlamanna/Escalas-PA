@@ -35,7 +35,7 @@ overlay.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
-  }, 50)
+  })
   modalChaveFixo.style.display = 'none';
   modalChaveTroca.style.display = 'none';
   modalNextMonth.style.display = 'none';
@@ -333,7 +333,13 @@ function saveScale(lastDay) {
       }
 
       for (let i = 0; i < plantoes.length; i++) {
-        plantoes[i].innerHTML = data[i];
+        if (data[i]=== '------') {
+          plantoes[i].innerHTML = data[i];
+          plantoes[i].style.backgroundColor = '#5e5e5e';
+        } else {
+          plantoes[i].innerHTML = data[i];
+        }
+        
       }
       hiddeDays(lastDay);
 
@@ -720,8 +726,7 @@ function setBtnText() {
           presentDay();
           setBtnText()
 
-          setTimeout(() => {
-            document.body.style.opacity = '1';
-          }, 300)
+          document.body.style.opacity = '1';
 
+    
   }
