@@ -11,6 +11,15 @@ const menuBtn = document.querySelector('.menuBtn');
 const menu = document.querySelector('.menu');
 const closeMenuBtn = document.querySelector('.closeMenu'); 
 
+overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    modalOn = false;
+    menu.style.right = '-100%';
+    setTimeout(() => {
+      menu.style.display = 'none';
+    })
+  })
+
 menuBtn.addEventListener('click', () => {
   menu.style.display = 'block';
   setTimeout(() => {

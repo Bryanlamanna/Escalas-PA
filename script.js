@@ -34,6 +34,17 @@ const closeMenuBtn = document.querySelector('.closeMenu');
 const confirmBtnFixo = document.querySelector('.confirmBtnFixo');
 const modalChaveFixo = document.querySelector('.modalChaveFixo');
 
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modalOn = false;
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  })
+  modalChaveTroca.style.display = 'none';
+})
+
+
 fetch('https://escala-62ed5-default-rtdb.firebaseio.com/escalas.json')
     .then(response => response.json())
     .then(escalas => {

@@ -25,6 +25,18 @@ const closeMenuBtn = document.querySelector('.closeMenu');
 const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];;
 
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modalOn = false;
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  })
+  modalChaveFixo.style.display = 'none';
+  modalChaveTroca.style.display = 'none';
+  modalNextMonth.style.display = 'none';
+})
+
 fixosBtn.addEventListener('click', () => {
   if (modalOn) {
     modalChaveFixo.style.display = 'none'; 
@@ -280,9 +292,13 @@ function createMyScale() {
      }
    })
    .catch(error => console.error('Ocorreu um erro ao obter os dados:', error));
+}
 
-   
-
+function setBtnText() {
+  const today = new Date();
+  const month = mesesDoAno[today.getMonth()].toUpperCase();
+  
+  document.querySelector('.currentBtn span').textContent = `${month}/${today.getFullYear()}`;
 }
 
 window.onload = () => {
@@ -290,4 +306,5 @@ window.onload = () => {
     createMyScale();
     setDayNum();
     setWeekNum();
+    setBtnText();
  }

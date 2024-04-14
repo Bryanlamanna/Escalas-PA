@@ -29,6 +29,19 @@ const closeMenuBtn = document.querySelector('.closeMenu');
 const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sáb.'];
 const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modalOn = false;
+  menu.style.right = '-100%';
+  setTimeout(() => {
+    menu.style.display = 'none';
+  })
+  modalChaveFixo.style.display = 'none';
+  modalChaveTroca.style.display = 'none';
+  modalNextMonth.style.display = 'none';
+})
+
+
 nextScaleBtn.addEventListener('click', () => {
   if (modalOn) {
     modalNextMonth.style.display = 'none'; 
@@ -639,7 +652,7 @@ function switchMonth() {
  const escalaProximo = fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json')
                      .then(response => response.json())
                      .then( data => {
-                       fetch ('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThisTeste.json', {
+                       fetch ('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json', {
                          method: 'PUT',
                          body: JSON.stringify(data),
                          headers: {
@@ -648,10 +661,10 @@ function switchMonth() {
                        })  
                      });
  
- const coresProximo = fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext.json')
+const coresProximo = fetch('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsNext.json')
                      .then(response => response.json())
                      .then( data => {
-                       fetch ('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThisTeste.json', {
+                       fetch ('https://positionsdb-45ad9-default-rtdb.firebaseio.com/positionsThis.json', {
                          method: 'PUT',
                          body: JSON.stringify(data),
                          headers: {
@@ -660,12 +673,11 @@ function switchMonth() {
                        })
                      });
 
- const today = new Date();
- const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
- const firstDayNextMonth = nextMonth.getDay();
- const register = `${mesesDoAno[today.getMonth()]}-${today.getFullYear()}`;                 
-
- const escalaAtual = fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json')
+const today = new Date();
+const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+const firstDayNextMonth = nextMonth.getDay();
+const register = `${mesesDoAno[today.getMonth()]}-${today.getFullYear()}`;                 
+const escalaAtual = fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleThis.json')
                      .then(response => response.json())
                      .then( data => {
                        fetch (`https://scalesdb-76ec1-default-rtdb.firebaseio.com/escala${register}.json`, {
@@ -678,8 +690,8 @@ function switchMonth() {
                      });
 
 
- makeScale(firstDayNextMonth).then(data => {
-       fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNextTeste.json', {
+makeScale(firstDayNextMonth).then(data => {
+       fetch('https://scalesdb-76ec1-default-rtdb.firebaseio.com/scaleNext.json', {
          method: 'PUT',
          body: JSON.stringify(data),
          headers: {
@@ -693,6 +705,12 @@ function switchMonth() {
 
 }
 
+function setBtnText() {
+  const today = new Date();
+  const month = mesesDoAno[today.getMonth()+1].toUpperCase();
+  
+  document.querySelector('.currentBtn span').textContent = `${month}/${today.getFullYear()}`;
+}
 
 window.onload = () => {
     updateColors();
@@ -700,4 +718,5 @@ window.onload = () => {
     setDayNum();
     setWeekNum();
     presentDay();
+    setBtnText();
 }
