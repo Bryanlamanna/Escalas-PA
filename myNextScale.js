@@ -309,7 +309,8 @@ window.onload = () => {
   setWeekNum();
   setBtnText()
 
-  document.body.style.opacity = '1';
-
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 300)
 
 }
