@@ -35,7 +35,7 @@ overlay.addEventListener('click', () => {
   menu.style.right = '-100%';
   setTimeout(() => {
     menu.style.display = 'none';
-  })
+  }, 50)
   modalChaveFixo.style.display = 'none';
   modalChaveTroca.style.display = 'none';
   modalNextMonth.style.display = 'none';
