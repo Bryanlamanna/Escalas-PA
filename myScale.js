@@ -41,7 +41,7 @@ overlay.addEventListener('click', () => {
   modalNextMonth.style.display = 'none';
 })
 
-
+/*
 nextScaleBtn.addEventListener('click', () => {
   if (modalOn) {
     modalNextMonth.style.display = 'none'; 
@@ -56,7 +56,7 @@ nextScaleBtn.addEventListener('click', () => {
     overlay.style.display = 'block';
     modalOn = true;
 }
-})
+})*/
 
 fixosBtn.addEventListener('click', () => {
   if (modalOn) {
