@@ -304,7 +304,7 @@ function setBtnText() {
 window.onload = () => {
 
   createMyScale()
-  updateColors()
+  /* updateColors()*/
   setDayNum();
   setWeekNum();
   setBtnText()
